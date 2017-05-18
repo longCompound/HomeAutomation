@@ -30,7 +30,7 @@
 { 
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+
     }
     self.besideView = nil;
     return self;
