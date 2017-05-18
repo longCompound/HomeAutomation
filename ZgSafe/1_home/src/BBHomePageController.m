@@ -16,7 +16,6 @@
 #import "BBSideBarView.h"
 #import "BBTemperatureLineView.h"
 #import "BBLoginViewController.h"
-//#import "BBNewsEyesViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BBNoticeSender.h"
 #include <string.h>
@@ -93,7 +92,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         _members = [[NSMutableArray alloc] init];
     }
     return self;
