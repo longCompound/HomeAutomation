@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pathName</key>
+	<dict>
+		<key>path</key>
+		<string>app/register.do</string>
+		<key>description</key>
+		<string>注册接口</string>
+	</dict>
+	<key>host</key>
+	<string>http://www.baidu.com/</string>
+	<key>desc</key>
+	<string>服务器地址</string>
+</dict>
+</plist>

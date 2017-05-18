@@ -1,0 +1,42 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#import "util_functions.h"
+#import "UIImageView+WebCache.h"
+#import "MBProgressHUD.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "Reachability.h"
+#import "Defines.h"
+#import "UIColor+RGBColor.h"
+#import "BBAppDelegate.h"
+#import "JSONKit.h"
+#import "BlueBoxerManager.h"
+#import "MyScrollHeader.h"
+#import "BBNoticeSender.h"
+#import "BBPullRefreshTable.h"
+//接口所需文件头
+#import "constDef.h"
+#import "BBSocketManager.h"
+#import "BBDataFrameTool.h"
+#import "BBDispatchManager.h"
+#import "BBSocketClient.h"
+#import "BBSocketManager.h"
+#import "BBUncaughtExceptionHandler.h"
+
+#import "BBsigle.h"
+
+#endif
