@@ -8,6 +8,7 @@
 
 #import "ZGanHomeViewController.h"
 #import "DDCollectionViewFlowLayout.h"
+#import "ZGanCollectionViewCell.h"
 #define kPickPerLine  4
 
 @interface ZGanHomeViewController () <UICollectionViewDataSource,UICollectionViewDelegate,DDCollectionViewDelegateFlowLayout>{
@@ -40,7 +41,7 @@
         layout.enableStickyHeaders = YES;
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topBar.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.topBar.frame)) collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor whiteColor];
-        [_collectionView registerClass:[MeetingPicCell class] forCellWithReuseIdentifier:@"MeetingPicCell"];
+        [_collectionView registerClass:[ZGanCollectionViewCell class] forCellWithReuseIdentifier:@"MeetingPicCell"];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         //        _collectionView.header = self.refreshHeader;
@@ -69,7 +70,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MeetingPicCell *cell = (MeetingPicCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"MeetingPicCell" forIndexPath:indexPath];
+    ZGanCollectionViewCell *cell = (ZGanCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"MeetingPicCell" forIndexPath:indexPath];
     return cell;
 }
 
@@ -106,42 +107,5 @@
 
 @end
 
-
-@interface MeetingPicCell ()
-
-@end
-
-@implementation MeetingPicCell
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    if (self = [super initWithFrame:frame]) {
-        [self addSubview:self.imageView];
-    }
-    return self;
-}
-
-- (void)layoutSubviews
-{
-    self.imageView.frame = CGRectMake(0.25, 0.25, CGRectGetWidth(self.frame)-0.5, CGRectGetHeight(self.frame)-0.5);
-}
-
-- (UIImageView *)imageView
-{
-    if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.25, 0.25, CGRectGetWidth(self.frame)-0.5, CGRectGetHeight(self.frame)-0.5)];
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        _imageView.clipsToBounds = YES;
-    }
-    return _imageView;
-}
-
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-@end
 
 

@@ -789,6 +789,7 @@
 		4DA8B2581ECEA4AE00C8C599 /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8B2571ECEA4AE00C8C599 /* ColorUtil.m */; };
 		4DA8B25C1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8B25B1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.m */; };
 		4DA8B25F1ECEE2A800C8C599 /* ZGanActionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8B25E1ECEE2A800C8C599 /* ZGanActionModel.m */; };
+		4DA8B2621ECEE42F00C8C599 /* ZGanCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8B2611ECEE42F00C8C599 /* ZGanCollectionViewCell.m */; };
 		93A0D16A18C96C6500BE274C /* MyCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A0D16918C96C6500BE274C /* MyCamera.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9C03F1E01921ACBD00E42BF3 /* eye-bg_gray_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C03F1DF1921ACBD00E42BF3 /* eye-bg_gray_1136.png */; };
 		9C03F1E31921B2FB00E42BF3 /* eye-bg_gray_960.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C03F1E21921B2FB00E42BF3 /* eye-bg_gray_960.png */; };
@@ -1808,6 +1809,8 @@
 		4DA8B25B1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		4DA8B25D1ECEE2A800C8C599 /* ZGanActionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGanActionModel.h; sourceTree = "<group>"; };
 		4DA8B25E1ECEE2A800C8C599 /* ZGanActionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGanActionModel.m; sourceTree = "<group>"; };
+		4DA8B2601ECEE42F00C8C599 /* ZGanCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGanCollectionViewCell.h; sourceTree = "<group>"; };
+		4DA8B2611ECEE42F00C8C599 /* ZGanCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGanCollectionViewCell.m; sourceTree = "<group>"; };
 		667471F91EBE1F580036D4F6 /* libIOTCAPIs_ALL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIOTCAPIs_ALL.a; path = "ZgSafe/tool/camera/lib/Debug-iphonesimulator/libIOTCAPIs_ALL.a"; sourceTree = "<group>"; };
 		93A0D16818C96C6500BE274C /* MyCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCamera.h; sourceTree = "<group>"; };
 		93A0D16918C96C6500BE274C /* MyCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCamera.m; sourceTree = "<group>"; };
@@ -3091,6 +3094,8 @@
 			children = (
 				4DA8B25A1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.h */,
 				4DA8B25B1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.m */,
+				4DA8B2601ECEE42F00C8C599 /* ZGanCollectionViewCell.h */,
+				4DA8B2611ECEE42F00C8C599 /* ZGanCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4649,6 +4654,7 @@
 			files = (
 				189A9B031818D18200E0C3BF /* BlueBoxerManager.m in Sources */,
 				9C3908321883C67200C0DD57 /* BBUncaughtExceptionHandler.m in Sources */,
+				4DA8B2621ECEE42F00C8C599 /* ZGanCollectionViewCell.m in Sources */,
 				9C53D34A18726E300062ED26 /* BBDispatchManager.m in Sources */,
 				9C69EAAD1889185500B031A1 /* SDWebImageManager.m in Sources */,
 				9CACB6331835B7F300847371 /* MKNumberBadgeView.m in Sources */,

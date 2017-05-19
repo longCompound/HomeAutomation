@@ -11,9 +11,3 @@
 @interface ZGanHomeViewController : BBRootViewController
 
 @end
-
-@interface MeetingPicCell : UICollectionViewCell
-
-@property (nonatomic, strong) UIImageView     *imageView;
-
-@end
