@@ -43,6 +43,8 @@
     [application setStatusBarHidden:NO];
     BBLog(@"application launched");
     if (IOS_VERSION >= 7.0f) {
+        [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    } else {
         [application setStatusBarStyle:UIStatusBarStyleDefault];
     }
     [self initialSettingInfo];
@@ -59,15 +61,16 @@
         [_statusBg release];
     }
     
-    if (ISIP5) {
-        _homePageVC = [[BBHomePageController alloc]initWithNibName:@"BBHomePageController"
-                                                            bundle:nil];
-    } else {
-        _homePageVC = [[BBHomePageController alloc]initWithNibName:@"BBHomePageController_iPhone4"
-                                                            bundle:nil];;
-    }
+//    if (ISIP5) {
+//        _homePageVC = [[BBHomePageController alloc]initWithNibName:@"BBHomePageController"
+//                                                            bundle:nil];
+//    } else {
+//        _homePageVC = [[BBHomePageController alloc]initWithNibName:@"BBHomePageController_iPhone4"
+//                                                            bundle:nil];;
+//    }
     
-    _navigationController = [[BBNavigationController alloc] initWithRootViewController:_homePageVC];
+    _rootVC = [[BBRootTabbarController alloc] init];
+    _navigationController = [[BBNavigationController alloc] initWithRootViewController:_rootVC];
     [_navigationController setNavigationBarHidden:YES animated:NO];
     self.window.rootViewController = _navigationController;
     

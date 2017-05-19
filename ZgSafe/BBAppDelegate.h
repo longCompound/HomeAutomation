@@ -11,6 +11,8 @@
 #import "BBNavigationController.h"
 #import "WeiboSDK.h"
 #import "tool/QQhulian/TencentOpenAPI.framework/Headers/TencentOAuth.h"
+#import "BBRootTabbarController.h"
+
 
 @class BBLoginViewController;
 @class BBSideBarView;
@@ -34,6 +36,9 @@ typedef NS_ENUM(NSInteger, AuthorizeType) {
 
 @property (strong, nonatomic) BBNavigationController *navigationController;
 @property (strong, nonatomic) BBHomePageController *homePageVC;
+
+@property (strong, nonatomic) BBRootTabbarController *rootVC;
+
 @property (nonatomic,assign) BOOL EyesVCShowwing;//当前显示的是云眼
 @property (nonatomic,assign) BOOL EyesVCBtn;//是否是云眼页推的
 @property (nonatomic,assign) BOOL EyesIsOpen;//是否是云眼页推的

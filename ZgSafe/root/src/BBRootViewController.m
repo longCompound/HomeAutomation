@@ -24,19 +24,40 @@
     return self;
 }
 
+- (void)loadView
+{
+    [super loadView];
+    _topBar = [[[NSBundle mainBundle] loadNibNamed:@"ZGanTopBar" owner:nil options:nil] lastObject];
+    if (IOS_VERSION>=7.0) {
+        _topBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64);
+    } else {
+        _topBar.frame = CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 44);
+    }
+    _topBar.delegate = self;
+    [self.view addSubview:_topBar];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onReceiveWaringNotificaiton:) name:BBDidReceiveWarningNotificaiton object:nil];
-    
-    
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    if (IOS_VERSION>=7.0) {
+        _topBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64);
+    } else {
+        _topBar.frame = CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 44);
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    appDelegate.statusBg.frame = [[UIApplication sharedApplication]statusBarFrame];
+    appDelegate.statusBg.frame = [[UIApplication sharedApplication] statusBarFrame];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +72,6 @@
     }else{
         return UIStatusBarStyleDefault;
     }
-    
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -70,7 +90,7 @@
     return NO;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskPortrait;
 }
@@ -97,10 +117,21 @@
             }
     }else{
         if (self.presentingViewController) {
-            [self.presentingViewController dismissModalViewControllerAnimated:NO];
+            [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
+                
+            }];
         }
     }
- 
+}
+
+- (void)touchTopBarLeftButton:(ZGanTopBar *)bar
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)touchTopBarRightButton:(ZGanTopBar *)bar
+{
+    
 }
 
 @end

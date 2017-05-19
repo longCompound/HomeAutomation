@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZGanTopBar.h"
 
-@interface BBRootViewController : UIViewController
+@interface BBRootViewController : UIViewController <ZGanTopBarDelegate>
 
 // 是否允许自动旋转(默认为NO)
 @property (nonatomic, assign, getter=isAutoRotate) BOOL autoRotate;
 
 // 默认界面方向(默认为UIInterfaceOrientationPortrait)
 @property (nonatomic, assign) UIInterfaceOrientation defaultOrientation;
+
+@property (nonatomic, strong)  ZGanTopBar          *topBar;
 
 @end
