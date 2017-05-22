@@ -12,9 +12,6 @@
 #import "ZGanSecurityViewController.h"
 #import "ZGanControlViewController.h"
 
-#define VIEW_HEIGHT self.view.frame.size.height
-#define VIEW_WIDTH self.view.frame.size.width
-#define BAR_HEIGHT 60
 
 static const NSInteger kBaseTag  =  100;
 

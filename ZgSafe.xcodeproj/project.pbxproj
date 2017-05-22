@@ -318,6 +318,22 @@
 		4D5584331ED340E90043B001 /* ZGZGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584321ED340E90043B001 /* ZGZGViewController.m */; };
 		4D5584361ED340FD0043B001 /* ZGZNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584351ED340FD0043B001 /* ZGZNViewController.m */; };
 		4D55843A1ED347BF0043B001 /* UIImage+UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584391ED347BF0043B001 /* UIImage+UIImageExtras.m */; };
+		4D5584621ED34CD40043B001 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584551ED34CD40043B001 /* TAAbstractDotView.m */; };
+		4D5584631ED34CD40043B001 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584571ED34CD40043B001 /* TAAnimatedDotView.m */; };
+		4D5584641ED34CD40043B001 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584591ED34CD40043B001 /* TADotView.m */; };
+		4D5584651ED34CD40043B001 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D55845B1ED34CD40043B001 /* TAPageControl.m */; };
+		4D5584661ED34CD40043B001 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D55845D1ED34CD40043B001 /* SDCollectionViewCell.m */; };
+		4D5584671ED34CD40043B001 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D55845F1ED34CD40043B001 /* SDCycleScrollView.m */; };
+		4D5584681ED34CD40043B001 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584611ED34CD40043B001 /* UIView+SDExtension.m */; };
+		4D55846B1ED34EC60043B001 /* ZGDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D55846A1ED34EC60043B001 /* ZGDeviceModel.m */; };
+		4D5584741ED361B70043B001 /* deng_double_false.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D55846C1ED361B70043B001 /* deng_double_false.png */; };
+		4D5584751ED361B70043B001 /* deng_double_false@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D55846D1ED361B70043B001 /* deng_double_false@2x.png */; };
+		4D5584761ED361B70043B001 /* main4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D55846E1ED361B70043B001 /* main4@2x.png */; };
+		4D5584771ED361B70043B001 /* main5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D55846F1ED361B70043B001 /* main5@2x.png */; };
+		4D5584781ED361B70043B001 /* main6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5584701ED361B70043B001 /* main6@2x.png */; };
+		4D5584791ED361B70043B001 /* main7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5584711ED361B70043B001 /* main7@2x.png */; };
+		4D55847A1ED361B70043B001 /* main8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5584721ED361B70043B001 /* main8@2x.png */; };
+		4D55847B1ED361B70043B001 /* main9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5584731ED361B70043B001 /* main9@2x.png */; };
 		4DA8B0621ECE943F00C8C599 /* BBRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */; };
 		4DA8B0631ECE943F00C8C599 /* ZGanControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE751ECE943E00C8C599 /* ZGanControlViewController.m */; };
 		4DA8B0641ECE943F00C8C599 /* ZGanControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA8AE761ECE943E00C8C599 /* ZGanControlViewController.xib */; };
@@ -1327,6 +1343,30 @@
 		4D5584371ED345950043B001 /* ZGDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZGDefine.h; sourceTree = "<group>"; };
 		4D5584381ED347BF0043B001 /* UIImage+UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageExtras.h"; sourceTree = "<group>"; };
 		4D5584391ED347BF0043B001 /* UIImage+UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageExtras.m"; sourceTree = "<group>"; };
+		4D5584541ED34CD40043B001 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		4D5584551ED34CD40043B001 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		4D5584561ED34CD40043B001 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		4D5584571ED34CD40043B001 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		4D5584581ED34CD40043B001 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		4D5584591ED34CD40043B001 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		4D55845A1ED34CD40043B001 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		4D55845B1ED34CD40043B001 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		4D55845C1ED34CD40043B001 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		4D55845D1ED34CD40043B001 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		4D55845E1ED34CD40043B001 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		4D55845F1ED34CD40043B001 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		4D5584601ED34CD40043B001 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		4D5584611ED34CD40043B001 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		4D5584691ED34EC60043B001 /* ZGDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGDeviceModel.h; sourceTree = "<group>"; };
+		4D55846A1ED34EC60043B001 /* ZGDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGDeviceModel.m; sourceTree = "<group>"; };
+		4D55846C1ED361B70043B001 /* deng_double_false.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deng_double_false.png; sourceTree = "<group>"; };
+		4D55846D1ED361B70043B001 /* deng_double_false@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deng_double_false@2x.png"; sourceTree = "<group>"; };
+		4D55846E1ED361B70043B001 /* main4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main4@2x.png"; sourceTree = "<group>"; };
+		4D55846F1ED361B70043B001 /* main5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main5@2x.png"; sourceTree = "<group>"; };
+		4D5584701ED361B70043B001 /* main6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main6@2x.png"; sourceTree = "<group>"; };
+		4D5584711ED361B70043B001 /* main7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main7@2x.png"; sourceTree = "<group>"; };
+		4D5584721ED361B70043B001 /* main8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main8@2x.png"; sourceTree = "<group>"; };
+		4D5584731ED361B70043B001 /* main9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main9@2x.png"; sourceTree = "<group>"; };
 		4DA8AE701ECE943E00C8C599 /* BBRootTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBRootTabbarController.h; path = ../BBRootTabbarController.h; sourceTree = "<group>"; };
 		4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBRootTabbarController.m; path = ../BBRootTabbarController.m; sourceTree = "<group>"; };
 		4DA8AE741ECE943E00C8C599 /* ZGanControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGanControlViewController.h; sourceTree = "<group>"; };
@@ -3018,6 +3058,35 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		4D5584521ED34CD40043B001 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				4D5584531ED34CD40043B001 /* PageControl */,
+				4D55845C1ED34CD40043B001 /* SDCollectionViewCell.h */,
+				4D55845D1ED34CD40043B001 /* SDCollectionViewCell.m */,
+				4D55845E1ED34CD40043B001 /* SDCycleScrollView.h */,
+				4D55845F1ED34CD40043B001 /* SDCycleScrollView.m */,
+				4D5584601ED34CD40043B001 /* UIView+SDExtension.h */,
+				4D5584611ED34CD40043B001 /* UIView+SDExtension.m */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		4D5584531ED34CD40043B001 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				4D5584541ED34CD40043B001 /* TAAbstractDotView.h */,
+				4D5584551ED34CD40043B001 /* TAAbstractDotView.m */,
+				4D5584561ED34CD40043B001 /* TAAnimatedDotView.h */,
+				4D5584571ED34CD40043B001 /* TAAnimatedDotView.m */,
+				4D5584581ED34CD40043B001 /* TADotView.h */,
+				4D5584591ED34CD40043B001 /* TADotView.m */,
+				4D55845A1ED34CD40043B001 /* TAPageControl.h */,
+				4D55845B1ED34CD40043B001 /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 		4DA8AE6F1ECE943E00C8C599 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -3054,6 +3123,8 @@
 		4DA8AE771ECE943E00C8C599 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4D5584691ED34EC60043B001 /* ZGDeviceModel.h */,
+				4D55846A1ED34EC60043B001 /* ZGDeviceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3061,6 +3132,7 @@
 		4DA8AE781ECE943E00C8C599 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4D5584521ED34CD40043B001 /* SDCycleScrollView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3119,6 +3191,14 @@
 		4DA8AE801ECE943E00C8C599 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4D55846C1ED361B70043B001 /* deng_double_false.png */,
+				4D55846D1ED361B70043B001 /* deng_double_false@2x.png */,
+				4D55846E1ED361B70043B001 /* main4@2x.png */,
+				4D55846F1ED361B70043B001 /* main5@2x.png */,
+				4D5584701ED361B70043B001 /* main6@2x.png */,
+				4D5584711ED361B70043B001 /* main7@2x.png */,
+				4D5584721ED361B70043B001 /* main8@2x.png */,
+				4D5584731ED361B70043B001 /* main9@2x.png */,
 				4D55841D1ED336FB0043B001 /* bgImage_new.png */,
 				4D55841E1ED336FB0043B001 /* bgImage_new@2x.png */,
 				4DA8B2541ECEA46D00C8C599 /* back@2x.png */,
@@ -3925,6 +4005,7 @@
 				18186D16182BA26B00D6086D /* home_bg.jpg in Resources */,
 				4DA8B0901ECE943F00C8C599 /* btn_access_records_no@2x.png in Resources */,
 				4DA8B19F1ECE944000C8C599 /* qipai_btn_bg@2x.png in Resources */,
+				4D5584771ED361B70043B001 /* main5@2x.png in Resources */,
 				4DA8B21C1ECE944000C8C599 /* wuye_edit_bighui_bg.png in Resources */,
 				4DA8B0E51ECE944000C8C599 /* fangwu_btn_bg.png in Resources */,
 				18186D87182BA26B00D6086D /* btn_yellow.png in Resources */,
@@ -3989,6 +4070,7 @@
 				4DA8B1AE1ECE944000C8C599 /* reg_edit_center_bg.png in Resources */,
 				18186D4D182BA26B00D6086D /* background.jpg in Resources */,
 				4DA8B1BB1ECE944000C8C599 /* reg_repas_edit_bg@2x.png in Resources */,
+				4D5584751ED361B70043B001 /* deng_double_false@2x.png in Resources */,
 				4DA8B1C41ECE944000C8C599 /* rfid_men.png in Resources */,
 				4DA8B1141ECE944000C8C599 /* imag_servicezan.png in Resources */,
 				18186DBC182BA26B00D6086D /* BBLoginViewController.xib in Resources */,
@@ -4261,6 +4343,7 @@
 				18A2EC13196FE94500D83171 /* BBNewsEyesViewController.xib in Resources */,
 				4DA8B0931ECE944000C8C599 /* btn_alarm_record_no.png in Resources */,
 				4DA8B1E81ECE944000C8C599 /* settings_gray_icon 4.png in Resources */,
+				4D5584781ED361B70043B001 /* main6@2x.png in Resources */,
 				4DA8B2111ECE944000C8C599 /* warning_image1.png in Resources */,
 				4DA8B2281ECE944000C8C599 /* xuxian_line.png in Resources */,
 				9CB4586E18570B5D0036B4E2 /* xgy_960.png in Resources */,
@@ -4274,6 +4357,7 @@
 				18186DB2182BA26B00D6086D /* txt_bg.png in Resources */,
 				4DA8B12A1ECE944000C8C599 /* kaisuo_btn_bg.png in Resources */,
 				4DA8B2081ECE944000C8C599 /* voice_off_icon 4.png in Resources */,
+				4D55847B1ED361B70043B001 /* main9@2x.png in Resources */,
 				18186DD3182BA26B00D6086D /* BBFeedBackViewController.xib in Resources */,
 				4DA8B1421ECE944000C8C599 /* list_selector_disabled_holo_dark.9 2.png in Resources */,
 				4DA8B0831ECE943F00C8C599 /* bg_black_bar.png in Resources */,
@@ -4284,6 +4368,7 @@
 				4DA8B0D21ECE944000C8C599 /* delete_iv@2x.png in Resources */,
 				4DA8B0A01ECE944000C8C599 /* cancle_defence_iv@2x.png in Resources */,
 				4DA8B07F1ECE943F00C8C599 /* banjia_btn_bg.png in Resources */,
+				4D5584791ED361B70043B001 /* main7@2x.png in Resources */,
 				4DA8B0C91ECE944000C8C599 /* date_node_iv.png in Resources */,
 				4DA8B2141ECE944000C8C599 /* welcome_bg.png in Resources */,
 				4DA8B0D11ECE944000C8C599 /* delete_iv.png in Resources */,
@@ -4454,6 +4539,7 @@
 				18186D28182BA26B00D6086D /* img9.png in Resources */,
 				4DA8B0F81ECE944000C8C599 /* gray_bg@2x.PNG in Resources */,
 				18186D4B182BA26B00D6086D /* 3_btns_bg.png in Resources */,
+				4D55847A1ED361B70043B001 /* main8@2x.png in Resources */,
 				4DA8B1D31ECE944000C8C599 /* screenshot_gray_icon 3.png in Resources */,
 				18186D5B182BA26B00D6086D /* temperature_warning_bg.png in Resources */,
 				9C5AB4FB1830A947001C9275 /* Icon-Small@2x.png in Resources */,
@@ -4556,6 +4642,7 @@
 				4DA8B1C91ECE944000C8C599 /* rfid_ok_btn_img@2x.png in Resources */,
 				9C5AB4F71830A947001C9275 /* Icon-40@2x.png in Resources */,
 				18186D31182BA26B00D6086D /* side_bar_gap_line.png in Resources */,
+				4D5584761ED361B70043B001 /* main4@2x.png in Resources */,
 				4DA8B1691ECE944000C8C599 /* main6.png in Resources */,
 				18186D57182BA26B00D6086D /* set_regard.png in Resources */,
 				4DA8B08C1ECE943F00C8C599 /* bottom_btn_img@2x.png in Resources */,
@@ -4570,6 +4657,7 @@
 				4DA8B1D11ECE944000C8C599 /* sales_btn_bg@2x.png in Resources */,
 				18186D59182BA26B00D6086D /* temperature_btn_bg.png in Resources */,
 				4DA8B22D1ECE944000C8C599 /* yckz_alarm_btn@2x.png in Resources */,
+				4D5584741ED361B70043B001 /* deng_double_false.png in Resources */,
 				18186D51182BA26B00D6086D /* girl.png in Resources */,
 				18F8F6B619285C450068B483 /* BBAboutViewController.xib in Resources */,
 				4DA8B1711ECE944000C8C599 /* main8.png in Resources */,
@@ -4653,11 +4741,13 @@
 				4DA8B24F1ECE9D5A00C8C599 /* ZGanTopBar.m in Sources */,
 				18186DB7182BA26B00D6086D /* BBAdressManageViewController.m in Sources */,
 				189A9B0B1818D18200E0C3BF /* ASIFormDataRequest.m in Sources */,
+				4D5584661ED34CD40043B001 /* SDCollectionViewCell.m in Sources */,
 				4D5584361ED340FD0043B001 /* ZGZNViewController.m in Sources */,
 				9C53758C186C19D2001385BC /* BBDataFrame.m in Sources */,
 				9C69EAA51889185500B031A1 /* BBPageControl.m in Sources */,
 				9C69EAAE1889185500B031A1 /* SDWebImagePrefetcher.m in Sources */,
 				18F8F6DE192899410068B483 /* BBAddAdressViewController.mm in Sources */,
+				4D5584651ED34CD40043B001 /* TAPageControl.m in Sources */,
 				4D15D9631ED29EFF00DE4E0B /* UIView+ITTAdditions.m in Sources */,
 				189A9B0E1818D18200E0C3BF /* ASINetworkQueue.m in Sources */,
 				18F8F6CE192894710068B483 /* BBAppDelegate.m in Sources */,
@@ -4665,6 +4755,7 @@
 				04C742861917B50E00DD0BF4 /* Mu51cUdpSearcher.m in Sources */,
 				18186D69182BA26B00D6086D /* BBHighTemperatureViewController.m in Sources */,
 				18186DE9182BA26B00D6086D /* BBUnlockView.m in Sources */,
+				4D5584631ED34CD40043B001 /* TAAnimatedDotView.m in Sources */,
 				9C537589186C19D2001385BC /* BBMsgClient.m in Sources */,
 				4DA8B25C1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.m in Sources */,
 				9C53758B186C19D2001385BC /* BBSocketManager.m in Sources */,
@@ -4676,12 +4767,15 @@
 				18186D5D182BA26B00D6086D /* BBDateKeyBoard.m in Sources */,
 				189A9AFF1818D18200E0C3BF /* BBRootViewController.m in Sources */,
 				9CA446BE18276328007B7B9F /* MJRefreshBaseView.m in Sources */,
+				4D5584671ED34CD40043B001 /* SDCycleScrollView.m in Sources */,
 				189A9B0C1818D18200E0C3BF /* ASIHTTPRequest.m in Sources */,
+				4D5584621ED34CD40043B001 /* TAAbstractDotView.m in Sources */,
 				18186D3B182BA26B00D6086D /* BBSideBarView.m in Sources */,
 				18186D6B182BA26B00D6086D /* BBTemperatureLineView.m in Sources */,
 				189A9B001818D18200E0C3BF /* BBScrollMenu.m in Sources */,
 				183F64FC1932DF5300EC899A /* BBresetPassWordViewController.m in Sources */,
 				9C653AA1191B1A72006CC23A /* BBPullRefreshTable.m in Sources */,
+				4D5584681ED34CD40043B001 /* UIView+SDExtension.m in Sources */,
 				18186DBE182BA26B00D6086D /* BBregisterViewController.mm in Sources */,
 				18A2EC12196FE94500D83171 /* BBNewsEyesViewController.mm in Sources */,
 				4D55843A1ED347BF0043B001 /* UIImage+UIImageExtras.m in Sources */,
@@ -4721,6 +4815,7 @@
 				4D55842A1ED340AD0043B001 /* ZGSQViewController.m in Sources */,
 				189A9AFC1818D18200E0C3BF /* BBNavigationController.m in Sources */,
 				18186D49182BA26B00D6086D /* BBInformationView.m in Sources */,
+				4D55846B1ED34EC60043B001 /* ZGDeviceModel.m in Sources */,
 				9C69EAAC1889185500B031A1 /* SDWebImageDownloader.m in Sources */,
 				18186DC0182BA26B00D6086D /* BBSetNetingViewController.mm in Sources */,
 				189A9B0D1818D18200E0C3BF /* ASIInputStream.m in Sources */,
@@ -4736,6 +4831,7 @@
 				4D09A0B81ED30CDD00C0F172 /* ZGBaseCollectionViewController.m in Sources */,
 				9C537587186C19D2001385BC /* BBLoginClient.m in Sources */,
 				18186DB5182BA26B00D6086D /* BBAdressCell.m in Sources */,
+				4D5584641ED34CD40043B001 /* TADotView.m in Sources */,
 				18186D36182BA26B00D6086D /* BBHomePageController.m in Sources */,
 				18186DB9182BA26B00D6086D /* BBChangePswViewController.m in Sources */,
 				182C7659192C4218008AFE1D /* BBsigle.m in Sources */,

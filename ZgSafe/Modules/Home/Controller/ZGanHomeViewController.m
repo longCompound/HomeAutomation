@@ -41,7 +41,7 @@
     _topImageView.frame = CGRectMake(0, 0, self.view.width, 95.0 * self.view.width / 375);
     _blueBar.frame = CGRectMake(0, _topImageView.bottom, self.view.width, 37);
     _adImageView.frame = CGRectMake(0, _blueBar.bottom, self.view.width, 140.0 * self.view.width / 375);
-    _collectionView.frame = CGRectMake(0, _adImageView.bottom, self.view.width, self.view.height - _adImageView.bottom - 60);
+    _collectionView.frame = CGRectMake(0, _adImageView.bottom, self.view.width, self.view.height - _adImageView.bottom - BAR_HEIGHT);
     _notiButton.frame = CGRectMake(0, 0, _blueBar.height, _blueBar.height);
 }
 
