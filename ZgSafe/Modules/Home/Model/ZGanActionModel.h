@@ -12,6 +12,8 @@
 
 @property (nonatomic, assign) NSUInteger type;
 
+@property (nonatomic, copy) NSString * title;
+
 @property (nonatomic, copy) NSString * thumbImageName;
 
 @property (nonatomic, copy) NSString * url;
@@ -19,6 +21,7 @@
 @property (nonatomic, strong) NSDictionary * otherInfo;
 
 + (instancetype)modelWithType:(NSUInteger)type
+                        title:(NSString *)title
                 thumbImageName:(NSString *)thumbImageName
                            url:(NSString *)url
                      otherInfo:(NSDictionary*)otherInfo;

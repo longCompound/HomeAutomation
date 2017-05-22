@@ -313,6 +313,11 @@
 		4D15D9691ED2A28D00DE4E0B /* ZGWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D9671ED2A28D00DE4E0B /* ZGWebViewController.xib */; };
 		4D55841F1ED336FB0043B001 /* bgImage_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D55841D1ED336FB0043B001 /* bgImage_new.png */; };
 		4D5584201ED336FB0043B001 /* bgImage_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D55841E1ED336FB0043B001 /* bgImage_new@2x.png */; };
+		4D55842A1ED340AD0043B001 /* ZGSQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584291ED340AD0043B001 /* ZGSQViewController.m */; };
+		4D55842D1ED340C10043B001 /* ZGFWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D55842C1ED340C10043B001 /* ZGFWViewController.m */; };
+		4D5584331ED340E90043B001 /* ZGZGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584321ED340E90043B001 /* ZGZGViewController.m */; };
+		4D5584361ED340FD0043B001 /* ZGZNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584351ED340FD0043B001 /* ZGZNViewController.m */; };
+		4D55843A1ED347BF0043B001 /* UIImage+UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5584391ED347BF0043B001 /* UIImage+UIImageExtras.m */; };
 		4DA8B0621ECE943F00C8C599 /* BBRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */; };
 		4DA8B0631ECE943F00C8C599 /* ZGanControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE751ECE943E00C8C599 /* ZGanControlViewController.m */; };
 		4DA8B0641ECE943F00C8C599 /* ZGanControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA8AE761ECE943E00C8C599 /* ZGanControlViewController.xib */; };
@@ -1301,9 +1306,9 @@
 		18F8F6DB192899410068B483 /* BBAddAdressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAddAdressViewController.h; sourceTree = "<group>"; };
 		18F8F6DC192899410068B483 /* BBAddAdressViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BBAddAdressViewController.mm; sourceTree = "<group>"; };
 		18F8F6DD192899410068B483 /* BBAddAdressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBAddAdressViewController.xib; sourceTree = "<group>"; };
-		4D09A0B51ED30CDD00C0F172 /* ZGBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGBaseCollectionViewController.h; sourceTree = "<group>"; };
-		4D09A0B61ED30CDD00C0F172 /* ZGBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGBaseCollectionViewController.m; sourceTree = "<group>"; };
-		4D09A0B71ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGBaseCollectionViewController.xib; sourceTree = "<group>"; };
+		4D09A0B51ED30CDD00C0F172 /* ZGBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZGBaseCollectionViewController.h; path = ../../Custom/ZGBaseCollectionViewController.h; sourceTree = "<group>"; };
+		4D09A0B61ED30CDD00C0F172 /* ZGBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZGBaseCollectionViewController.m; path = ../../Custom/ZGBaseCollectionViewController.m; sourceTree = "<group>"; };
+		4D09A0B71ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZGBaseCollectionViewController.xib; path = ../../Custom/ZGBaseCollectionViewController.xib; sourceTree = "<group>"; };
 		4D15D9611ED29EFF00DE4E0B /* UIView+ITTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+ITTAdditions.h"; path = "../UIView+ITTAdditions.h"; sourceTree = "<group>"; };
 		4D15D9621ED29EFF00DE4E0B /* UIView+ITTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+ITTAdditions.m"; path = "../UIView+ITTAdditions.m"; sourceTree = "<group>"; };
 		4D15D9651ED2A28D00DE4E0B /* ZGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGWebViewController.h; sourceTree = "<group>"; };
@@ -1311,6 +1316,17 @@
 		4D15D9671ED2A28D00DE4E0B /* ZGWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGWebViewController.xib; sourceTree = "<group>"; };
 		4D55841D1ED336FB0043B001 /* bgImage_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgImage_new.png; sourceTree = "<group>"; };
 		4D55841E1ED336FB0043B001 /* bgImage_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgImage_new@2x.png"; sourceTree = "<group>"; };
+		4D5584281ED340AD0043B001 /* ZGSQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGSQViewController.h; sourceTree = "<group>"; };
+		4D5584291ED340AD0043B001 /* ZGSQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGSQViewController.m; sourceTree = "<group>"; };
+		4D55842B1ED340C10043B001 /* ZGFWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGFWViewController.h; sourceTree = "<group>"; };
+		4D55842C1ED340C10043B001 /* ZGFWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGFWViewController.m; sourceTree = "<group>"; };
+		4D5584311ED340E90043B001 /* ZGZGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGZGViewController.h; sourceTree = "<group>"; };
+		4D5584321ED340E90043B001 /* ZGZGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGZGViewController.m; sourceTree = "<group>"; };
+		4D5584341ED340FD0043B001 /* ZGZNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGZNViewController.h; sourceTree = "<group>"; };
+		4D5584351ED340FD0043B001 /* ZGZNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGZNViewController.m; sourceTree = "<group>"; };
+		4D5584371ED345950043B001 /* ZGDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZGDefine.h; sourceTree = "<group>"; };
+		4D5584381ED347BF0043B001 /* UIImage+UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageExtras.h"; sourceTree = "<group>"; };
+		4D5584391ED347BF0043B001 /* UIImage+UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageExtras.m"; sourceTree = "<group>"; };
 		4DA8AE701ECE943E00C8C599 /* BBRootTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBRootTabbarController.h; path = ../BBRootTabbarController.h; sourceTree = "<group>"; };
 		4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBRootTabbarController.m; path = ../BBRootTabbarController.m; sourceTree = "<group>"; };
 		4DA8AE741ECE943E00C8C599 /* ZGanControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGanControlViewController.h; sourceTree = "<group>"; };
@@ -2981,6 +2997,8 @@
 		4D15D9641ED2A25A00DE4E0B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				4D5584381ED347BF0043B001 /* UIImage+UIImageExtras.h */,
+				4D5584391ED347BF0043B001 /* UIImage+UIImageExtras.m */,
 				4DA8B2511ECEA24F00C8C599 /* UIButton+EnlargeEdge.h */,
 				4DA8B2521ECEA24F00C8C599 /* UIButton+EnlargeEdge.m */,
 				4D15D9611ED29EFF00DE4E0B /* UIView+ITTAdditions.h */,
@@ -2995,9 +3013,7 @@
 				4D15D9651ED2A28D00DE4E0B /* ZGWebViewController.h */,
 				4D15D9661ED2A28D00DE4E0B /* ZGWebViewController.m */,
 				4D15D9671ED2A28D00DE4E0B /* ZGWebViewController.xib */,
-				4D09A0B51ED30CDD00C0F172 /* ZGBaseCollectionViewController.h */,
-				4D09A0B61ED30CDD00C0F172 /* ZGBaseCollectionViewController.m */,
-				4D09A0B71ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib */,
+				4D5584371ED345950043B001 /* ZGDefine.h */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -3005,12 +3021,12 @@
 		4DA8AE6F1ECE943E00C8C599 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				4D15D9641ED2A25A00DE4E0B /* Custom */,
-				4DA8AE721ECE943E00C8C599 /* Control */,
 				4DA8AE791ECE943E00C8C599 /* Home */,
-				4DA8AE801ECE943E00C8C599 /* images */,
-				4DA8B0541ECE943F00C8C599 /* Me */,
+				4DA8AE721ECE943E00C8C599 /* Control */,
 				4DA8B05B1ECE943F00C8C599 /* Security */,
+				4DA8B0541ECE943F00C8C599 /* Me */,
+				4DA8AE801ECE943E00C8C599 /* images */,
+				4D15D9641ED2A25A00DE4E0B /* Custom */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -3062,9 +3078,20 @@
 		4DA8AE7A1ECE943E00C8C599 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4D09A0B51ED30CDD00C0F172 /* ZGBaseCollectionViewController.h */,
+				4D09A0B61ED30CDD00C0F172 /* ZGBaseCollectionViewController.m */,
+				4D09A0B71ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib */,
 				4DA8AE7B1ECE943E00C8C599 /* ZGanHomeViewController.h */,
 				4DA8AE7C1ECE943E00C8C599 /* ZGanHomeViewController.m */,
 				4DA8AE7D1ECE943E00C8C599 /* ZGanHomeViewController.xib */,
+				4D55842B1ED340C10043B001 /* ZGFWViewController.h */,
+				4D55842C1ED340C10043B001 /* ZGFWViewController.m */,
+				4D5584281ED340AD0043B001 /* ZGSQViewController.h */,
+				4D5584291ED340AD0043B001 /* ZGSQViewController.m */,
+				4D5584311ED340E90043B001 /* ZGZGViewController.h */,
+				4D5584321ED340E90043B001 /* ZGZGViewController.m */,
+				4D5584341ED340FD0043B001 /* ZGZNViewController.h */,
+				4D5584351ED340FD0043B001 /* ZGZNViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4626,6 +4653,7 @@
 				4DA8B24F1ECE9D5A00C8C599 /* ZGanTopBar.m in Sources */,
 				18186DB7182BA26B00D6086D /* BBAdressManageViewController.m in Sources */,
 				189A9B0B1818D18200E0C3BF /* ASIFormDataRequest.m in Sources */,
+				4D5584361ED340FD0043B001 /* ZGZNViewController.m in Sources */,
 				9C53758C186C19D2001385BC /* BBDataFrame.m in Sources */,
 				9C69EAA51889185500B031A1 /* BBPageControl.m in Sources */,
 				9C69EAAE1889185500B031A1 /* SDWebImagePrefetcher.m in Sources */,
@@ -4656,6 +4684,7 @@
 				9C653AA1191B1A72006CC23A /* BBPullRefreshTable.m in Sources */,
 				18186DBE182BA26B00D6086D /* BBregisterViewController.mm in Sources */,
 				18A2EC12196FE94500D83171 /* BBNewsEyesViewController.mm in Sources */,
+				4D55843A1ED347BF0043B001 /* UIImage+UIImageExtras.m in Sources */,
 				4DA8B0631ECE943F00C8C599 /* ZGanControlViewController.m in Sources */,
 				18186DEA182BA26B00D6086D /* BBVideoCameraViewController.m in Sources */,
 				189A9B891818FB9300E0C3BF /* JSONKit.m in Sources */,
@@ -4678,6 +4707,7 @@
 				189A9B051818D18200E0C3BF /* UIImage+stretch.m in Sources */,
 				18186DCF182BA26B00D6086D /* BBExchangeScoreViewController.m in Sources */,
 				18F8F6B519285C450068B483 /* BBAboutViewController.m in Sources */,
+				4D55842D1ED340C10043B001 /* ZGFWViewController.m in Sources */,
 				18F8F6D3192897410068B483 /* BBAddRFIDViewController.m in Sources */,
 				189A9B081818D18200E0C3BF /* ASIDataCompressor.m in Sources */,
 				189A9B111818D18200E0C3BF /* MBProgressHUD.m in Sources */,
@@ -4688,6 +4718,7 @@
 				183F65031933184F00EC899A /* BBressetVerCodeViewController.m in Sources */,
 				189A9A471818D0D900E0C3BF /* main.m in Sources */,
 				18095884183079AF00C23672 /* iToast.m in Sources */,
+				4D55842A1ED340AD0043B001 /* ZGSQViewController.m in Sources */,
 				189A9AFC1818D18200E0C3BF /* BBNavigationController.m in Sources */,
 				18186D49182BA26B00D6086D /* BBInformationView.m in Sources */,
 				9C69EAAC1889185500B031A1 /* SDWebImageDownloader.m in Sources */,
@@ -4700,6 +4731,7 @@
 				189A9B041818D18200E0C3BF /* UIColor+RGBColor.m in Sources */,
 				18186D7F182BA26B00D6086D /* BBAlbumsCell.m in Sources */,
 				9C537588186C19D2001385BC /* BBMainClient.m in Sources */,
+				4D5584331ED340E90043B001 /* ZGZGViewController.m in Sources */,
 				4DA8B23A1ECE944000C8C599 /* ZGanMeViewController.m in Sources */,
 				4D09A0B81ED30CDD00C0F172 /* ZGBaseCollectionViewController.m in Sources */,
 				9C537587186C19D2001385BC /* BBLoginClient.m in Sources */,

@@ -11,12 +11,14 @@
 @implementation ZGanActionModel
 
 + (instancetype)modelWithType:(NSUInteger)type
+                        title:(NSString *)title
                thumbImageName:(NSString *)thumbImageName
                           url:(NSString *)url
                     otherInfo:(NSDictionary*)otherInfo
 {
     ZGanActionModel * model = [[ZGanActionModel alloc] init];
     model.type = type;
+    model.title = title;
     model.thumbImageName = thumbImageName;
     model.url = url;
     model.otherInfo = otherInfo;

@@ -7,11 +7,18 @@
 //
 
 #import "BBRootViewController.h"
+#import "ZGanActionModel.h"
 
 @interface ZGBaseCollectionViewController : BBRootViewController
 
 @property (nonatomic,copy) NSArray  *dataArray;
 
 @property (nonatomic, assign) NSUInteger numbersInRow;
+
+@property (nonatomic, assign) CGFloat topEdge;
+
+@property (nonatomic, assign) CGFloat bottomEdge;
+
+- (void)initData;
 
 @end

@@ -41,6 +41,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.topBar setupBackTrace:@"返回" title:self.titleString rightActionTitle:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onReceiveWaringNotificaiton:) name:BBDidReceiveWarningNotificaiton object:nil];
 }
 

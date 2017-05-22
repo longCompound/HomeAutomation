@@ -19,4 +19,6 @@
 
 @property (nonatomic, strong)  ZGanTopBar          *topBar;
 
+@property (nonatomic, copy) NSString * titleString;
+
 @end

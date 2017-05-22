@@ -16,6 +16,8 @@
 
 @property (nonatomic,weak) id<ZGanCollectionViewCellDelegate>delegate;
 
+- (void)setBottomEdge:(CGFloat)bottomEdge topEdge:(CGFloat)topEdge;
+
 @end
 
 

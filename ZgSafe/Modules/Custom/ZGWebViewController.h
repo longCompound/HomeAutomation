@@ -10,8 +10,6 @@
 
 @interface ZGWebViewController : BBRootViewController
 
-@property (nonatomic,copy) NSString * titleString;
-
 @property (nonatomic,copy) NSString * urlString;
 
 @end

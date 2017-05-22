@@ -19,10 +19,27 @@
 
 @implementation ZGBaseCollectionViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        _topEdge = 5;
+        _bottomEdge = 5;
+        _numbersInRow = 3;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _numbersInRow = 3;
+    [self initData];
+    [self createUI];
+    [_collectionView reloadData];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)initData
+{
+
 }
 
 - (void)setNumbersInRow:(NSUInteger)numbersInRow
@@ -66,13 +83,14 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView layout:(DDCollectionViewFlowLayout *)layout numberOfColumnsInSection:(NSInteger)section{
-    return 4;
+    return _numbersInRow;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ZGanCollectionViewCell *cell = (ZGanCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"ZGanCollectionViewCell" forIndexPath:indexPath];
     cell.actionInfo = _dataArray[indexPath.row];
     cell.delegate = self;
+    [cell setBottomEdge:_bottomEdge topEdge:_topEdge];
     return cell;
 }
 
@@ -91,7 +109,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(CGRectGetWidth(self.view.frame)/_numbersInRow,CGRectGetWidth(self.view.frame)/_numbersInRow * 114 / 90);
+    return CGSizeMake(CGRectGetWidth(self.view.frame)/_numbersInRow, CGRectGetWidth(self.view.frame)/_numbersInRow + _topEdge + _bottomEdge);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -104,7 +122,7 @@
 - (void)cellClickWithInfo:(ZGanActionModel *)model
 {
     ZGWebViewController * vc = [[ZGWebViewController alloc] initWithNibName:@"ZGWebViewController" bundle:[NSBundle mainBundle]];
-    vc.titleString = @"";
+    vc.titleString = model.title;
     vc.urlString = @"https://www.baidu.com";
     [self.navigationController pushViewController:vc animated:YES];
 }

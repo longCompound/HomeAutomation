@@ -11,6 +11,11 @@
 @interface ZGanCollectionViewCell () {
     UIButton              *_actionButton;
 }
+
+@property (nonatomic, assign) CGFloat topEdge;
+
+@property (nonatomic, assign) CGFloat bottomEdge;
+
 @end
 
 @implementation ZGanCollectionViewCell
@@ -25,9 +30,11 @@
 
 - (void)createUI
 {
+    _topEdge = 5;
+    _bottomEdge = 5;
     [self addSubview:({
         _actionButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _actionButton.frame = CGRectMake(5, 5, self.bounds.size.width - 10, self.bounds.size.height - 10);
+        _actionButton.frame = CGRectMake(5, _topEdge, self.bounds.size.width - 10, self.bounds.size.height - _topEdge - _bottomEdge);
         [_actionButton addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
         _actionButton;
     })];
@@ -36,12 +43,19 @@
 - (void)setActionInfo:(ZGanActionModel *)actionInfo
 {
     _actionInfo = actionInfo;
-    [_actionButton setImage:[UIImage imageNamed:actionInfo.thumbImageName] forState:UIControlStateNormal];
+    [_actionButton setImage:[[UIImage imageNamed:actionInfo.thumbImageName] imageByScalingToSize:CGSizeMake(70, 89)] forState:UIControlStateNormal];
+}
+
+- (void)setBottomEdge:(CGFloat)bottomEdge topEdge:(CGFloat)topEdge
+{
+    _topEdge = topEdge;
+    _bottomEdge = bottomEdge;
+    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews
 {
-    _actionButton.frame = CGRectMake(5, 5, self.bounds.size.width - 10, self.bounds.size.height - 10);
+    _actionButton.frame = CGRectMake(5, _topEdge, self.bounds.size.width - 10, self.bounds.size.height - _topEdge - _bottomEdge);
 }
 
 -(void)click

@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.topBar.hidesLeftBtn = NO;
-    [self.topBar setupBackTrace:@"返回" title:_titleString rightActionTitle:nil];
     [_web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]]];
 }
 

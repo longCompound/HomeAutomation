@@ -41,5 +41,8 @@
 #import "UIView+ITTAdditions.h"
 #import "UIButton+EnlargeEdge.h"
 #import "ZGWebViewController.h"
+#import "UIImage+UIImageExtras.h"
+
+#import "ZGDefine.h"
 
 #endif
