@@ -306,9 +306,13 @@
 		18F8F6D4192897410068B483 /* BBAddRFIDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F6D2192897410068B483 /* BBAddRFIDViewController.xib */; };
 		18F8F6DE192899410068B483 /* BBAddAdressViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F6DC192899410068B483 /* BBAddAdressViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18F8F6DF192899410068B483 /* BBAddAdressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F6DD192899410068B483 /* BBAddAdressViewController.xib */; };
+		4D09A0B81ED30CDD00C0F172 /* ZGBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09A0B61ED30CDD00C0F172 /* ZGBaseCollectionViewController.m */; };
+		4D09A0B91ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D09A0B71ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib */; };
 		4D15D9631ED29EFF00DE4E0B /* UIView+ITTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D15D9621ED29EFF00DE4E0B /* UIView+ITTAdditions.m */; };
 		4D15D9681ED2A28D00DE4E0B /* ZGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D15D9661ED2A28D00DE4E0B /* ZGWebViewController.m */; };
 		4D15D9691ED2A28D00DE4E0B /* ZGWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D15D9671ED2A28D00DE4E0B /* ZGWebViewController.xib */; };
+		4D55841F1ED336FB0043B001 /* bgImage_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D55841D1ED336FB0043B001 /* bgImage_new.png */; };
+		4D5584201ED336FB0043B001 /* bgImage_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D55841E1ED336FB0043B001 /* bgImage_new@2x.png */; };
 		4DA8B0621ECE943F00C8C599 /* BBRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */; };
 		4DA8B0631ECE943F00C8C599 /* ZGanControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE751ECE943E00C8C599 /* ZGanControlViewController.m */; };
 		4DA8B0641ECE943F00C8C599 /* ZGanControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA8AE761ECE943E00C8C599 /* ZGanControlViewController.xib */; };
@@ -1297,11 +1301,16 @@
 		18F8F6DB192899410068B483 /* BBAddAdressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAddAdressViewController.h; sourceTree = "<group>"; };
 		18F8F6DC192899410068B483 /* BBAddAdressViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BBAddAdressViewController.mm; sourceTree = "<group>"; };
 		18F8F6DD192899410068B483 /* BBAddAdressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBAddAdressViewController.xib; sourceTree = "<group>"; };
+		4D09A0B51ED30CDD00C0F172 /* ZGBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGBaseCollectionViewController.h; sourceTree = "<group>"; };
+		4D09A0B61ED30CDD00C0F172 /* ZGBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGBaseCollectionViewController.m; sourceTree = "<group>"; };
+		4D09A0B71ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGBaseCollectionViewController.xib; sourceTree = "<group>"; };
 		4D15D9611ED29EFF00DE4E0B /* UIView+ITTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+ITTAdditions.h"; path = "../UIView+ITTAdditions.h"; sourceTree = "<group>"; };
 		4D15D9621ED29EFF00DE4E0B /* UIView+ITTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+ITTAdditions.m"; path = "../UIView+ITTAdditions.m"; sourceTree = "<group>"; };
 		4D15D9651ED2A28D00DE4E0B /* ZGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGWebViewController.h; sourceTree = "<group>"; };
 		4D15D9661ED2A28D00DE4E0B /* ZGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGWebViewController.m; sourceTree = "<group>"; };
 		4D15D9671ED2A28D00DE4E0B /* ZGWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGWebViewController.xib; sourceTree = "<group>"; };
+		4D55841D1ED336FB0043B001 /* bgImage_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgImage_new.png; sourceTree = "<group>"; };
+		4D55841E1ED336FB0043B001 /* bgImage_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgImage_new@2x.png"; sourceTree = "<group>"; };
 		4DA8AE701ECE943E00C8C599 /* BBRootTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBRootTabbarController.h; path = ../BBRootTabbarController.h; sourceTree = "<group>"; };
 		4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBRootTabbarController.m; path = ../BBRootTabbarController.m; sourceTree = "<group>"; };
 		4DA8AE741ECE943E00C8C599 /* ZGanControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGanControlViewController.h; sourceTree = "<group>"; };
@@ -2986,6 +2995,9 @@
 				4D15D9651ED2A28D00DE4E0B /* ZGWebViewController.h */,
 				4D15D9661ED2A28D00DE4E0B /* ZGWebViewController.m */,
 				4D15D9671ED2A28D00DE4E0B /* ZGWebViewController.xib */,
+				4D09A0B51ED30CDD00C0F172 /* ZGBaseCollectionViewController.h */,
+				4D09A0B61ED30CDD00C0F172 /* ZGBaseCollectionViewController.m */,
+				4D09A0B71ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -3080,6 +3092,8 @@
 		4DA8AE801ECE943E00C8C599 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4D55841D1ED336FB0043B001 /* bgImage_new.png */,
+				4D55841E1ED336FB0043B001 /* bgImage_new@2x.png */,
 				4DA8B2541ECEA46D00C8C599 /* back@2x.png */,
 				4DA8AE811ECE943E00C8C599 /* accounting_btn_bg.png */,
 				4DA8AE821ECE943E00C8C599 /* accounting_btn_bg@2x.png */,
@@ -3880,6 +3894,7 @@
 				18186D0E182BA26B00D6086D /* dial_off.png in Resources */,
 				18186D5A182BA26B00D6086D /* temperature_dot.png in Resources */,
 				4DA8B1831ECE944000C8C599 /* np_numberpicker_selection_divider.9 4.png in Resources */,
+				4D55841F1ED336FB0043B001 /* bgImage_new.png in Resources */,
 				18186D16182BA26B00D6086D /* home_bg.jpg in Resources */,
 				4DA8B0901ECE943F00C8C599 /* btn_access_records_no@2x.png in Resources */,
 				4DA8B19F1ECE944000C8C599 /* qipai_btn_bg@2x.png in Resources */,
@@ -4283,6 +4298,7 @@
 				4DA8B1B51ECE944000C8C599 /* reg_jtwsid_edit_bg@2x.png in Resources */,
 				4DA8B2351ECE944000C8C599 /* yellow_line@2x.png in Resources */,
 				4DA8B1E41ECE944000C8C599 /* service_btn_bg.png in Resources */,
+				4D09A0B91ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib in Resources */,
 				18186DB6182BA26B00D6086D /* BBAdressCell.xib in Resources */,
 				4DA8B1AA1ECE944000C8C599 /* reg_btn.png in Resources */,
 				18186DA4182BA26B00D6086D /* networkSetings.png in Resources */,
@@ -4483,6 +4499,7 @@
 				9C7DB2AF1876C0E900AF1572 /* img9_h.png in Resources */,
 				4DA8B0F01ECE944000C8C599 /* forget_code_btn@2x.png in Resources */,
 				18186DE8182BA26B00D6086D /* vdio_setbg.png in Resources */,
+				4D5584201ED336FB0043B001 /* bgImage_new@2x.png in Resources */,
 				4DA8B1931ECE944000C8C599 /* other_btn_bg@2x.png in Resources */,
 				4DA8B07B1ECE943F00C8C599 /* baby_btn_bg.png in Resources */,
 				18186D0F182BA26B00D6086D /* dial_on.png in Resources */,
@@ -4684,6 +4701,7 @@
 				18186D7F182BA26B00D6086D /* BBAlbumsCell.m in Sources */,
 				9C537588186C19D2001385BC /* BBMainClient.m in Sources */,
 				4DA8B23A1ECE944000C8C599 /* ZGanMeViewController.m in Sources */,
+				4D09A0B81ED30CDD00C0F172 /* ZGBaseCollectionViewController.m in Sources */,
 				9C537587186C19D2001385BC /* BBLoginClient.m in Sources */,
 				18186DB5182BA26B00D6086D /* BBAdressCell.m in Sources */,
 				18186D36182BA26B00D6086D /* BBHomePageController.m in Sources */,

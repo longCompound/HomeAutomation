@@ -21,7 +21,6 @@
     self.topBar.hidesLeftBtn = NO;
     [self.topBar setupBackTrace:@"返回" title:_titleString rightActionTitle:nil];
     [_web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]]];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillLayoutSubviews

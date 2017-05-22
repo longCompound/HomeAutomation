@@ -1,69 +1,46 @@
 //
-//  ZGanHomeViewController.m
+//  ZGBaseCollectionViewController.m
 //  ZgSafe
 //
-//  Created by Mark on 2017/5/18.
+//  Created by Mark on 2017/5/22.
 //  Copyright © 2017年 iXcoder. All rights reserved.
 //
 
-#import "ZGanHomeViewController.h"
+#import "ZGBaseCollectionViewController.h"
 #import "DDCollectionViewFlowLayout.h"
 #import "ZGanCollectionViewCell.h"
-#define kPickPerLine  4
 
-@interface ZGanHomeViewController () <UICollectionViewDataSource,UICollectionViewDelegate,DDCollectionViewDelegateFlowLayout,ZGanCollectionViewCellDelegate>{
-    NSArray                       *_dataArray;
-    __weak IBOutlet UIImageView *_topImageView;
-    __weak IBOutlet UIButton *_notiButton;
-    __weak IBOutlet UIView *_blueBar;
-    __weak IBOutlet UIImageView *_adImageView;
+
+@interface ZGBaseCollectionViewController () <UICollectionViewDataSource,UICollectionViewDelegate,DDCollectionViewDelegateFlowLayout,ZGanCollectionViewCellDelegate> {
     __weak IBOutlet UICollectionView *_collectionView;
 }
 
 @end
 
-@implementation ZGanHomeViewController
+@implementation ZGBaseCollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.topBar.hidden = YES;
-    [self createUI];
+    _numbersInRow = 3;
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)setNumbersInRow:(NSUInteger)numbersInRow
+{
+    if (numbersInRow == 0) {
+        numbersInRow = 3;
+    }
+    _numbersInRow = numbersInRow;
 }
 
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
-    _topImageView.frame = CGRectMake(0, 0, self.view.width, 95.0 * self.view.width / 375);
-    _blueBar.frame = CGRectMake(0, _topImageView.bottom, self.view.width, 37);
-    _adImageView.frame = CGRectMake(0, _blueBar.bottom, self.view.width, 140.0 * self.view.width / 375);
-    _collectionView.frame = CGRectMake(0, _adImageView.bottom, self.view.width, self.view.height - _adImageView.bottom - 60);
-    _notiButton.frame = CGRectMake(0, 0, _blueBar.height, _blueBar.height);
+    _collectionView.frame = CGRectMake(0, self.topBar.bottom, self.view.width, self.view.height - self.topBar.bottom);
 }
 
 - (void)createUI
 {
-    _dataArray = @[[ZGanActionModel modelWithType:0 thumbImageName:@"main1" url:nil otherInfo:nil],
-                   [ZGanActionModel modelWithType:1 thumbImageName:@"main4" url:nil otherInfo:nil],
-                   [ZGanActionModel modelWithType:2 thumbImageName:@"main5" url:nil otherInfo:nil],
-                   [ZGanActionModel modelWithType:3 thumbImageName:@"main7" url:nil otherInfo:nil],
-                   [ZGanActionModel modelWithType:4 thumbImageName:@"main6" url:nil otherInfo:nil],
-                   [ZGanActionModel modelWithType:5 thumbImageName:@"main3" url:nil otherInfo:nil],
-                   [ZGanActionModel modelWithType:6 thumbImageName:@"main9" url:nil otherInfo:nil],
-                   [ZGanActionModel modelWithType:7 thumbImageName:@"main8" url:nil otherInfo:nil]];
-    
-    UIImage * image = [UIImage imageNamed:@"drag_bg_yellow.png"];
-    
-    // 设置端盖的值
-    CGFloat top = image.size.height * 0.02;
-    CGFloat left = image.size.width * 0.5;
-    CGFloat bottom = image.size.height * 0.98;
-    CGFloat right = image.size.width * 0.5;
-    
-    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(top, left, bottom, right);
-
-    _topImageView.image = [image resizableImageWithCapInsets:edgeInsets];
-    [_notiButton setEnlargeEdgeWithTop:0 right:_blueBar.width bottom:0 left:0];[_notiButton setEnlargeEdgeWithTop:0 right:_blueBar.width bottom:0 left:0];
-
     DDCollectionViewFlowLayout *layout = [[DDCollectionViewFlowLayout alloc] init];
     layout.delegate = self;
     layout.enableStickyHeaders = YES;
@@ -75,6 +52,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UICollectionView DataSource Methods
@@ -98,10 +76,6 @@
     return cell;
 }
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-//    return nil;
-//}
-
 #pragma mark - UICollectionView Delegate Methods
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
@@ -117,12 +91,8 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(CGRectGetWidth(self.view.frame)/4,CGRectGetWidth(self.view.frame)/4 * 114 / 90);
+    return CGSizeMake(CGRectGetWidth(self.view.frame)/_numbersInRow,CGRectGetWidth(self.view.frame)/_numbersInRow * 114 / 90);
 }
-
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-//    return CGSizeMake(self.view.bounds.size.width, 0);
-//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -139,12 +109,5 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)noticeClick:(id)sender {
-    
-    
-}
 
 @end
-
-
-

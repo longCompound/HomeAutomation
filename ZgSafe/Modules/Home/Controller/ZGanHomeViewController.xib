@@ -32,14 +32,18 @@
                     <rect key="frame" x="0.0" y="93" width="375" height="37"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3V-po-0MJ">
-                            <rect key="frame" x="8" y="3" width="35" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3V-po-0MJ">
+                            <rect key="frame" x="10" y="4" width="31" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="laba.png"/>
+                            <connections>
+                                <action selector="noticeClick:" destination="-1" eventType="touchUpInside" id="nLv-lc-Lh7"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.29516109210000002" green="0.40957412170000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IS8-mY-ys8">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgImage_new.png" translatesAutoresizingMaskIntoConstraints="NO" id="IS8-mY-ys8">
                     <rect key="frame" x="0.0" y="130" width="375" height="132"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -64,6 +68,8 @@
         </view>
     </objects>
     <resources>
+        <image name="bgImage_new.png" width="240" height="91"/>
         <image name="drag_bg_yellow.png" width="400" height="74"/>
+        <image name="laba.png" width="31" height="28"/>
     </resources>
 </document>
