@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZGanActionModel.h"
 
+@protocol ZGanCollectionViewCellDelegate;
 @interface ZGanCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, strong) UIImageView     *imageView;
+@property (nonatomic, strong) ZGanActionModel  * actionInfo;
+
+@property (nonatomic,weak) id<ZGanCollectionViewCellDelegate>delegate;
+
+@end
+
+
+@protocol ZGanCollectionViewCellDelegate <NSObject>
+
+- (void)cellClickWithInfo:(ZGanActionModel *)model;
 
 @end

@@ -8,29 +8,61 @@
 
 #import "ZGanCollectionViewCell.h"
 
+@interface ZGanCollectionViewCell () {
+    UIButton              *_actionButton;
+}
+@end
+
 @implementation ZGanCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self addSubview:self.imageView];
+        [self createUI];
     }
     return self;
 }
 
-- (void)layoutSubviews
+- (void)createUI
 {
-    self.imageView.frame = CGRectMake(0.25, 0.25, CGRectGetWidth(self.frame)-0.5, CGRectGetHeight(self.frame)-0.5);
+    [self addSubview:({
+        _actionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _actionButton.frame = CGRectMake(5, 5, self.bounds.size.width - 10, self.bounds.size.height - 10);
+        [_actionButton addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+        _actionButton;
+    })];
 }
 
-- (UIImageView *)imageView
+- (void)setActionInfo:(ZGanActionModel *)actionInfo
 {
-    if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.25, 0.25, CGRectGetWidth(self.frame)-0.5, CGRectGetHeight(self.frame)-0.5)];
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        _imageView.clipsToBounds = YES;
-    }
-    return _imageView;
+    _actionInfo = actionInfo;
+    [_actionButton setImage:[UIImage imageNamed:actionInfo.thumbImageName] forState:UIControlStateNormal];
 }
+
+- (void)layoutSubviews
+{
+    _actionButton.frame = CGRectMake(5, 5, self.bounds.size.width - 10, self.bounds.size.height - 10);
+}
+
+-(void)click
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(cellClickWithInfo:)]) {
+        [_delegate cellClickWithInfo:_actionInfo];
+    }
+}
+
+//- (void)setButtonImageAndTitleWithSpace:(CGFloat)spacing WithButton:(UIButton *)btn{
+//    CGSize imageSize = btn.imageView.frame.size;
+//    CGSize titleSize = btn.titleLabel.frame.size;
+//    CGSize textSize = [btn.titleLabel.text sizeWithFont:btn.titleLabel.font];
+//    CGSize frameSize = CGSizeMake(ceilf(textSize.width), ceilf(textSize.height));
+//    if (titleSize.width + 0.5 < frameSize.width) {
+//        titleSize.width = frameSize.width;
+//    }
+//    CGFloat totalHeight = (imageSize.height + titleSize.height + spacing);
+//    btn.imageEdgeInsets = UIEdgeInsetsMake(- (totalHeight - imageSize.height), 0.0, 0.0, - titleSize.width);
+//    btn.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width, - (totalHeight - titleSize.height), 0);
+//    
+//}
 
 @end

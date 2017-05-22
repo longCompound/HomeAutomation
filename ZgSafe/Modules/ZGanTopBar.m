@@ -21,14 +21,15 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.backgroundColor = [ColorUtil getColor:@"3C394B"alpha:1.0];
+    self.backgroundColor = [ColorUtil getColor:@"3C394B" alpha:1.0];
     self.userInteractionEnabled = YES;
 }
 
-- (void)setHiddenLeftBtn:(BOOL)hiddenLeftBtn
+- (void)setHidesLeftBtn:(BOOL)hidesLeftBtn
 {
-    _leftButton.hidden = hiddenLeftBtn;
-    _traceTitleLabel.hidden = hiddenLeftBtn;
+    _hidesLeftBtn = hidesLeftBtn;
+    _leftButton.hidden = hidesLeftBtn;
+    _traceTitleLabel.hidden = hidesLeftBtn;
 }
 
 - (IBAction)leftButtonClick:(UIButton *)sender
@@ -65,7 +66,7 @@
     _titleLabel.frame = CGRectMake((width-200)/2, height-44, 200, 44);
     _rightButton.frame = CGRectMake(width-60, height-44, 60, 44);
     _leftButton.frame = CGRectMake(0, height-44, 44, 44);
-    _traceTitleLabel.frame = CGRectMake(44,height-44, 60, 44);
+    _traceTitleLabel.frame = CGRectMake(35,height-44, 60, 44);
 }
 
 @end

@@ -23,6 +23,8 @@ static const NSInteger kBaseTag  =  100;
     ZGanMeViewController               * _meVC;
     ZGanSecurityViewController         * _securityVC;
     ZGanControlViewController          * _controlVC;
+    
+    UIView                             * _barView;
 }
 
 @property (nonatomic, weak) UIButton * selectedButton;
@@ -34,7 +36,7 @@ static const NSInteger kBaseTag  =  100;
 - (instancetype)init
 {
     if (self = [super init]) {
-        self.tabBar.hidden = YES;
+        
     }
     return self;
 }
@@ -42,12 +44,13 @@ static const NSInteger kBaseTag  =  100;
 -(void)loadView
 {
     [super loadView];
-    [self initTabBarControllers];
-    [self initTabBarItems];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBar.hidden = YES;
+    [self initTabBarControllers];
+    [self initTabBarItems];
 }
 
 - (void)initTabBarControllers
@@ -57,13 +60,17 @@ static const NSInteger kBaseTag  =  100;
     _securityVC = [[ZGanSecurityViewController alloc] initWithNibName:@"ZGanSecurityViewController" bundle:[NSBundle mainBundle]];
     _meVC = [[ZGanMeViewController alloc] initWithNibName:@"ZGanMeViewController" bundle:[NSBundle mainBundle]];
     self.viewControllers = @[_homeVC,_securityVC,_controlVC,_meVC];
+    
+    [self.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * obj, NSUInteger idx, BOOL * stop) {
+        obj.view.frame = CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height - BAR_HEIGHT);
+    }];
 }
 
 - (void)initTabBarItems
 {
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, VIEW_HEIGHT-BAR_HEIGHT, VIEW_WIDTH, BAR_HEIGHT)];
-    view.userInteractionEnabled = YES;
-    view.backgroundColor = [UIColor blackColor];
+    _barView = [[UIView alloc]initWithFrame:CGRectMake(0, VIEW_HEIGHT-BAR_HEIGHT, VIEW_WIDTH, BAR_HEIGHT)];
+    _barView.userInteractionEnabled = YES;
+    _barView.backgroundColor = [UIColor blackColor];
     NSArray * images = @[@"index_btn_flase.png",@"jtws_btn_false.png",@"yckz_btn_false.png",@"self_btn_false.png"];
     NSArray * selectedImages = @[@"index_btn_true.png",@"jtws_btn_true.png",@"yckz_btn_true.png",@"self_btn_true.png"];
     
@@ -76,10 +83,10 @@ static const NSInteger kBaseTag  =  100;
         button.tag = idx + kBaseTag;
         [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:selectedImageName] forState:UIControlStateSelected];
-        [view addSubview:button];
+        [_barView addSubview:button];
     }];
     
-    [self.view addSubview:view];
+    [self.view addSubview:_barView];
 }
 
 - (void)buttonClick:(UIButton *)sender
@@ -91,6 +98,15 @@ static const NSInteger kBaseTag  =  100;
     self.selectedButton.selected = NO;
     self.selectedButton = sender;
     self.selectedButton.selected = YES;
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    [self.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * obj, NSUInteger idx, BOOL * stop) {
+        obj.view.frame = CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height - BAR_HEIGHT);
+    }];
+    _barView.frame = CGRectMake(0, VIEW_HEIGHT-BAR_HEIGHT, VIEW_WIDTH, BAR_HEIGHT);
 }
 
 - (void)didReceiveMemoryWarning {

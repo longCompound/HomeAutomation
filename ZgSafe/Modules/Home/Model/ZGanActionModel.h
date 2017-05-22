@@ -10,12 +10,17 @@
 
 @interface ZGanActionModel : NSObject
 
-@property (nonatomic, copy) NSString * title;
+@property (nonatomic, assign) NSUInteger type;
 
 @property (nonatomic, copy) NSString * thumbImageName;
 
 @property (nonatomic, copy) NSString * url;
 
 @property (nonatomic, strong) NSDictionary * otherInfo;
+
++ (instancetype)modelWithType:(NSUInteger)type
+                thumbImageName:(NSString *)thumbImageName
+                           url:(NSString *)url
+                     otherInfo:(NSDictionary*)otherInfo;
 
 @end

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.topBar.hiddenLeftBtn = YES;
+    self.topBar.hidesLeftBtn = YES;
     [self.topBar setupBackTrace:nil title:@"远程控制" rightActionTitle:nil];
     // Do any additional setup after loading the view from its nib.
 }

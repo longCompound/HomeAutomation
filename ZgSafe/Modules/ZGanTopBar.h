@@ -24,7 +24,7 @@
 
 @property (nonatomic, weak) id <ZGanTopBarDelegate>delegate;
 
-@property (nonatomic, assign) BOOL hiddenLeftBtn;
+@property (nonatomic, assign) BOOL hidesLeftBtn;
 
 - (void)setupBackTrace:(NSString *)trace
                  title:(NSString *)title
