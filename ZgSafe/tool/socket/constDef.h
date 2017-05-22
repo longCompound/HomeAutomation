@@ -12,7 +12,7 @@
 
 #define LOG_SERVER_PATH         @"cloudlogin1.zgantech.com"
 #define LOG_SERVER_PORT         21000//
-#define LOG_SERVER_IP           @"61.186.245.252" //61.186.245.252 115.29.147.12
+#define LOG_SERVER_IP           @"139.217.3.113"//@"61.186.245.252" //61.186.245.252 115.29.147.12
 #define LOG_USR                 @"55555555"
 #define LOG_PWD                 @"66666666"
 
