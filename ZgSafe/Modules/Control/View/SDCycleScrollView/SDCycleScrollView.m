@@ -480,6 +480,10 @@ NSString * const ID = @"cycleCell";
     }
 }
 
+- (void)refreshCurrentDisplay
+{
+    [_mainView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self currentIndex] inSection:0]]];
+}
 
 #pragma mark - UICollectionViewDataSource
 

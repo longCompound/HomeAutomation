@@ -70,6 +70,7 @@
 - (void)setupImageView
 {
     _button = [UIButton buttonWithType:UIButtonTypeCustom];
+    _button.enabled = NO;
     [self.contentView addSubview:_button];
 }
 

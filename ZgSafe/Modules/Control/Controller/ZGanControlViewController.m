@@ -31,6 +31,7 @@
         _scrollImageView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
         _scrollImageView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
         _scrollImageView.autoScroll = NO;
+        _scrollImageView.infiniteLoop = NO;
         _scrollImageView.currentPageDotColor = [UIColor orangeColor];
         _scrollImageView.pageDotColor = [UIColor whiteColor];
         _scrollImageView.titleLabelBackgroundColor = [UIColor clearColor];
@@ -66,7 +67,8 @@
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
     ZGDeviceModel * model = [_dataSource objectAtIndex:index];
-    model.state = YES;
+    model.state = !model.state;
+    [cycleScrollView refreshCurrentDisplay];
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index

@@ -107,7 +107,7 @@ typedef enum {
 - (void)adjustWhenControllerViewWillAppera;
 
 //////////////////////  自定义样式接口  //////////////////////
-
+- (void)refreshCurrentDisplay;
 
 /** 轮播图片的ContentMode，默认为 UIViewContentModeScaleToFill */
 @property (nonatomic, assign) UIViewContentMode bannerImageViewContentMode;
