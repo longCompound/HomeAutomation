@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ex-vD-snH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title_bg.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="7Ex-vD-snH">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -63,5 +63,6 @@
     </objects>
     <resources>
         <image name="back.png" width="27" height="30"/>
+        <image name="title_bg.JPG" width="800" height="142"/>
     </resources>
 </document>

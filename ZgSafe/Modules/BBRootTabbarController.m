@@ -56,7 +56,7 @@ static const NSInteger kBaseTag  =  100;
     _controlVC = [[ZGanControlViewController alloc] initWithNibName:@"ZGanControlViewController" bundle:[NSBundle mainBundle]];
     _securityVC = [[ZGanSecurityViewController alloc] initWithNibName:@"ZGanSecurityViewController" bundle:[NSBundle mainBundle]];
     _meVC = [[ZGanMeViewController alloc] initWithNibName:@"ZGanMeViewController" bundle:[NSBundle mainBundle]];
-    self.viewControllers = @[_homeVC,_securityVC,_controlVC,_meVC];
+    self.viewControllers = @[_homeVC,_controlVC,_securityVC,_meVC];
     
     [self.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * obj, NSUInteger idx, BOOL * stop) {
         obj.view.frame = CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height - BAR_HEIGHT);
@@ -68,8 +68,8 @@ static const NSInteger kBaseTag  =  100;
     _barView = [[UIView alloc]initWithFrame:CGRectMake(0, VIEW_HEIGHT-BAR_HEIGHT, VIEW_WIDTH, BAR_HEIGHT)];
     _barView.userInteractionEnabled = YES;
     _barView.backgroundColor = [UIColor blackColor];
-    NSArray * images = @[@"index_btn_flase.png",@"jtws_btn_false.png",@"yckz_btn_false.png",@"self_btn_false.png"];
-    NSArray * selectedImages = @[@"index_btn_true.png",@"jtws_btn_true.png",@"yckz_btn_true.png",@"self_btn_true.png"];
+    NSArray * images = @[@"index_btn_flase.png",@"yckz_btn_false.png",@"jtws_btn_false.png",@"self_btn_false.png"];
+    NSArray * selectedImages = @[@"index_btn_true.png",@"yckz_btn_true.png",@"jtws_btn_true.png",@"self_btn_true.png"];
     
     CGFloat buttonWidth = VIEW_WIDTH / MAX(images.count, 1);
     [images enumerateObjectsUsingBlock:^(NSString * imageName, NSUInteger idx, BOOL * stop) {

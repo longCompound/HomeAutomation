@@ -30,6 +30,9 @@
                  title:(NSString *)title
       rightActionTitle:(NSString *)actionTitle;
 
+- (void)setupBackTrace:(NSString *)trace
+                 title:(NSString *)title
+      rightActionImage:(NSString *)rightActionImage;
 
 @end
 

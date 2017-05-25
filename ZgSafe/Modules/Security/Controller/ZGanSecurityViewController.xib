@@ -1,12 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZGanSecurityViewController">
             <connections>
+                <outlet property="_bgImageView" destination="adW-AT-fxr" id="dfH-AC-h9b"/>
+                <outlet property="_cloudEyeBtn" destination="myZ-16-hkH" id="y63-JQ-TkU"/>
+                <outlet property="_historyBtn" destination="2hE-Ib-3L2" id="bNe-Yf-2nM"/>
+                <outlet property="_photoLibBtn" destination="gKR-ix-0Lx" id="0Nw-he-EJf"/>
+                <outlet property="_topImageView" destination="sDf-Jm-kpd" id="0cC-oT-6BI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +23,49 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloudeye_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="adW-AT-fxr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myZ-16-hkH">
+                    <rect key="frame" x="0.0" y="71" width="375" height="345"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="cloudeye_btn.png"/>
+                    <connections>
+                        <action selector="cloudClick:" destination="-1" eventType="touchUpInside" id="F3M-yE-Q7z"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jtws_memeber_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="sDf-Jm-kpd">
+                    <rect key="frame" x="9" y="413" width="357" height="67"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hE-Ib-3L2">
+                    <rect key="frame" x="9" y="480" width="177" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="yingji_btn.png"/>
+                    <connections>
+                        <action selector="historyClick:" destination="-1" eventType="touchUpInside" id="WRS-ut-bNe"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKR-ix-0Lx">
+                    <rect key="frame" x="183" y="480" width="186" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="cloudphoto_btn.png"/>
+                    <connections>
+                        <action selector="photoLibClick:" destination="-1" eventType="touchUpInside" id="Kz2-yK-IAt"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="cloudeye_bg.png" width="400" height="456"/>
+        <image name="cloudeye_btn.png" width="320" height="327"/>
+        <image name="cloudphoto_btn.png" width="177" height="56"/>
+        <image name="jtws_memeber_bg.png" width="354" height="90"/>
+        <image name="yingji_btn.png" width="177" height="56"/>
+    </resources>
 </document>

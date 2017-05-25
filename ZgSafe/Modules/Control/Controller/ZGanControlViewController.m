@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.topBar.hidesLeftBtn = YES;
-    [self.topBar setupBackTrace:nil title:@"远程控制" rightActionTitle:nil];
+    [self.topBar setupBackTrace:nil title:@"远程控制" rightActionImage:@"yckz_alarm_btn.png"];
     
     [self.view addSubview:({
         _scrollImageView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0,self.topBar.bottom,self.view.width, self.view.height-self.topBar.bottom-BAR_HEIGHT)
@@ -72,6 +72,12 @@
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index
+{
+    
+}
+#pragma mark --
+#pragma mark -- ZGanTopBarDelegate --
+- (void)touchTopBarRightButton:(ZGanTopBar *)bar
 {
     
 }

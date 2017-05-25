@@ -249,7 +249,6 @@
         
         if (animated) {
             [UIView animateWithDuration:0.25f animations:^{
-                
                 [aButton setCenter:CGPointMake(aButton.center.x-27
                                            , aButton.center.y)];
             }];

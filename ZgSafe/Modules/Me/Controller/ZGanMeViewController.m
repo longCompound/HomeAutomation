@@ -8,7 +8,10 @@
 
 #import "ZGanMeViewController.h"
 
-@interface ZGanMeViewController ()
+@interface ZGanMeViewController () <UITableViewDelegate,UITableViewDataSource> {
+    __weak IBOutlet UITableView *_tableView;
+    NSMutableArray              *_dataArray;
+}
 
 @end
 
@@ -18,22 +21,12 @@
     [super viewDidLoad];
     self.topBar.hidesLeftBtn = YES;
     [self.topBar setupBackTrace:nil title:@"个人中心" rightActionTitle:nil];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
