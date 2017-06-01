@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZGRowModel.h"
 
 @interface ZGContentCell : UITableViewCell
+
+@property (nonatomic, strong) ZGRowModel  * model;
 
 @end

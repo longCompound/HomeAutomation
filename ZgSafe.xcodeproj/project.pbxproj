@@ -336,17 +336,15 @@
 		4D5584791ED361B70043B001 /* main7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5584711ED361B70043B001 /* main7@2x.png */; };
 		4D55847A1ED361B70043B001 /* main8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5584721ED361B70043B001 /* main8@2x.png */; };
 		4D55847B1ED361B70043B001 /* main9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5584731ED361B70043B001 /* main9@2x.png */; };
+		4D68259C1EE00DA00014B5AA /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D68259B1EE00DA00014B5AA /* UIAlertView+Block.m */; };
 		4D7492321ED533A30050A1BC /* home_new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D7492311ED533A30050A1BC /* home_new@2x.png */; };
 		4D7B980B1ED6CE1B004C9660 /* title_bg.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D7B980A1ED6CE1B004C9660 /* title_bg.JPG */; };
 		4D7B98101ED6D296004C9660 /* ZGanMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7B980F1ED6D296004C9660 /* ZGanMeViewController.xib */; };
-		4D7B98131ED6D33C004C9660 /* ZGSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B98121ED6D33C004C9660 /* ZGSectionModel.m */; };
 		4D7B98161ED6D374004C9660 /* ZGRowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B98151ED6D374004C9660 /* ZGRowModel.m */; };
 		4D7B981A1ED6D95D004C9660 /* ZGHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B98181ED6D95D004C9660 /* ZGHeaderCell.m */; };
 		4D7B981B1ED6D95D004C9660 /* ZGHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7B98191ED6D95D004C9660 /* ZGHeaderCell.xib */; };
 		4D7B981F1ED6D990004C9660 /* ZGTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B981D1ED6D990004C9660 /* ZGTextCell.m */; };
 		4D7B98201ED6D990004C9660 /* ZGTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7B981E1ED6D990004C9660 /* ZGTextCell.xib */; };
-		4D7B98281ED6DCB7004C9660 /* ZGEditTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B98261ED6DCB7004C9660 /* ZGEditTextCell.m */; };
-		4D7B98291ED6DCB7004C9660 /* ZGEditTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7B98271ED6DCB7004C9660 /* ZGEditTextCell.xib */; };
 		4D7B982D1ED6DD28004C9660 /* ZGContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B982B1ED6DD28004C9660 /* ZGContentCell.m */; };
 		4D7B982E1ED6DD28004C9660 /* ZGContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7B982C1ED6DD28004C9660 /* ZGContentCell.xib */; };
 		4DA8B0621ECE943F00C8C599 /* BBRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */; };
@@ -1383,11 +1381,11 @@
 		4D5584711ED361B70043B001 /* main7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main7@2x.png"; sourceTree = "<group>"; };
 		4D5584721ED361B70043B001 /* main8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main8@2x.png"; sourceTree = "<group>"; };
 		4D5584731ED361B70043B001 /* main9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main9@2x.png"; sourceTree = "<group>"; };
+		4D68259A1EE00DA00014B5AA /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
+		4D68259B1EE00DA00014B5AA /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		4D7492311ED533A30050A1BC /* home_new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_new@2x.png"; sourceTree = "<group>"; };
 		4D7B980A1ED6CE1B004C9660 /* title_bg.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title_bg.JPG; sourceTree = "<group>"; };
 		4D7B980F1ED6D296004C9660 /* ZGanMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGanMeViewController.xib; sourceTree = "<group>"; };
-		4D7B98111ED6D33C004C9660 /* ZGSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGSectionModel.h; sourceTree = "<group>"; };
-		4D7B98121ED6D33C004C9660 /* ZGSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGSectionModel.m; sourceTree = "<group>"; };
 		4D7B98141ED6D374004C9660 /* ZGRowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGRowModel.h; sourceTree = "<group>"; };
 		4D7B98151ED6D374004C9660 /* ZGRowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGRowModel.m; sourceTree = "<group>"; };
 		4D7B98171ED6D95D004C9660 /* ZGHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGHeaderCell.h; sourceTree = "<group>"; };
@@ -1396,9 +1394,6 @@
 		4D7B981C1ED6D990004C9660 /* ZGTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGTextCell.h; sourceTree = "<group>"; };
 		4D7B981D1ED6D990004C9660 /* ZGTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGTextCell.m; sourceTree = "<group>"; };
 		4D7B981E1ED6D990004C9660 /* ZGTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGTextCell.xib; sourceTree = "<group>"; };
-		4D7B98251ED6DCB7004C9660 /* ZGEditTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGEditTextCell.h; sourceTree = "<group>"; };
-		4D7B98261ED6DCB7004C9660 /* ZGEditTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGEditTextCell.m; sourceTree = "<group>"; };
-		4D7B98271ED6DCB7004C9660 /* ZGEditTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGEditTextCell.xib; sourceTree = "<group>"; };
 		4D7B982A1ED6DD28004C9660 /* ZGContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGContentCell.h; sourceTree = "<group>"; };
 		4D7B982B1ED6DD28004C9660 /* ZGContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGContentCell.m; sourceTree = "<group>"; };
 		4D7B982C1ED6DD28004C9660 /* ZGContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGContentCell.xib; sourceTree = "<group>"; };
@@ -3077,6 +3072,8 @@
 				4DA8B2521ECEA24F00C8C599 /* UIButton+EnlargeEdge.m */,
 				4D15D9611ED29EFF00DE4E0B /* UIView+ITTAdditions.h */,
 				4D15D9621ED29EFF00DE4E0B /* UIView+ITTAdditions.m */,
+				4D68259A1EE00DA00014B5AA /* UIAlertView+Block.h */,
+				4D68259B1EE00DA00014B5AA /* UIAlertView+Block.m */,
 				4DA8B2561ECEA4AE00C8C599 /* ColorUtil.h */,
 				4DA8B2571ECEA4AE00C8C599 /* ColorUtil.m */,
 				4DA8AE701ECE943E00C8C599 /* BBRootTabbarController.h */,
@@ -3711,8 +3708,6 @@
 		4DA8B0591ECE943F00C8C599 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4D7B98111ED6D33C004C9660 /* ZGSectionModel.h */,
-				4D7B98121ED6D33C004C9660 /* ZGSectionModel.m */,
 				4D7B98141ED6D374004C9660 /* ZGRowModel.h */,
 				4D7B98151ED6D374004C9660 /* ZGRowModel.m */,
 			);
@@ -3728,9 +3723,6 @@
 				4D7B981C1ED6D990004C9660 /* ZGTextCell.h */,
 				4D7B981D1ED6D990004C9660 /* ZGTextCell.m */,
 				4D7B981E1ED6D990004C9660 /* ZGTextCell.xib */,
-				4D7B98251ED6DCB7004C9660 /* ZGEditTextCell.h */,
-				4D7B98261ED6DCB7004C9660 /* ZGEditTextCell.m */,
-				4D7B98271ED6DCB7004C9660 /* ZGEditTextCell.xib */,
 				4D7B982A1ED6DD28004C9660 /* ZGContentCell.h */,
 				4D7B982B1ED6DD28004C9660 /* ZGContentCell.m */,
 				4D7B982C1ED6DD28004C9660 /* ZGContentCell.xib */,
@@ -4715,7 +4707,6 @@
 				18186D10182BA26B00D6086D /* female_off.png in Resources */,
 				4DA8B1B61ECE944000C8C599 /* reg_pas_edit_bg.png in Resources */,
 				18186DA1182BA26B00D6086D /* InputBox.png in Resources */,
-				4D7B98291ED6DCB7004C9660 /* ZGEditTextCell.xib in Resources */,
 				4DA8B1D11ECE944000C8C599 /* sales_btn_bg@2x.png in Resources */,
 				18186D59182BA26B00D6086D /* temperature_btn_bg.png in Resources */,
 				4DA8B22D1ECE944000C8C599 /* yckz_alarm_btn@2x.png in Resources */,
@@ -4815,7 +4806,6 @@
 				18F8F6CE192894710068B483 /* BBAppDelegate.m in Sources */,
 				4D7B981A1ED6D95D004C9660 /* ZGHeaderCell.m in Sources */,
 				9C537586186C19D2001385BC /* BBFileClient.m in Sources */,
-				4D7B98281ED6DCB7004C9660 /* ZGEditTextCell.m in Sources */,
 				04C742861917B50E00DD0BF4 /* Mu51cUdpSearcher.m in Sources */,
 				18186D69182BA26B00D6086D /* BBHighTemperatureViewController.m in Sources */,
 				18186DE9182BA26B00D6086D /* BBUnlockView.m in Sources */,
@@ -4860,7 +4850,6 @@
 				18186D5F182BA26B00D6086D /* BBInOutAndSafeRecoredCell.m in Sources */,
 				4DA8B0621ECE943F00C8C599 /* BBRootTabbarController.m in Sources */,
 				9C4EE65C1919BE6700BAC42E /* BBVerifyCodeSettingViewController.m in Sources */,
-				4D7B98131ED6D33C004C9660 /* ZGSectionModel.m in Sources */,
 				18186D72182BA26B00D6086D /* BBInvadeViewController.m in Sources */,
 				18186D83182BA26B00D6086D /* BBAlDetailsViewController.m in Sources */,
 				18186DD2182BA26B00D6086D /* BBFeedBackViewController.m in Sources */,
@@ -4886,6 +4875,7 @@
 				18186DC0182BA26B00D6086D /* BBSetNetingViewController.mm in Sources */,
 				189A9B0D1818D18200E0C3BF /* ASIInputStream.m in Sources */,
 				189A9B091818D18200E0C3BF /* ASIDataDecompressor.m in Sources */,
+				4D68259C1EE00DA00014B5AA /* UIAlertView+Block.m in Sources */,
 				4DA8B25F1ECEE2A800C8C599 /* ZGanActionModel.m in Sources */,
 				4D7B981F1ED6D990004C9660 /* ZGTextCell.m in Sources */,
 				9C69EAB01889185500B031A1 /* UIImageView+WebCache.m in Sources */,

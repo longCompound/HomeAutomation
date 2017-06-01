@@ -10,4 +10,19 @@
 
 @implementation ZGRowModel
 
++ (instancetype)modelWithTitle:(NSString *)title
+                   bgImageName:(NSString *)bgImageName
+                       content:(NSString *)content
+                      cellType:(ZGCellType)cellType
+                      editable:(BOOL)editable
+{
+    ZGRowModel *model = [[ZGRowModel alloc] init];
+    model.title = title;
+    model.bgImageName = bgImageName;
+    model.content = content;
+    model.cellType = cellType;
+    model.editable = editable;
+    return model;
+}
+
 @end
