@@ -11,17 +11,21 @@
 #import "ZGanMeViewController.h"
 #import "ZGanSecurityViewController.h"
 #import "ZGanControlViewController.h"
+#import "BBLoginViewController.h"
+#import "Defines.h"
 
 
 static const NSInteger kBaseTag  =  100;
 
-@interface BBRootTabbarController () {
+@interface BBRootTabbarController () <BBSocketClientDelegate,BBLoginClientDelegate>{
     ZGanHomeViewController             * _homeVC;
     ZGanMeViewController               * _meVC;
     ZGanSecurityViewController         * _securityVC;
     ZGanControlViewController          * _controlVC;
     
     UIView                             * _barView;
+    
+    SEL _selector;
 }
 
 @property (nonatomic, weak) UIButton * selectedButton;
@@ -48,6 +52,36 @@ static const NSInteger kBaseTag  =  100;
     self.tabBar.hidden = YES;
     [self initTabBarControllers];
     [self initTabBarItems];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    BlueBoxer *sysUser = [BlueBoxerManager getCurrentUser];
+    
+    NSString *username=[[NSUserDefaults standardUserDefaults]objectForKey:@"userName"];
+    NSString *pwd=[[NSUserDefaults standardUserDefaults]objectForKey:@"passWord"];
+    
+    if ((username==nil || pwd ==nil) && !sysUser.isLoged) {
+        //首次登录
+        [self toLoginPage];
+        
+    }else if (!sysUser.isLoged){
+        //自动登录
+        _P_UserName=username;
+        [[BBSocketManager getInstance] login:username password:pwd delegate:self];
+    }else{
+        
+        [self getAllDatas];
+    }
+}
+
+
+-(void)toLoginPage{
+    BBLoginViewController *logViewController = [[BBLoginViewController alloc]initWithNibName:@"BBLoginViewController" bundle:nil];
+    [self presentViewController:logViewController animated:YES completion:^{
+        
+    }];
 }
 
 - (void)initTabBarControllers
@@ -106,11 +140,214 @@ static const NSInteger kBaseTag  =  100;
     _barView.frame = CGRectMake(0, VIEW_HEIGHT-BAR_HEIGHT, VIEW_WIDTH, BAR_HEIGHT);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark --
+#pragma mark -- request manage
+
+/*!
+ *@description  请求首页所有数据
+ *@function     getAllDatas
+ *@param        (void)
+ *@return       (void)
+ */
+- (void)getAllDatas
+{
+    [self getDatas];
+    //    self.view.userInteractionEnabled = NO;
 }
 
+
+/*!
+ *@description  请求首页所需的温度湿度数据
+ *@function     getDatas
+ *@param        (void)
+ *@return       (void)
+ */
+- (void)getDatas
+{
+    //to do 此处布放消息请求先注释  新版没看到布放的内容
+//    [self getCurrentDeviceThenPerformSelector:@selector(getGuardStatusAndScanCard)];
+    
+    
+    NSMutableString *requestStr = [NSMutableString stringWithString:@"http://msgservice.zgantech.com/zganweather.aspx?did=YL_CX_001"];
+    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:requestStr]];
+    request.delegate = self;
+    request.timeOutSeconds = NETWORK_TIMEOUT;
+    request.requestMethod = @"GET";
+    request.shouldAttemptPersistentConnection = NO;
+    [request startAsynchronous];
+    
+}
+/*!
+ *@description  获取布防状态
+ *@function     getGuardStatusAndScanCard
+ *@param        (void)
+ *@return       (void)
+ */
+- (void)getGuardStatusAndScanCard
+{
+    BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+    NSString *userId = curUser.userid;
+    [mainClient queryCurrentStatus:self param:userId];
+    [mainClient scanCard2:self param:userId];
+}
+
+/*!
+ *@description  获取当前设备
+ *@function     getCurrentDeviceThenPerformSelector:
+ *@param        selector    --选择事件
+ *@return       (void)
+ */
+- (void)getCurrentDeviceThenPerformSelector:(SEL)selector
+{
+    _selector = selector;
+    BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+    NSString *userId = curUser.userid;
+    
+    [mainClient queryCurrentTerminal:self param:userId];
+    
+}
+
+#pragma mark --
+#pragma mark -- BBSocketClientDelegate
+-(int)onRecevie:(BBDataFrame*)src received:(BBDataFrame*)data
+{
+    return 1;
+}
+
+-(void)onRecevieError:(BBDataFrame*)src received:(BBDataFrame*)data
+{
+
+}
+
+-(void)onTimeout:(BBDataFrame*)sr
+{
+
+}
+
+#pragma mark -
+#pragma mark ASIHTTPRequestDelegate method
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil];
+    if (result) {
+        NSArray *arr = [result valueForKey:@"data"];
+        if (arr && arr.count) {
+            NSDictionary *dic = arr[0];
+            NSString *str = [dic valueForKey:@"Wd"];
+            arr = [str componentsSeparatedByString:@"/"];
+            
+            NSString *tempStr = [arr[0] stringByReplacingOccurrencesOfString:@"℃" withString:@""];
+            CGFloat temperature = [tempStr floatValue];
+            
+//            _temperatureValueLbl.text = [NSString stringWithFormat:@"%d",(NSInteger)(temperature+0.5f)];
+//            
+//            if (temperature >= 60.) {
+//                [self temperature];
+//            }
+//            if (temperature > 35.) {
+//                _temperatureDescription.text = @"热";
+//            }else if (temperature > 26. && temperature <= 35.) {
+//                _temperatureDescription.text = @"暖";
+//            }else if (temperature > 17. && temperature <= 26.) {
+//                _temperatureDescription.text = @"舒适";
+//            }else if (temperature >= 10. && temperature <= 17.) {
+//                _temperatureDescription.text = @"凉";
+//            }else{
+//                _temperatureDescription.text = @"冷";
+//            }
+//            
+//            
+//            //湿度
+//            str = [dic valueForKey:@"Sd"];
+//            NSString *humStr = [str stringByReplacingOccurrencesOfString:@"%" withString:@""];
+//            
+//            CGFloat humidity = [humStr floatValue];
+//            _humidityValueLbl.text = [NSString stringWithFormat:@"%d",(NSInteger)(humidity+0.5f)];
+//            humidity /= 100.;
+//            if (humidity < 0.4f) {
+//                _humidityImageView.image = [UIImage imageNamed:@"img8.png"];
+//                _humidityDescription.text = @"干燥";
+//            }else if (humidity < 0.6f) {
+//                _humidityImageView.image = [UIImage imageNamed:@"img7.png"];
+//                _humidityDescription.text = @"适宜";
+//            }else{
+//                _humidityImageView.image = [UIImage imageNamed:@"img2.png"];
+//                _humidityDescription.text = @"潮湿";
+//            }
+            
+        }
+    }
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+}
+
+
+-(void)loginReceiveData:(BBDataFrame *)data{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *result = [[NSString alloc]initWithBytes:[data.data bytes] length:data.data.length encoding:GBK_ENCODEING];
+        
+        if(result){
+            NSArray *arr = [result componentsSeparatedByString:@"\t"];
+            
+            if ([arr[0] isEqualToString:@"0"]  ) {
+                BlueBoxer *sysUser = [BlueBoxerManager getCurrentUser];
+                sysUser.loged = YES;
+                sysUser.deviceid=nil;
+                sysUser.userid=_P_UserName;
+                [BlueBoxerManager archiveCurrentUser:sysUser];
+                
+                [self getAllDatas];
+                
+            }else{
+                [self toLoginErr];
+                UtilAlert(@"登录失败！", nil);
+            }
+            
+        }else{
+            [self toLoginErr];
+        }
+        
+        
+    });
+}
+
+//登录失败
+-(void)toLoginErr{
+    [[NSUserDefaults standardUserDefaults]setObject:nil forKey:@"passWord"];
+    BlueBoxer *sysUser = [BlueBoxerManager getCurrentUser];
+    sysUser.loged = NO;
+    sysUser.deviceid=nil;
+    sysUser.username=nil;
+    [BlueBoxerManager archiveCurrentUser:sysUser];
+    [self toLoginPage];
+}
+
+#pragma mark -
+#pragma mark UncaughtExceptionDelegate method
+- (void)didIgnoredSignal:(int)sig
+{
+    
+    if (sig == SIGPIPE) {
+        
+        UtilAlert(@"登录失败！", nil);
+        
+        //重复登录本地下线
+        
+        
+        [self toLoginErr];
+        
+        BlueBoxer *user = curUser;
+        user.loged = NO;
+        [BlueBoxerManager archiveCurrentUser:user];
+        BBLoginViewController *loginVc = [[BBLoginViewController alloc]init];
+        [appDelegate.homePageVC presentViewController:loginVc animated:YES completion:nil];
+        
+    }
+}
 
 
 @end

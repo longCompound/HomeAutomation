@@ -86,6 +86,7 @@
     [BBUncaughtExceptionHandler regHandler:self forSignal:SIGPIPE];
     Reachability *reach = [Reachability reachabilityForInternetConnection];
     [reach startNotifier];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChangeHandler:) name:kReachabilityChangedNotification object:nil];    
     
     return YES;

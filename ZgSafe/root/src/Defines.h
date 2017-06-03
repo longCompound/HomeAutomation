@@ -34,7 +34,6 @@
                                               cancelButtonTitle:@"确定" \
                                             otherButtonTitles:nil]; \
 [dialAlert show]; \
-[dialAlert release]; \
 }
 
 #define ISIP5 ([UIScreen mainScreen].bounds.size.height == 568 ? YES : NO)
