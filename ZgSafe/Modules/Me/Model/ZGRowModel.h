@@ -16,4 +16,16 @@ typedef NS_ENUM(NSUInteger, ZGCellType) {
 
 @interface ZGRowModel : NSObject
 
+@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString * bgImageName;
+@property (nonatomic, assign) ZGCellType cellType;
+@property (nonatomic, copy) NSString * content;
+@property (nonatomic, assign) BOOL  editable;
+
++ (instancetype)modelWithTitle:(NSString *)title
+                   bgImageName:(NSString *)bgImageName
+                       content:(NSString *)content
+                      cellType:(ZGCellType)cellType
+                      editable:(BOOL)editable;
+
 @end

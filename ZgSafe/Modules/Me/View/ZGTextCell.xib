@@ -17,7 +17,32 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7k-at-JEp">
+                        <rect key="frame" x="18" y="0.0" width="281" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW6-Mc-J4O">
+                        <rect key="frame" x="29" y="12" width="261" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="edit_imag.png" translatesAutoresizingMaskIntoConstraints="NO" id="BAv-oP-FkV">
+                        <rect key="frame" x="266" y="11" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="_bgImageView" destination="R7k-at-JEp" id="N4B-ej-OVH"/>
+                <outlet property="_markIMageView" destination="BAv-oP-FkV" id="KBN-TJ-4g6"/>
+                <outlet property="_titleLabel" destination="KW6-Mc-J4O" id="QNW-D6-uyZ"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="edit_imag.png" width="17" height="17"/>
+    </resources>
 </document>
