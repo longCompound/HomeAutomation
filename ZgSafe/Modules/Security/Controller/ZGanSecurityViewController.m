@@ -8,6 +8,8 @@
 
 #import "ZGanSecurityViewController.h"
 #import "BBNewsEyesViewController.h"
+#import "BBAlbumsViewController.h"
+#import "BBMarkViewController.h"
 
 @interface ZGanSecurityViewController () {
     __weak IBOutlet UIImageView *_bgImageView;
@@ -80,12 +82,16 @@
 
 - (IBAction)historyClick:(UIButton *)sender
 {
-    
+    BBMarkViewController *viewController = [[BBMarkViewController alloc] initWithNibName:@"BBMarkViewController" bundle:nil];
+    viewController.currentPageType = BBMarkPageTypeWarningRecord;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (IBAction)photoLibClick:(UIButton *)sender
 {
-    
+    BBAlbumsViewController *vc = [[BBAlbumsViewController alloc] initWithNibName:@"BBAlbumsViewController" bundle:nil];
+    appDelegate.EyesVCBtn=YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
