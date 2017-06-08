@@ -28,7 +28,7 @@
 
 - (void)layoutSubviews
 {
-    _bgImageView.frame = CGRectMake(10, -1, self.width - 10 * 2, self.height + 1);
+    _bgImageView.frame = CGRectMake(10, -2, self.width - 10 * 2, self.height + 3);
     _titleLabel.frame  = CGRectMake(20, 0, self.width - 20 * 2, self.height);
 }
 

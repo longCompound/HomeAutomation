@@ -50,7 +50,7 @@
     NSArray * temp = _dataArray[indexPath.section];
     ZGRowModel * model = temp[indexPath.row];
     if (model.cellType == ZGCellType_TextCell) {
-       static NSString * textCellID = @"ZGTextCell";
+        static NSString * textCellID = @"ZGTextCell";
         ZGTextCell * cell = [tableView dequeueReusableCellWithIdentifier:textCellID];
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:textCellID owner:nil options:nil] lastObject];
@@ -58,7 +58,7 @@
         cell.model = model;
         return cell;
     } else if (model.cellType == ZGCellType_TitleCell) {
-       static NSString * titleCellID = @"ZGHeaderCell";
+        static NSString * titleCellID = @"ZGHeaderCell";
         ZGHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:titleCellID];
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:titleCellID owner:nil options:nil] lastObject];
@@ -89,6 +89,26 @@
     view.backgroundColor = [UIColor clearColor];
     return view;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == _dataArray.count - 1) {
+        return 20;
+    }
+    return 0;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section == _dataArray.count - 1) {
+        UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 20)];
+        view.backgroundColor = [UIColor clearColor];
+        return view;
+    }
+    return nil;
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

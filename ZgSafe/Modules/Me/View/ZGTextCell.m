@@ -29,7 +29,7 @@
 
 - (void)layoutSubviews
 {
-    _bgImageView.frame = CGRectMake(10, -3, self.width - 10 * 2, self.height + 3);
+    _bgImageView.frame = CGRectMake(10, -2, self.width - 10 * 2, self.height + 3);
      _markIMageView.frame = CGRectMake(_bgImageView.right - 24 - 5, (self.height - 24) / 2, 24, 24);
     _titleLabel.frame  = CGRectMake(20, 0, _markIMageView.left - 20  - 10, self.height);
 }
