@@ -10,4 +10,6 @@
 
 @interface BBRootTabbarController : BBTabbarController
 
+@property (nonatomic, copy) NSString *P_UserName;//用户名
+
 @end

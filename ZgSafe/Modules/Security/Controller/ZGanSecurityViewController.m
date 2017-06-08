@@ -7,6 +7,9 @@
 //
 
 #import "ZGanSecurityViewController.h"
+#import "BBNewsEyesViewController.h"
+#import "BBAlbumsViewController.h"
+#import "BBMarkViewController.h"
 
 @interface ZGanSecurityViewController () {
     __weak IBOutlet UIImageView *_bgImageView;
@@ -61,17 +64,34 @@
 
 - (IBAction)cloudClick:(UIButton *)sender
 {
-    
+    if(!appDelegate.EyesIsOpen){
+        //appDelegate.EyesIsOpen=YES;
+        BBNewsEyesViewController *eyesVC;
+        
+        if (ISIP5){
+            eyesVC = [[BBNewsEyesViewController alloc]initWithNibName:@"BBNewsEyesViewController_4" bundle:nil];
+        }else{
+            eyesVC = [[BBNewsEyesViewController alloc]initWithNibName:@"BBNewsEyesViewController" bundle:nil];
+        }
+        
+        eyesVC.hidesBottomBarWhenPushed = YES;
+        
+        [self.navigationController pushViewController:eyesVC animated:YES];
+    }
 }
 
 - (IBAction)historyClick:(UIButton *)sender
 {
-    
+    BBMarkViewController *viewController = [[BBMarkViewController alloc] initWithNibName:@"BBMarkViewController" bundle:nil];
+    viewController.currentPageType = BBMarkPageTypeWarningRecord;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (IBAction)photoLibClick:(UIButton *)sender
 {
-    
+    BBAlbumsViewController *vc = [[BBAlbumsViewController alloc] initWithNibName:@"BBAlbumsViewController" bundle:nil];
+    appDelegate.EyesVCBtn=YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
