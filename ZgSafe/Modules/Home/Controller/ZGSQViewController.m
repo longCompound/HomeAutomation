@@ -30,15 +30,15 @@
     self.topEdge = 5;
     self.bottomEdge = 40;
     self.numbersInRow = 3;
-    self.dataArray = @[[ZGanActionModel modelWithType:0 title:@"餐饮美食" thumbImageName:@"main1" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:1 title:@"棋牌娱乐" thumbImageName:@"main4" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:2 title:@"便利超市" thumbImageName:@"main5" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:3 title:@"宠物美容" thumbImageName:@"main7" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:4 title:@"药房诊所" thumbImageName:@"main6" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:5 title:@"汽车美容" thumbImageName:@"main3" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:6 title:@"母婴用品" thumbImageName:@"main9" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:7 title:@"鲜花养殖" thumbImageName:@"main8" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:8 title:@"教育培训" thumbImageName:@"main8" url:nil otherInfo:nil]];
+    self.dataArray = @[[ZGanActionModel modelWithType:0 title:@"餐饮美食" thumbImageName:@"food_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:1 title:@"棋牌娱乐" thumbImageName:@"qipai_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:2 title:@"便利超市" thumbImageName:@"market_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:3 title:@"宠物美容" thumbImageName:@"pet_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:4 title:@"药房诊所" thumbImageName:@"yaof_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:5 title:@"汽车美容" thumbImageName:@"car_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:6 title:@"母婴用品" thumbImageName:@"baby_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:7 title:@"鲜花养殖" thumbImageName:@"flower_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:8 title:@"教育培训" thumbImageName:@"edu_btn_bg" url:nil otherInfo:nil]];
 }
 
 @end

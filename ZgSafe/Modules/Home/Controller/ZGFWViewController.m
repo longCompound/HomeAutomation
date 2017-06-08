@@ -30,15 +30,15 @@
     self.topEdge = 5;
     self.bottomEdge = 40;
     self.numbersInRow = 3;
-    self.dataArray = @[[ZGanActionModel modelWithType:0 title:@"家电维修" thumbImageName:@"main1" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:1 title:@"水电维修" thumbImageName:@"main4" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:2 title:@"家政保洁" thumbImageName:@"main5" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:3 title:@"搬家公司" thumbImageName:@"main7" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:4 title:@"月嫂保姆" thumbImageName:@"main6" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:5 title:@"二手回收" thumbImageName:@"main3" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:6 title:@"开锁服务" thumbImageName:@"main9" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:7 title:@"管道疏通" thumbImageName:@"main8" url:nil otherInfo:nil],
-                       [ZGanActionModel modelWithType:8 title:@"洗衣服务" thumbImageName:@"main8" url:nil otherInfo:nil]];
+    self.dataArray = @[[ZGanActionModel modelWithType:0 title:@"家电维修" thumbImageName:@"jiadian_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:1 title:@"水电维修" thumbImageName:@"shuidian_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:2 title:@"家政保洁" thumbImageName:@"jiazhen_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:3 title:@"搬家公司" thumbImageName:@"banjia_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:4 title:@"月嫂保姆" thumbImageName:@"yuesao_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:5 title:@"二手回收" thumbImageName:@"ershou_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:6 title:@"开锁服务" thumbImageName:@"kaisuo_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:7 title:@"管道疏通" thumbImageName:@"guandao_btn_bg" url:nil otherInfo:nil],
+                       [ZGanActionModel modelWithType:8 title:@"洗衣服务" thumbImageName:@"xiyi_btn_bg" url:nil otherInfo:nil]];
 }
 
 @end
