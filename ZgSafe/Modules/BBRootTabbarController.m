@@ -165,7 +165,7 @@ static const NSInteger kBaseTag  =  100;
 - (void)getDatas
 {
     //to do 此处布放消息请求先注释  新版没看到布放的内容
-//    [self getCurrentDeviceThenPerformSelector:@selector(getGuardStatusAndScanCard)];
+    [self getCurrentDeviceThenPerformSelector:@selector(getGuardStatusAndScanCard)];
     
     
     NSMutableString *requestStr = [NSMutableString stringWithString:@"http://msgservice.zgantech.com/zganweather.aspx?did=YL_CX_001"];
