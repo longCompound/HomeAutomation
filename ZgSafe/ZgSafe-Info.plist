@@ -72,6 +72,11 @@
 	<string>1.5.14072101</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>SBUsesNetwork</key>
 	<string>3</string>
 	<key>UIRequiredDeviceCapabilities</key>

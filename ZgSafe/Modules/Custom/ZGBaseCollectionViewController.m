@@ -123,8 +123,14 @@
 {
     ZGWebViewController * vc = [[ZGWebViewController alloc] initWithNibName:@"ZGWebViewController" bundle:[NSBundle mainBundle]];
     vc.titleString = model.title;
-    vc.urlString = @"https://www.baidu.com";
+    vc.urlString = model.url;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (NSString *)getURLStringWithTitle:(NSString *)title
+{
+    return nil;
 }
 
 

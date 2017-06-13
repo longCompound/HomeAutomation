@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZGStarView">
+            <rect key="frame" x="0.0" y="0.0" width="153" height="31"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="b27_icon_star_gray.png" highlightedImage="b27_icon_star_yellow.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-sX-468">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="b27_icon_star_gray.png" highlightedImage="b27_icon_star_yellow.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IWe-e6-7ep">
+                    <rect key="frame" x="31" y="0.0" width="30" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="b27_icon_star_gray.png" highlightedImage="b27_icon_star_yellow.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pu4-mk-H68">
+                    <rect key="frame" x="62" y="0.0" width="30" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="b27_icon_star_gray.png" highlightedImage="b27_icon_star_yellow.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCV-Cn-Zbu">
+                    <rect key="frame" x="92" y="0.0" width="30" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="b27_icon_star_gray.png" highlightedImage="b27_icon_star_yellow.png" translatesAutoresizingMaskIntoConstraints="NO" id="m2D-hz-UUl">
+                    <rect key="frame" x="123" y="0.0" width="30" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="_starImageArray" destination="qFX-sX-468" id="WuR-w3-HKU"/>
+                <outletCollection property="_starImageArray" destination="IWe-e6-7ep" id="GhN-gc-Shq"/>
+                <outletCollection property="_starImageArray" destination="pu4-mk-H68" id="LoA-7h-9XP"/>
+                <outletCollection property="_starImageArray" destination="DCV-Cn-Zbu" id="P2Z-Eh-4cv"/>
+                <outletCollection property="_starImageArray" destination="m2D-hz-UUl" id="4g5-H3-Rg1"/>
+            </connections>
+            <point key="canvasLocation" x="177.5" y="-267.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="b27_icon_star_gray.png" width="40" height="40"/>
+        <image name="b27_icon_star_yellow.png" width="40" height="40"/>
+    </resources>
+</document>

@@ -8,6 +8,8 @@
 
 #import "ZGZGViewController.h"
 
+static NSString * const kZGZGUrlString = @"http://cq.58.com/";
+
 @interface ZGZGViewController ()
 
 @end
@@ -44,6 +46,15 @@
                        [ZGanActionModel modelWithType:11 title:@"其他" thumbImageName:@"other_btn_bg" url:nil otherInfo:nil]];
 }
 
+#pragma mark --
+#pragma mark -- ZGanCollectionViewCellDelegate --
+- (void)cellClickWithInfo:(ZGanActionModel *)model
+{
+    ZGWebViewController * vc = [[ZGWebViewController alloc] initWithNibName:@"ZGWebViewController" bundle:[NSBundle mainBundle]];
+    vc.titleString = model.title;
+    vc.urlString = kZGZGUrlString;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 @end

@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, SocketUsageType) {
 @property(nonatomic,retain) NSMutableDictionary* hostInfoDict;
 @property(nonatomic,retain) NSString* user;
 
-+ (id)getInstance;
++ (instancetype)getInstance;
 
 // 销毁所有socket
 - (void)distoryAllSockets;
