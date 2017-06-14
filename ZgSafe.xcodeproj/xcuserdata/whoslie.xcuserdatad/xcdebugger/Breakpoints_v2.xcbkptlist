@@ -84,7 +84,7 @@
                   moduleName = "ZgSafe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/whoslie/Documents/Home/ZgSafe/ZgSafe/4_clodeAlbums/src/BBAlbumsViewController.m"
-                  timestampString = "518241782.647023"
+                  timestampString = "519062642.925124"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "698"
@@ -99,7 +99,7 @@
                   moduleName = "ZgSafe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/whoslie/Documents/Home/ZgSafe/ZgSafe/4_clodeAlbums/src/BBAlbumsViewController.m"
-                  timestampString = "518241782.648294"
+                  timestampString = "519062642.926357"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "698"
@@ -180,22 +180,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZgSafe/tool/socket/BBSocketClient.m"
-            timestampString = "518241356.054425"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "-connect:port:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZgSafe/tool/socket/BBSocketClient.m"
             timestampString = "518241359.839345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -234,6 +218,86 @@
             startingLineNumber = "189"
             endingLineNumber = "189"
             landmarkName = "-getGuardStatusAndScanCard"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZgSafe/6_usercenter/src/BBLoginViewController.m"
+            timestampString = "519055658.383373"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "-loginReceiveData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZgSafe/6_usercenter/src/BBregisterViewController.mm"
+            timestampString = "519055663.165031"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "506"
+            endingLineNumber = "506"
+            landmarkName = "-loginReceiveData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZgSafe/Modules/BBRootTabbarController.m"
+            timestampString = "519055674.293866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "-loginReceiveData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZgSafe/tool/socket/BBLoginClient.m"
+            timestampString = "519055693.105692"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-logWithDelegate:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZgSafe/Modules/Security/Controller/ZGanSecurityViewController.m"
+            timestampString = "519062641.833159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "-onRecevie:received:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
