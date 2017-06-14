@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZGanTopBar.h"
+#import "MBProgressHUD.h"
 
 @interface BBRootViewController : UIViewController <ZGanTopBarDelegate>
 
@@ -20,5 +21,7 @@
 @property (nonatomic, strong)  ZGanTopBar          *topBar;
 
 @property (nonatomic, copy) NSString * titleString;
+
+- (void)toast:(NSString *)message;
 
 @end

@@ -11,6 +11,8 @@
 
 @interface BBRootViewController ()
 
+@property (nonatomic, strong) MBProgressHUD * toastHUD;
+
 @end
 
 @implementation BBRootViewController
@@ -27,6 +29,7 @@
 - (void)loadView
 {
     [super loadView];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     _topBar = [[[NSBundle mainBundle] loadNibNamed:@"ZGanTopBar" owner:nil options:nil] lastObject];
     if (IOS_VERSION>=7.0) {
         _topBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64);
@@ -133,6 +136,22 @@
 - (void)touchTopBarRightButton:(ZGanTopBar *)bar
 {
     
+}
+
+- (void)toast:(NSString *)message
+{
+[[ProgressHUD instance] showToast:self.view title:message duration:2];
+}
+
+- (MBProgressHUD *)toastHUD
+{
+    if (!_toastHUD) {
+        _toastHUD = [[MBProgressHUD alloc] initWithView:self.view];
+        [_toastHUD setLabelFont:[UIFont systemFontOfSize:13.0f]];
+        [_toastHUD setRemoveFromSuperViewOnHide:YES];
+        _toastHUD.mode = MBProgressHUDModeCustomView;
+    }
+    return _toastHUD;
 }
 
 @end

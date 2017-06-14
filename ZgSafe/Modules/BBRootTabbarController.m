@@ -59,8 +59,8 @@ static const NSInteger kBaseTag  =  100;
     [super viewDidAppear:animated];
     BlueBoxer *sysUser = [BlueBoxerManager getCurrentUser];
     
-    NSString *username=[[NSUserDefaults standardUserDefaults]objectForKey:@"userName"];
-    NSString *pwd=[[NSUserDefaults standardUserDefaults]objectForKey:@"passWord"];
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:@"passWord"];
     
     if ((username==nil || pwd ==nil) && !sysUser.isLoged) {
         //首次登录
@@ -336,8 +336,7 @@ static const NSInteger kBaseTag  =  100;
         UtilAlert(@"登录失败！", nil);
         
         //重复登录本地下线
-        
-        
+
         [self toLoginErr];
         
         BlueBoxer *user = curUser;

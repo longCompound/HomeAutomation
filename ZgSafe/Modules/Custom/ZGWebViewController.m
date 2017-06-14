@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.topBar.hidesLeftBtn = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    _web.frame = CGRectMake(0, self.topBar.bottom, self.view.width, self.view.height - self.topBar.bottom);
     [_web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]]];
 }
 

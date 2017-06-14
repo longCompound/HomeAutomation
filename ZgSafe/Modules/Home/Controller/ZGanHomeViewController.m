@@ -13,8 +13,13 @@
 #import "ZGSQViewController.h"
 #import "ZGZGViewController.h"
 #import "ZGZNViewController.h"
+#import "ZGZWYWViewController.h"
+#import "ZGBGListViewController.h"
 
 #define kPickPerLine  4
+
+
+static NSString * const zgxxURL = @"http://cq.58.com/";
 
 @interface ZGanHomeViewController () <UICollectionViewDataSource,UICollectionViewDelegate,DDCollectionViewDelegateFlowLayout,ZGanCollectionViewCellDelegate>{
     NSArray                       *_dataArray;
@@ -50,7 +55,7 @@
     _dataArray = @[[ZGanActionModel modelWithType:0 title:@"社区服务" thumbImageName:@"main1" url:nil otherInfo:nil],
                    [ZGanActionModel modelWithType:1 title:@"社区商圈" thumbImageName:@"main4" url:nil otherInfo:nil],
                    [ZGanActionModel modelWithType:2 title:@"政务要闻" thumbImageName:@"main5" url:nil otherInfo:nil],
-                   [ZGanActionModel modelWithType:3 title:@"招工信息" thumbImageName:@"main7" url:nil otherInfo:nil],
+                   [ZGanActionModel modelWithType:3 title:@"招工信息" thumbImageName:@"main7" url:zgxxURL otherInfo:nil],
                    [ZGanActionModel modelWithType:4 title:@"办事指南" thumbImageName:@"main6" url:nil otherInfo:nil],
                    [ZGanActionModel modelWithType:5 title:@"办公地点" thumbImageName:@"main3" url:nil otherInfo:nil],
                    [ZGanActionModel modelWithType:6 title:@"查询账单" thumbImageName:@"main9" url:nil otherInfo:nil],
@@ -148,12 +153,20 @@
             viewController = [[ZGSQViewController alloc] initWithNibName:@"ZGBaseCollectionViewController" bundle:nil];
         }
             break;
+        case 2: {
+           viewController = [[ZGZWYWViewController alloc] initWithNibName:@"ZGZWYWViewController" bundle:nil];
+        }
+            break;
         case 3:{
             viewController = [[ZGZGViewController alloc] initWithNibName:@"ZGBaseCollectionViewController" bundle:nil];
         }
             break;
         case 4:{
             viewController = [[ZGZNViewController alloc] initWithNibName:@"ZGBaseCollectionViewController" bundle:nil];
+        }
+            break;
+        case 5: {
+            viewController = [[ZGBGListViewController alloc] initWithNibName:@"ZGBGListViewController" bundle:nil];
         }
             break;
         default: {

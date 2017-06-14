@@ -11,6 +11,8 @@
 
 @interface ZGBaseCollectionViewController : BBRootViewController
 
+@property (nonatomic, strong) NSDictionary * typeDic;
+
 @property (nonatomic,copy) NSArray  *dataArray;
 
 @property (nonatomic, assign) NSUInteger numbersInRow;
@@ -20,5 +22,9 @@
 @property (nonatomic, assign) CGFloat bottomEdge;
 
 - (void)initData;
+
+- (NSString *)getURLStringWithTitle:(NSString *)title;
+
+- (void)cellClickWithInfo:(ZGanActionModel *)model;
 
 @end
