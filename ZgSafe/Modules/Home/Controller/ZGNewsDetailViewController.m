@@ -12,7 +12,6 @@
 
 @interface ZGNewsDetailViewController () <UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate> {
     __weak IBOutlet UITableView *_tableView;
-    NSDictionary                *_infoDic;
 }
 
 @property (nonatomic, assign) CGFloat webViewHeight;

@@ -406,6 +406,9 @@
 		4DA65C321EF12DAA00ACDFC2 /* ZGWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA65C301EF12DAA00ACDFC2 /* ZGWebViewCell.xib */; };
 		4DA65C361EF13F9400ACDFC2 /* ZGZNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C341EF13F9400ACDFC2 /* ZGZNListViewController.m */; };
 		4DA65C371EF13F9400ACDFC2 /* ZGZNListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA65C351EF13F9400ACDFC2 /* ZGZNListViewController.xib */; };
+		4DA65C3B1EF1465500ACDFC2 /* ZGBGListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C391EF1465500ACDFC2 /* ZGBGListViewController.m */; };
+		4DA65C3C1EF1465500ACDFC2 /* ZGBGListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA65C3A1EF1465500ACDFC2 /* ZGBGListViewController.xib */; };
+		4DA65C3F1EF1588B00ACDFC2 /* ZGAddressDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C3E1EF1588B00ACDFC2 /* ZGAddressDetailViewController.m */; };
 		4DA8B0621ECE943F00C8C599 /* BBRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */; };
 		4DA8B0631ECE943F00C8C599 /* ZGanControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE751ECE943E00C8C599 /* ZGanControlViewController.m */; };
 		4DA8B0641ECE943F00C8C599 /* ZGanControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA8AE761ECE943E00C8C599 /* ZGanControlViewController.xib */; };
@@ -1567,6 +1570,11 @@
 		4DA65C331EF13F9400ACDFC2 /* ZGZNListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGZNListViewController.h; sourceTree = "<group>"; };
 		4DA65C341EF13F9400ACDFC2 /* ZGZNListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGZNListViewController.m; sourceTree = "<group>"; };
 		4DA65C351EF13F9400ACDFC2 /* ZGZNListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGZNListViewController.xib; sourceTree = "<group>"; };
+		4DA65C381EF1465500ACDFC2 /* ZGBGListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGBGListViewController.h; sourceTree = "<group>"; };
+		4DA65C391EF1465500ACDFC2 /* ZGBGListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGBGListViewController.m; sourceTree = "<group>"; };
+		4DA65C3A1EF1465500ACDFC2 /* ZGBGListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGBGListViewController.xib; sourceTree = "<group>"; };
+		4DA65C3D1EF1588B00ACDFC2 /* ZGAddressDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGAddressDetailViewController.h; sourceTree = "<group>"; };
+		4DA65C3E1EF1588B00ACDFC2 /* ZGAddressDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGAddressDetailViewController.m; sourceTree = "<group>"; };
 		4DA8AE701ECE943E00C8C599 /* BBRootTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBRootTabbarController.h; path = ../BBRootTabbarController.h; sourceTree = "<group>"; };
 		4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBRootTabbarController.m; path = ../BBRootTabbarController.m; sourceTree = "<group>"; };
 		4DA8AE741ECE943E00C8C599 /* ZGanControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGanControlViewController.h; sourceTree = "<group>"; };
@@ -3504,6 +3512,11 @@
 				4DA65C331EF13F9400ACDFC2 /* ZGZNListViewController.h */,
 				4DA65C341EF13F9400ACDFC2 /* ZGZNListViewController.m */,
 				4DA65C351EF13F9400ACDFC2 /* ZGZNListViewController.xib */,
+				4DA65C381EF1465500ACDFC2 /* ZGBGListViewController.h */,
+				4DA65C391EF1465500ACDFC2 /* ZGBGListViewController.m */,
+				4DA65C3A1EF1465500ACDFC2 /* ZGBGListViewController.xib */,
+				4DA65C3D1EF1588B00ACDFC2 /* ZGAddressDetailViewController.h */,
+				4DA65C3E1EF1588B00ACDFC2 /* ZGAddressDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4747,6 +4760,7 @@
 				18186D43182BA26B00D6086D /* setting.png in Resources */,
 				18186DA8182BA26B00D6086D /* qrcode.png in Resources */,
 				9CA446BD18276328007B7B9F /* MJRefresh.bundle in Resources */,
+				4DA65C3C1EF1465500ACDFC2 /* ZGBGListViewController.xib in Resources */,
 				4DA8B0811ECE943F00C8C599 /* baojie_btn_bg.png in Resources */,
 				4DA8B10C1ECE944000C8C599 /* ic_launcher-web.png in Resources */,
 				18484F44192B2E4400A6120D /* adver_bg.JPG in Resources */,
@@ -5191,6 +5205,7 @@
 				4D1DD56D1EF054B60023F12F /* ITTXibView.m in Sources */,
 				18186DEA182BA26B00D6086D /* BBVideoCameraViewController.m in Sources */,
 				4D1DD5251EF053A50023F12F /* ITTBaseDataRequest.m in Sources */,
+				4DA65C3F1EF1588B00ACDFC2 /* ZGAddressDetailViewController.m in Sources */,
 				189A9B891818FB9300E0C3BF /* JSONKit.m in Sources */,
 				18186DE1182BA26B00D6086D /* BBRFIDMaintainViewController.m in Sources */,
 				4D1DD5601EF0545E0023F12F /* ITTDataCacheManager.m in Sources */,
@@ -5201,6 +5216,7 @@
 				18484F3B192B2E0A00A6120D /* BBShowVideoCell.m in Sources */,
 				4D1DD5211EF053A50023F12F /* DemoDataRequest.m in Sources */,
 				4DA8B2531ECEA24F00C8C599 /* UIButton+EnlargeEdge.m in Sources */,
+				4DA65C3B1EF1465500ACDFC2 /* ZGBGListViewController.m in Sources */,
 				182364F11831FAB00030771B /* BBshowADcorl.m in Sources */,
 				4D1DD5611EF0545E0023F12F /* ITTFileCacheDao.m in Sources */,
 				9C69EAAF1889185500B031A1 /* UIButton+WebCache.m in Sources */,
