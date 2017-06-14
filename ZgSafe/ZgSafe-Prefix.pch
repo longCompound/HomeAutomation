@@ -36,6 +36,7 @@
 #import "BBSocketClient.h"
 #import "BBSocketManager.h"
 #import "BBUncaughtExceptionHandler.h"
+#import "ZGNewsDetailViewController.h"
 
 #import "BBsigle.h"
 #import "ColorUtil.h"

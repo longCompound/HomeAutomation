@@ -29,6 +29,7 @@
 - (void)loadView
 {
     [super loadView];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     _topBar = [[[NSBundle mainBundle] loadNibNamed:@"ZGanTopBar" owner:nil options:nil] lastObject];
     if (IOS_VERSION>=7.0) {
         _topBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64);

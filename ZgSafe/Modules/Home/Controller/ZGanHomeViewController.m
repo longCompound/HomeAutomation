@@ -13,6 +13,7 @@
 #import "ZGSQViewController.h"
 #import "ZGZGViewController.h"
 #import "ZGZNViewController.h"
+#import "ZGZWYWViewController.h"
 
 #define kPickPerLine  4
 
@@ -149,6 +150,10 @@ static NSString * const zgxxURL = @"http://cq.58.com/";
             break;
         case 1:{
             viewController = [[ZGSQViewController alloc] initWithNibName:@"ZGBaseCollectionViewController" bundle:nil];
+        }
+            break;
+        case 2: {
+           viewController = [[ZGZWYWViewController alloc] initWithNibName:@"ZGZWYWViewController" bundle:nil];
         }
             break;
         case 3:{

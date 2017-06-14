@@ -51,7 +51,9 @@
 - (void)loadData
 {
     __weak __typeof(self) weakSelf = self;
-    [DemoDataRequest requestWithParameters:nil withRequestUrl:_model.url withIndicatorView:nil withCancelSubject:@"" onRequestFinished:^(ITTBaseDataRequest *request) {
+    [DemoDataRequest requestWithParameters:nil withRequestUrl:_model.url withIndicatorView:nil withCancelSubject:@"" onRequestStart:^(ITTBaseDataRequest *request) {
+        
+    } onRequestFinished:^(ITTBaseDataRequest *request) {
         NSDictionary * dic = request.handleredResult;
         NSArray * data = dic[@"data"];
         if (data && [data isKindOfClass:[NSArray class]]) {
@@ -59,7 +61,12 @@
         } else {
             [weakSelf toast:@"暂无数据"];
         }
+    } onRequestCanceled:^(ITTBaseDataRequest *request) {
+        
+    } onRequestFailed:^(ITTBaseDataRequest *request) {
+        [weakSelf toast:@"暂无数据"];
     }];
+    
 }
 
 - (void)loadDisplayData:(NSArray *)data

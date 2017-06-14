@@ -396,6 +396,14 @@
 		4D7B98201ED6D990004C9660 /* ZGTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7B981E1ED6D990004C9660 /* ZGTextCell.xib */; };
 		4D7B982D1ED6DD28004C9660 /* ZGContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B982B1ED6DD28004C9660 /* ZGContentCell.m */; };
 		4D7B982E1ED6DD28004C9660 /* ZGContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7B982C1ED6DD28004C9660 /* ZGContentCell.xib */; };
+		4DA65C1C1EF1229D00ACDFC2 /* ZGZWYWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C1A1EF1229D00ACDFC2 /* ZGZWYWViewController.m */; };
+		4DA65C1D1EF1229D00ACDFC2 /* ZGZWYWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA65C1B1EF1229D00ACDFC2 /* ZGZWYWViewController.xib */; };
+		4DA65C271EF1299E00ACDFC2 /* ZGNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C251EF1299E00ACDFC2 /* ZGNewsDetailViewController.m */; };
+		4DA65C281EF1299E00ACDFC2 /* ZGNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA65C261EF1299E00ACDFC2 /* ZGNewsDetailViewController.xib */; };
+		4DA65C2C1EF12D8E00ACDFC2 /* ZGNewsTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C2A1EF12D8E00ACDFC2 /* ZGNewsTitleCell.m */; };
+		4DA65C2D1EF12D8E00ACDFC2 /* ZGNewsTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA65C2B1EF12D8E00ACDFC2 /* ZGNewsTitleCell.xib */; };
+		4DA65C311EF12DAA00ACDFC2 /* ZGWebViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA65C2F1EF12DAA00ACDFC2 /* ZGWebViewCell.m */; };
+		4DA65C321EF12DAA00ACDFC2 /* ZGWebViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA65C301EF12DAA00ACDFC2 /* ZGWebViewCell.xib */; };
 		4DA8B0621ECE943F00C8C599 /* BBRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */; };
 		4DA8B0631ECE943F00C8C599 /* ZGanControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8AE751ECE943E00C8C599 /* ZGanControlViewController.m */; };
 		4DA8B0641ECE943F00C8C599 /* ZGanControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA8AE761ECE943E00C8C599 /* ZGanControlViewController.xib */; };
@@ -1542,6 +1550,18 @@
 		4D7B982A1ED6DD28004C9660 /* ZGContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGContentCell.h; sourceTree = "<group>"; };
 		4D7B982B1ED6DD28004C9660 /* ZGContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGContentCell.m; sourceTree = "<group>"; };
 		4D7B982C1ED6DD28004C9660 /* ZGContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGContentCell.xib; sourceTree = "<group>"; };
+		4DA65C191EF1229D00ACDFC2 /* ZGZWYWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGZWYWViewController.h; sourceTree = "<group>"; };
+		4DA65C1A1EF1229D00ACDFC2 /* ZGZWYWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGZWYWViewController.m; sourceTree = "<group>"; };
+		4DA65C1B1EF1229D00ACDFC2 /* ZGZWYWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGZWYWViewController.xib; sourceTree = "<group>"; };
+		4DA65C241EF1299E00ACDFC2 /* ZGNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGNewsDetailViewController.h; sourceTree = "<group>"; };
+		4DA65C251EF1299E00ACDFC2 /* ZGNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGNewsDetailViewController.m; sourceTree = "<group>"; };
+		4DA65C261EF1299E00ACDFC2 /* ZGNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGNewsDetailViewController.xib; sourceTree = "<group>"; };
+		4DA65C291EF12D8E00ACDFC2 /* ZGNewsTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGNewsTitleCell.h; sourceTree = "<group>"; };
+		4DA65C2A1EF12D8E00ACDFC2 /* ZGNewsTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGNewsTitleCell.m; sourceTree = "<group>"; };
+		4DA65C2B1EF12D8E00ACDFC2 /* ZGNewsTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGNewsTitleCell.xib; sourceTree = "<group>"; };
+		4DA65C2E1EF12DAA00ACDFC2 /* ZGWebViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGWebViewCell.h; sourceTree = "<group>"; };
+		4DA65C2F1EF12DAA00ACDFC2 /* ZGWebViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGWebViewCell.m; sourceTree = "<group>"; };
+		4DA65C301EF12DAA00ACDFC2 /* ZGWebViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGWebViewCell.xib; sourceTree = "<group>"; };
 		4DA8AE701ECE943E00C8C599 /* BBRootTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBRootTabbarController.h; path = ../BBRootTabbarController.h; sourceTree = "<group>"; };
 		4DA8AE711ECE943E00C8C599 /* BBRootTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBRootTabbarController.m; path = ../BBRootTabbarController.m; sourceTree = "<group>"; };
 		4DA8AE741ECE943E00C8C599 /* ZGanControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGanControlViewController.h; sourceTree = "<group>"; };
@@ -3452,6 +3472,18 @@
 				4D1DD4F01EF03A5C0023F12F /* ZGFWInfoViewController.h */,
 				4D1DD4F11EF03A5C0023F12F /* ZGFWInfoViewController.m */,
 				4D1DD4F21EF03A5C0023F12F /* ZGFWInfoViewController.xib */,
+				4DA65C191EF1229D00ACDFC2 /* ZGZWYWViewController.h */,
+				4DA65C1A1EF1229D00ACDFC2 /* ZGZWYWViewController.m */,
+				4DA65C1B1EF1229D00ACDFC2 /* ZGZWYWViewController.xib */,
+				4DA65C241EF1299E00ACDFC2 /* ZGNewsDetailViewController.h */,
+				4DA65C251EF1299E00ACDFC2 /* ZGNewsDetailViewController.m */,
+				4DA65C261EF1299E00ACDFC2 /* ZGNewsDetailViewController.xib */,
+				4DA65C291EF12D8E00ACDFC2 /* ZGNewsTitleCell.h */,
+				4DA65C2A1EF12D8E00ACDFC2 /* ZGNewsTitleCell.m */,
+				4DA65C2B1EF12D8E00ACDFC2 /* ZGNewsTitleCell.xib */,
+				4DA65C2E1EF12DAA00ACDFC2 /* ZGWebViewCell.h */,
+				4DA65C2F1EF12DAA00ACDFC2 /* ZGWebViewCell.m */,
+				4DA65C301EF12DAA00ACDFC2 /* ZGWebViewCell.xib */,
 				4D1DD4F61EF03AC40023F12F /* ZGFWInfoCell.h */,
 				4D1DD4F71EF03AC40023F12F /* ZGFWInfoCell.m */,
 				4D1DD4F81EF03AC40023F12F /* ZGFWInfoCell.xib */,
@@ -4625,6 +4657,7 @@
 				18186D0B182BA26B00D6086D /* app_n@2x.png in Resources */,
 				9CB4587018571D5A0036B4E2 /* gray_temp.png in Resources */,
 				4DA8B0941ECE944000C8C599 /* btn_alarm_record_no@2x.png in Resources */,
+				4DA65C2D1EF12D8E00ACDFC2 /* ZGNewsTitleCell.xib in Resources */,
 				4DA8B1761ECE944000C8C599 /* market_btn_bg.png in Resources */,
 				4DA8B0681ECE943F00C8C599 /* accounting_btn_bg@2x.png in Resources */,
 				18186DC9182BA26B00D6086D /* squares.png in Resources */,
@@ -4739,6 +4772,7 @@
 				4DA8B0731ECE943F00C8C599 /* alarm_iv.png in Resources */,
 				4DA8B1B51ECE944000C8C599 /* reg_jtwsid_edit_bg@2x.png in Resources */,
 				4DA8B2351ECE944000C8C599 /* yellow_line@2x.png in Resources */,
+				4DA65C321EF12DAA00ACDFC2 /* ZGWebViewCell.xib in Resources */,
 				4DA8B1E41ECE944000C8C599 /* service_btn_bg.png in Resources */,
 				4D09A0B91ED30CDD00C0F172 /* ZGBaseCollectionViewController.xib in Resources */,
 				18186DB6182BA26B00D6086D /* BBAdressCell.xib in Resources */,
@@ -4751,6 +4785,7 @@
 				4DA8B0CE1ECE944000C8C599 /* default_load_error_picture@2x.png in Resources */,
 				4DA8B1771ECE944000C8C599 /* market_btn_bg@2x.png in Resources */,
 				18186D14182BA26B00D6086D /* footprint_n@2x.png in Resources */,
+				4DA65C1D1EF1229D00ACDFC2 /* ZGZWYWViewController.xib in Resources */,
 				4DA8B2501ECE9D5A00C8C599 /* ZGanTopBar.xib in Resources */,
 				18186DAB182BA26B00D6086D /* registered.png in Resources */,
 				18186D45182BA26B00D6086D /* warningFrame.png in Resources */,
@@ -4881,6 +4916,7 @@
 				4DA8B1CF1ECE944000C8C599 /* right_iv@2x.png in Resources */,
 				18186DC6182BA26B00D6086D /* nianli.png in Resources */,
 				4DA8B16D1ECE944000C8C599 /* main7.png in Resources */,
+				4DA65C281EF1299E00ACDFC2 /* ZGNewsDetailViewController.xib in Resources */,
 				9CB458611856FFDC0036B4E2 /* zc-eye_1136.png in Resources */,
 				4DA8B12D1ECE944000C8C599 /* laba@2x.png in Resources */,
 				4DA8B0DE1ECE944000C8C599 /* edit_imag@2x.png in Resources */,
@@ -5072,6 +5108,7 @@
 				4DA8B2581ECEA4AE00C8C599 /* ColorUtil.m in Sources */,
 				4D1DD5891EF0554E0023F12F /* AFJSONRequestOperation.m in Sources */,
 				18186DBB182BA26B00D6086D /* BBLoginViewController.m in Sources */,
+				4DA65C1C1EF1229D00ACDFC2 /* ZGZWYWViewController.m in Sources */,
 				9C69EAA61889185500B031A1 /* BBScrollImageView.m in Sources */,
 				9C69EAAA1889185500B031A1 /* SDImageCache.m in Sources */,
 				4DA8B23C1ECE944000C8C599 /* ZGanSecurityViewController.m in Sources */,
@@ -5105,6 +5142,7 @@
 				9C537586186C19D2001385BC /* BBFileClient.m in Sources */,
 				04C742861917B50E00DD0BF4 /* Mu51cUdpSearcher.m in Sources */,
 				4D1DD59B1EF056480023F12F /* ITTHTTPRequest.m in Sources */,
+				4DA65C2C1EF12D8E00ACDFC2 /* ZGNewsTitleCell.m in Sources */,
 				18186D69182BA26B00D6086D /* BBHighTemperatureViewController.m in Sources */,
 				18186DE9182BA26B00D6086D /* BBUnlockView.m in Sources */,
 				4D5584631ED34CD40043B001 /* TAAnimatedDotView.m in Sources */,
@@ -5118,6 +5156,7 @@
 				18186DC2182BA26B00D6086D /* BBUserCenterViewController.m in Sources */,
 				189A9B021818D18200E0C3BF /* BBTabbarController.m in Sources */,
 				4D1DD4F91EF03AC40023F12F /* ZGFWInfoCell.m in Sources */,
+				4DA65C311EF12DAA00ACDFC2 /* ZGWebViewCell.m in Sources */,
 				4D1DD52B1EF053A50023F12F /* ITTRequestResult.m in Sources */,
 				18186DDF182BA26B00D6086D /* BBRFIDCell.m in Sources */,
 				18484F39192B2E0A00A6120D /* BBHuiAplViewController.m in Sources */,
@@ -5218,6 +5257,7 @@
 				4D1DD52A1EF053A50023F12F /* ITTRequestJsonDataHandler.m in Sources */,
 				4D1DD5701EF055000023F12F /* ITTHttpRequestManager.m in Sources */,
 				9C537585186C19D2001385BC /* BBDataFrameTool.m in Sources */,
+				4DA65C271EF1299E00ACDFC2 /* ZGNewsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

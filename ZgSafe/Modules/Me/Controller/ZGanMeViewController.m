@@ -13,7 +13,7 @@
 #import "ZGContentCell.h"
 #import "BBLoginViewController.h"
 
-@interface ZGanMeViewController () <UITableViewDelegate,UITableViewDataSource> {
+@interface ZGanMeViewController () <UITableViewDelegate,UITableViewDataSource,BBLoginClientDelegate> {
     __weak IBOutlet UITableView *_tableView;
     NSArray                       *_dataArray;
 }
@@ -232,14 +232,13 @@
 - (void)logoutFailedWithErrorInfo:(NSString *)errorInfo
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self toast:@"注销错误"];
+        [[ProgressHUD instance] showProgressHD:NO inView:self.view info:@"注销中..."];
+        [self toast:@"注销失败"];
     });
 }
 
 - (void)exitApplication {
-    BBAppDelegate *app = [UIApplication sharedApplication].delegate;
-    UIWindow *window = app.window;
-    
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
     [UIView animateWithDuration:1.0f animations:^{
         window.alpha = 0;
         window.frame = CGRectMake(0, window.bounds.size.width, 0, 0);

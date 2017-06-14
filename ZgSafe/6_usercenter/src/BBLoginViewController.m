@@ -56,11 +56,14 @@
     [super viewDidAppear:animated];
     
     if (appDelegate.UserRegister) {
+        
         NSString *username=[[NSUserDefaults standardUserDefaults]objectForKey:@"userName"];
         NSString *pwd=[[NSUserDefaults standardUserDefaults]objectForKey:@"passWord"];
         
         if(username!=nil && pwd!=nil){
-            [self.presentingViewController dismissModalViewControllerAnimated:YES];
+            [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+                
+            }];
             NSLog(@"启动自动登录......");
         }
         
