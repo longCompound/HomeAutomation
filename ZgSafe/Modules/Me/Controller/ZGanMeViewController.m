@@ -11,6 +11,7 @@
 #import "ZGHeaderCell.h"
 #import "ZGTextCell.h"
 #import "ZGContentCell.h"
+#import "BBLoginViewController.h"
 
 @interface ZGanMeViewController () <UITableViewDelegate,UITableViewDataSource> {
     __weak IBOutlet UITableView *_tableView;
@@ -24,7 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.topBar.hidesLeftBtn = YES;
-    [self.topBar setupBackTrace:nil title:@"个人中心" rightActionTitle:nil];
+    [self.topBar setupBackTrace:nil title:@"个人中心" rightActionImage:@"out_btn_img.png"];
+    
     [self initDataSource];
     _tableView.backgroundColor = [ColorUtil getColor:@"#efefef" alpha:1];
     [_tableView reloadData];
@@ -180,6 +182,70 @@
 {
     [super viewWillLayoutSubviews];
     _tableView.frame = CGRectMake(0, self.topBar.bottom, self.view.width, self.view.height - self.topBar.bottom - BAR_HEIGHT);
+}
+
+- (void)touchTopBarRightButton:(ZGanTopBar *)bar
+{
+    [[ProgressHUD instance] showProgressHD:YES inView:self.view info:@"注销中..."];
+    NSString *param = [NSString stringWithFormat:@"%@",curUser.userid];
+    BBLoginClient *logClient = [[BBLoginClient alloc] init];
+    [logClient logout:param delegate:self];
+}
+
+#pragma mark -
+#pragma mark BBLoginClientDelegate method
+
+- (void)logoutReceiveData:(BBDataFrame *)data
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[ProgressHUD instance] showProgressHD:NO inView:self.view info:@"注销中..."];
+        NSString *result = [[NSString alloc] initWithString:[data dataString]];
+        if (!result) {
+            [self toast:@"注销失败"];
+        }else{
+            NSArray *arr = [result componentsSeparatedByString:@"\t"];
+            if ([arr[0] isEqualToString:@"0"]) {
+                [self toast:@"注销成功"];
+                
+                [BBDispatchManager clearStack];
+                [appDelegate.homePageVC genMemberView:[NSArray array]];//删除首页成员列表
+                BlueBoxer *user = curUser;
+                user.loged = NO;
+                [BlueBoxerManager archiveCurrentUser:user];
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userName"];
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"passWord"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
+                BBLoginViewController *logViewController = [[BBLoginViewController alloc]initWithNibName:@"BBLoginViewController" bundle:nil];
+                [self presentViewController:logViewController animated:YES completion:^{
+                    
+                }];
+                
+            }else{
+                [self toast:arr[1]];
+            }
+        }
+//        [self exitApplication];
+    });
+}
+
+- (void)logoutFailedWithErrorInfo:(NSString *)errorInfo
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self toast:@"注销错误"];
+    });
+}
+
+- (void)exitApplication {
+    BBAppDelegate *app = [UIApplication sharedApplication].delegate;
+    UIWindow *window = app.window;
+    
+    [UIView animateWithDuration:1.0f animations:^{
+        window.alpha = 0;
+        window.frame = CGRectMake(0, window.bounds.size.width, 0, 0);
+    } completion:^(BOOL finished) {
+        exit(0);
+    }];
 }
 
 

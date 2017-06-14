@@ -272,8 +272,9 @@
             [result release];
             
             if([arr[0] isEqualToString:@"0"] ){
-                [[NSUserDefaults standardUserDefaults]setObject:_moblePhone.text forKey:@"userName"];
-                [[NSUserDefaults standardUserDefaults]setObject:_passwordPhone.text forKey:@"passWord"];
+                [[NSUserDefaults standardUserDefaults] setObject:_moblePhone.text forKey:@"userName"];
+                [[NSUserDefaults standardUserDefaults] setObject:_passwordPhone.text forKey:@"passWord"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 
                 strTxt=@"登录成功";
                 

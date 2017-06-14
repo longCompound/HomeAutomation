@@ -910,7 +910,6 @@
     } completion:^(BOOL finished) {
         exit(0);
     }];
-    
 }
 
 //发送APP下载
