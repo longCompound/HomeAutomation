@@ -11,9 +11,9 @@
 #import "AFHTTPRequestOperation.h"
 #import "ITTAFQueryStringPair.h"
 #import "ITTDataRequestManager.h"
-#import "AFHTTPClient.h"
 #import "ITTFileModel.h"
 #import "NSJSONSerialization+ITTAdditions.h"
+#import "AFURLRequestSerialization.h"
 
 @interface ITTAFNBaseDataRequest()
 {

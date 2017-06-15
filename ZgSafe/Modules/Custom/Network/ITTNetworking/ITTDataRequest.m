@@ -10,7 +10,6 @@
 #import "ITTHttpRequestManager.h"
 #import "ITTNetworkTrafficManager.h"
 #import "ITTAFQueryStringPair.h"
-#import "AFHTTPClient.h"
 #import "ITTRequestJsonDataHandler.h"
 #import "ITTDataEnvironment.h"
 

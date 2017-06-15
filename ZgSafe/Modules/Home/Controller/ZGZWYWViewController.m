@@ -82,7 +82,6 @@ static NSString * const kZWFWDetailURLFormat = @"http://msgservice.zgantech.com/
     NSString * phone = [BBSocketManager getInstance].user;
     NSString * url = [NSString stringWithFormat:@"http://msgservice.zgantech.com/zgancontent.aspx?did=%@",phone];
     [DemoDataRequest requestWithParameters:nil withRequestUrl:url withIndicatorView:nil withCancelSubject:@"" onRequestStart:^(ITTBaseDataRequest *request) {
-        
     } onRequestFinished:^(ITTBaseDataRequest *request) {
         NSDictionary * dic = request.handleredResult;
         NSArray * data = dic[@"data"];

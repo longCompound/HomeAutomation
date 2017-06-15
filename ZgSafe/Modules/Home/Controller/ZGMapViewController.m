@@ -114,6 +114,7 @@
             _mapView.centerCoordinate = _tempPt;
         } else {
             _mapView.centerCoordinate = CLLocationCoordinate2DMake(29.526199, 106.717878);
+            [[ProgressHUD instance] showToast:self.view title:@"未查询到符合条件的地点" duration:2];
         }
         [_mapView addAnnotations:temp];
     });

@@ -31,6 +31,7 @@
 
 - (void)dealloc
 {
+//    [self removeObserver:self forKeyPath:@"sendedCommand"];
     [commandStack removeAllObjects];
     [commandStack release];
     [handledStack removeAllObjects];
@@ -44,7 +45,7 @@
         commandStack = [[NSMutableArray alloc] init];
         handledStack = [[NSMutableArray alloc] init];
         sendedCommand =[[NSMutableArray alloc] init];
-        [self addObserver:self forKeyPath:@"sendedCommand" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
+//        [self addObserver:self forKeyPath:@"sendedCommand" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
         _isrunning  = YES;
         self.socketStatus = kSocketStatusInitialed;
         self.user = user;
