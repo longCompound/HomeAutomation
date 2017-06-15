@@ -18,9 +18,12 @@
 #import "BBDataFrame.h"
 #import <AudioToolbox/AudioSession.h>
 #import "MyCamera.h"
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
 
+static NSString * const kBMapKey = @"8Uzcg3uT7HQv0izXcPizdbiu8wdYGl3U";
 
-@interface BBAppDelegate()<WeiboSDKDelegate,TencentSessionDelegate,WXApiDelegate,UncaughtExceptionDelegate,BBLoginClientDelegate>
+@interface BBAppDelegate()<WeiboSDKDelegate,TencentSessionDelegate,WXApiDelegate,UncaughtExceptionDelegate,BBLoginClientDelegate,BMKGeneralDelegate>
 {
     BBshowADcorl *adShower;
     BOOL _alreadyShowWarnAlert;//界面上已经显示了报警的alertView
@@ -69,6 +72,7 @@
 //                                                            bundle:nil];;
 //    }
     
+    [[[BMKMapManager alloc] init] start:kBMapKey generalDelegate:self];
     _rootVC = [[BBRootTabbarController alloc] init];
     _navigationController = [[BBNavigationController alloc] initWithRootViewController:_rootVC];
     [_navigationController setNavigationBarHidden:YES animated:NO];
@@ -96,8 +100,6 @@
 {
     UtilAlert(@"网络异常", nil);
 }
-
-
 
 /*!
  *@description  初始化各种设置信息
