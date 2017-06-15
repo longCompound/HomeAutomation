@@ -11,7 +11,7 @@
 #import "BBAlbumsViewController.h"
 #import "BBMarkViewController.h"
 
-@interface ZGanSecurityViewController () {
+@interface ZGanSecurityViewController ()<BBSocketClientDelegate> {
     __weak IBOutlet UIImageView *_bgImageView;
     __weak IBOutlet UIButton *_cloudEyeBtn;
     __weak IBOutlet UIButton *_historyBtn;
@@ -30,6 +30,22 @@
     [self.topBar.rightButton setImage:[UIImage imageNamed:@"bufang_btn.png"] forState:UIControlStateSelected];
     [self.topBar setupBackTrace:nil title:@"家庭卫士" rightActionTitle:nil];
     self.topBar.rightButton.hidden = NO;
+    
+    
+}
+
+/*!
+ *@description  获取布防状态
+ *@function     getGuardStatusAndScanCard
+ *@param        (void)
+ *@return       (void)
+ */
+- (void)getGuardStatusAndScanCard
+{
+    BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+    NSString *userId = curUser.userid;
+    [mainClient queryCurrentStatus:self param:userId];
+    [mainClient scanCard2:self param:userId];
 }
 
 - (void)viewWillLayoutSubviews
@@ -57,7 +73,19 @@
 - (void)touchTopBarRightButton:(ZGanTopBar *)bar
 {
     self.topBar.rightButton.selected = !self.topBar.rightButton.selected;
+    BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    [fmt setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateStr = [fmt stringFromDate:[NSDate date]];
+    NSString *param = [NSString stringWithFormat:@"%@\t%@",curUser.userid,dateStr];
+    if (self.topBar.rightButton.selected) {
+        [mainClient addControl:self param :param ];
+    } else {
+        [mainClient cancelControl:self param:param];
+    }
 }
+
+
 
 #pragma mark --
 #pragma mark -- CustomMethods --
@@ -94,4 +122,136 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+
+-(int)onRecevie:(BBDataFrame*)src received:(BBDataFrame*)data
+{
+    if (src) {
+        //不是通知消息
+        if(src.MainCmd == 0x0E && src.SubCmd == 1) {
+            //步防
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self handleReceiveRegard:src data:data];
+            });
+        } else if (src.MainCmd == 0x0E && src.SubCmd == 2) {
+            //撤防
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self handleReceiveCancelRegard:src data:data];
+            });
+            
+        }else if (src.MainCmd == 0x0E && src.SubCmd == 72) {
+            //当前布防状态
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self handleReceiveCurrentRegard:src data:data];
+            });
+        }else if (src.MainCmd == 0x0E && src.SubCmd == 74) {
+            //获取温度值
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            //                [self handleReceiveTemperature:src data:data];
+            //            });
+            
+        }else if (src.MainCmd == 0x0E && src.SubCmd == 75) {
+            //获取湿度值
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            //                [self handleReceiveHumidity:src data:data];
+            //            });
+            
+        }else if (src.MainCmd == 0x0E && src.SubCmd == 4) {
+            //获扫描卡片
+            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self handleReceiveRFID:src data:data];
+            });
+        }else if (src.MainCmd == 0x0E && src.SubCmd == 84) {
+            //获取温度曲线
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            //                [self handleReceiveTemperatureLine:src data:data];
+            //            });
+        }else if (src.version==2 && src.MainCmd == 0x0E && src.SubCmd == 80) {
+            //获取当前绑定终端
+            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self handleReceiveUserDeviceID:src data:data];
+            });
+        }
+        
+    }
+    return 0;
+}
+
+-(void)onRecevieError:(BBDataFrame*)src received:(BBDataFrame*)data
+{
+
+}
+
+-(void)onTimeout:(BBDataFrame*)src
+{
+
+}
+
+
+#pragma mark --
+#pragma mark -- handler message
+/*!
+ *@description  处理获取到当前布防状态结果
+ *@function     handleReceiveCurrentRegard:data:
+ *@param        src     --
+ *@return       data    --返回数据
+ */
+- (void)handleReceiveCurrentRegard:(BBDataFrame *)src data:(BBDataFrame *)data{
+    
+    NSString *result = [[NSString alloc] initWithData:data.data encoding:NSUTF8StringEncoding];
+    
+    if(result){
+        NSArray *arr = [result componentsSeparatedByString:@"\t"];
+        
+        if(arr.count==2 && [arr[0] isEqualToString:@"0"]){
+            if ([arr[1] integerValue] == 1) {
+                self.topBar.rightButton.selected = NO;
+            }else{
+                self.topBar.rightButton.selected = YES;
+            }
+            
+        }
+    }
+}
+
+/*!
+ *@description  处理布防结果
+ *@function     handleReceiveRegard:data:
+ *@param        src     --
+ *@return       data    --返回数据
+ */
+- (void)handleReceiveRegard:(BBDataFrame *)src data:(BBDataFrame *)data{
+    
+    NSString *result = [[NSString alloc] initWithData:data.data encoding:NSUTF8StringEncoding];
+    
+    if(result){
+        NSArray *arr = [result componentsSeparatedByString:@"\t"];
+        if ([arr[0] isEqualToString:@"0" ]) {
+            self.topBar.rightButton.selected = YES;
+        } else {
+            self.topBar.rightButton.selected = NO;
+        }
+    }
+
+}
+
+
+/*!
+ *@description  处理撤防结果
+ *@function     handleReceiveCancelRegard:data:
+ *@param        src     --
+ *@return       data    --返回数据
+ */
+- (void)handleReceiveCancelRegard:(BBDataFrame *)src data:(BBDataFrame *)data{
+    
+    NSString *result = [[NSString alloc] initWithData:data.data encoding:NSUTF8StringEncoding];
+    
+    if (result) {
+        NSArray *arr = [result componentsSeparatedByString:@"\t"];
+        if ([arr[0] isEqualToString:@"0" ]) {
+            self.topBar.rightButton.selected = NO;
+        } else {
+            self.topBar.rightButton.selected = YES;
+        }
+    }
+}
 @end
