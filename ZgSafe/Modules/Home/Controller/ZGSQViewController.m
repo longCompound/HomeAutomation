@@ -53,7 +53,7 @@
 
 - (void)cellClickWithInfo:(ZGanActionModel *)model
 {
-    ZGMapViewController * vc = [[ZGMapViewController alloc] initWithNibName:@"ZGMapViewController" bundle:[NSBundle mainBundle]];
+    ZGMapViewController * vc = [[ZGMapViewController alloc] init];
     vc.titleString = model.title;
     vc.keyWord = self.typeDic[model.title];
     [self.navigationController pushViewController:vc animated:YES];
