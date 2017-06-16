@@ -650,17 +650,14 @@ didReceiveResponse:(NSURLResponse *)response
         NSInteger totalNumberOfBytesWritten = 0;
         if ([self.outputStream hasSpaceAvailable]) {
             const uint8_t *dataBuffer = (uint8_t *)[data bytes];
-
             NSInteger numberOfBytesWritten = 0;
             while (totalNumberOfBytesWritten < (NSInteger)length) {
                 numberOfBytesWritten = [self.outputStream write:&dataBuffer[(NSUInteger)totalNumberOfBytesWritten] maxLength:(length - (NSUInteger)totalNumberOfBytesWritten)];
                 if (numberOfBytesWritten == -1) {
                     break;
                 }
-
                 totalNumberOfBytesWritten += numberOfBytesWritten;
             }
-
             break;
         }
 
