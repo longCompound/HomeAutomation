@@ -16,7 +16,7 @@
 
 @interface ZGMapViewController () <BMKMapViewDelegate,BMKPoiSearchDelegate> {
     BMKMapView                             *_mapView;
-    BMKPoiSearch                            *_poiSearch;
+    BMKPoiSearch                           *_poiSearch;
     CGFloat                         _maxLatitude;
     CGFloat                         _maxLongitude;
     

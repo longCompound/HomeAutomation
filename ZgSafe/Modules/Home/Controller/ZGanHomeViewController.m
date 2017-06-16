@@ -15,6 +15,7 @@
 #import "ZGZNViewController.h"
 #import "ZGZWYWViewController.h"
 #import "ZGBGListViewController.h"
+#import "ZGZDCXViewController.h"
 
 #define kPickPerLine  4
 
@@ -28,6 +29,7 @@ static NSString * const zgxxURL = @"http://cq.58.com/";
     __weak IBOutlet UIView *_blueBar;
     __weak IBOutlet UIImageView *_adImageView;
     __weak IBOutlet UICollectionView *_collectionView;
+    BOOL           _disabled;
 }
 
 @end
@@ -143,6 +145,10 @@ static NSString * const zgxxURL = @"http://cq.58.com/";
 #pragma mark -- ZGanCollectionViewCellDelegate --
 - (void)cellClickWithInfo:(ZGanActionModel *)model
 {
+    if (_disabled) {
+        return;
+    }
+    [self disableClick];
     BBRootViewController * viewController = nil;
     switch (model.type) {
         case 0:{
@@ -169,6 +175,14 @@ static NSString * const zgxxURL = @"http://cq.58.com/";
             viewController = [[ZGBGListViewController alloc] initWithNibName:@"ZGBGListViewController" bundle:nil];
         }
             break;
+        case 6: {
+            viewController = [[ZGZDCXViewController alloc] initWithNibName:@"ZGZDCXViewController" bundle:nil];
+        }
+            break;
+        case 7: {
+            viewController = [[ZGBGListViewController alloc] initWithNibName:@"ZGBGListViewController" bundle:nil];
+        }
+            break;
         default: {
             ZGWebViewController * vc = [[ZGWebViewController alloc] initWithNibName:@"ZGWebViewController" bundle:[NSBundle mainBundle]];
             vc.titleString = model.title;
@@ -183,6 +197,14 @@ static NSString * const zgxxURL = @"http://cq.58.com/";
 - (IBAction)noticeClick:(id)sender {
     
     
+}
+
+- (void)disableClick
+{
+    _disabled = YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _disabled = NO;
+    });
 }
 
 @end

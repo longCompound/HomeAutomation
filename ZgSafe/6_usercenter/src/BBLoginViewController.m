@@ -43,6 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.topBar.hidden = YES;
     BlueBoxer *user = curUser;
     _moblePhone.text = user.userid?user.userid:@"";
     

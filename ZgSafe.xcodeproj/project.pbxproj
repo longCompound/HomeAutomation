@@ -882,6 +882,11 @@
 		4DA8B25C1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8B25B1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.m */; };
 		4DA8B25F1ECEE2A800C8C599 /* ZGanActionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8B25E1ECEE2A800C8C599 /* ZGanActionModel.m */; };
 		4DA8B2621ECEE42F00C8C599 /* ZGanCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8B2611ECEE42F00C8C599 /* ZGanCollectionViewCell.m */; };
+		4DFD2CDA1EF38695009C1246 /* ZGZDCXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD2CD81EF38695009C1246 /* ZGZDCXViewController.m */; };
+		4DFD2CDB1EF38695009C1246 /* ZGZDCXViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFD2CD91EF38695009C1246 /* ZGZDCXViewController.xib */; };
+		4DFD2CE71EF38E85009C1246 /* ZGZDDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD2CE51EF38E85009C1246 /* ZGZDDetailCell.m */; };
+		4DFD2CE81EF38E85009C1246 /* ZGZDDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFD2CE61EF38E85009C1246 /* ZGZDDetailCell.xib */; };
+		4DFD2CF01EF3C00F009C1246 /* ZGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD2CEF1EF3C00F009C1246 /* ZGDatePicker.m */; };
 		93A0D16A18C96C6500BE274C /* MyCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A0D16918C96C6500BE274C /* MyCamera.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9C03F1E01921ACBD00E42BF3 /* eye-bg_gray_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C03F1DF1921ACBD00E42BF3 /* eye-bg_gray_1136.png */; };
 		9C03F1E31921B2FB00E42BF3 /* eye-bg_gray_960.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C03F1E21921B2FB00E42BF3 /* eye-bg_gray_960.png */; };
@@ -2044,6 +2049,14 @@
 		4DA8B25E1ECEE2A800C8C599 /* ZGanActionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGanActionModel.m; sourceTree = "<group>"; };
 		4DA8B2601ECEE42F00C8C599 /* ZGanCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGanCollectionViewCell.h; sourceTree = "<group>"; };
 		4DA8B2611ECEE42F00C8C599 /* ZGanCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGanCollectionViewCell.m; sourceTree = "<group>"; };
+		4DFD2CD71EF38695009C1246 /* ZGZDCXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGZDCXViewController.h; sourceTree = "<group>"; };
+		4DFD2CD81EF38695009C1246 /* ZGZDCXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGZDCXViewController.m; sourceTree = "<group>"; };
+		4DFD2CD91EF38695009C1246 /* ZGZDCXViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGZDCXViewController.xib; sourceTree = "<group>"; };
+		4DFD2CE41EF38E85009C1246 /* ZGZDDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGZDDetailCell.h; sourceTree = "<group>"; };
+		4DFD2CE51EF38E85009C1246 /* ZGZDDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGZDDetailCell.m; sourceTree = "<group>"; };
+		4DFD2CE61EF38E85009C1246 /* ZGZDDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGZDDetailCell.xib; sourceTree = "<group>"; };
+		4DFD2CEE1EF3C00F009C1246 /* ZGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGDatePicker.h; sourceTree = "<group>"; };
+		4DFD2CEF1EF3C00F009C1246 /* ZGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGDatePicker.m; sourceTree = "<group>"; };
 		667471F91EBE1F580036D4F6 /* libIOTCAPIs_ALL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIOTCAPIs_ALL.a; path = "ZgSafe/tool/camera/lib/Debug-iphonesimulator/libIOTCAPIs_ALL.a"; sourceTree = "<group>"; };
 		93A0D16818C96C6500BE274C /* MyCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCamera.h; sourceTree = "<group>"; };
 		93A0D16918C96C6500BE274C /* MyCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCamera.m; sourceTree = "<group>"; };
@@ -3518,6 +3531,12 @@
 				4DA65C3E1EF1588B00ACDFC2 /* ZGAddressDetailViewController.m */,
 				4D74EE221EF22F09008F3024 /* ZGMapViewController.h */,
 				4D74EE511EF29861008F3024 /* ZGMapViewController.m */,
+				4DFD2CD71EF38695009C1246 /* ZGZDCXViewController.h */,
+				4DFD2CD81EF38695009C1246 /* ZGZDCXViewController.m */,
+				4DFD2CD91EF38695009C1246 /* ZGZDCXViewController.xib */,
+				4DFD2CE41EF38E85009C1246 /* ZGZDDetailCell.h */,
+				4DFD2CE51EF38E85009C1246 /* ZGZDDetailCell.m */,
+				4DFD2CE61EF38E85009C1246 /* ZGZDDetailCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3538,6 +3557,8 @@
 				4DA8B25B1ECEDB8500C8C599 /* DDCollectionViewFlowLayout.m */,
 				4DA8B2601ECEE42F00C8C599 /* ZGanCollectionViewCell.h */,
 				4DA8B2611ECEE42F00C8C599 /* ZGanCollectionViewCell.m */,
+				4DFD2CEE1EF3C00F009C1246 /* ZGDatePicker.h */,
+				4DFD2CEF1EF3C00F009C1246 /* ZGDatePicker.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4553,6 +4574,7 @@
 				18186D84182BA26B00D6086D /* BBAlDetailsViewController.xib in Resources */,
 				4DA8B1111ECE944000C8C599 /* imag_serviceadd@2x.png in Resources */,
 				4DA8B18C1ECE944000C8C599 /* orientation_gray_icon 2.png in Resources */,
+				4DFD2CDB1EF38695009C1246 /* ZGZDCXViewController.xib in Resources */,
 				4DA8B1BA1ECE944000C8C599 /* reg_repas_edit_bg.png in Resources */,
 				4DA8B0E61ECE944000C8C599 /* fangwu_btn_bg@2x.png in Resources */,
 				4DA8B0E91ECE944000C8C599 /* findpas_edit_bg.png in Resources */,
@@ -4898,6 +4920,7 @@
 				4DA8B10A1ECE944000C8C599 /* ic_launcher 8.png in Resources */,
 				9C653AA0191B1A72006CC23A /* whiteArrow@2x.png in Resources */,
 				18186D37182BA26B00D6086D /* BBHomePageController.xib in Resources */,
+				4DFD2CE81EF38E85009C1246 /* ZGZDDetailCell.xib in Resources */,
 				4DA8B1051ECE944000C8C599 /* ic_launcher 3.png in Resources */,
 				4DA8B0A41ECE944000C8C599 /* chazuo_false@2x.png in Resources */,
 				4DA8B2241ECE944000C8C599 /* wuyenew_true.png in Resources */,
@@ -5177,6 +5200,7 @@
 				189A9B021818D18200E0C3BF /* BBTabbarController.m in Sources */,
 				4D1DD4F91EF03AC40023F12F /* ZGFWInfoCell.m in Sources */,
 				4D74EE701EF2B828008F3024 /* AFNetworkReachabilityManager.m in Sources */,
+				4DFD2CE71EF38E85009C1246 /* ZGZDDetailCell.m in Sources */,
 				4DA65C311EF12DAA00ACDFC2 /* ZGWebViewCell.m in Sources */,
 				4D1DD52B1EF053A50023F12F /* ITTRequestResult.m in Sources */,
 				18186DDF182BA26B00D6086D /* BBRFIDCell.m in Sources */,
@@ -5186,6 +5210,7 @@
 				189A9AFF1818D18200E0C3BF /* BBRootViewController.m in Sources */,
 				9CA446BE18276328007B7B9F /* MJRefreshBaseView.m in Sources */,
 				4D5584671ED34CD40043B001 /* SDCycleScrollView.m in Sources */,
+				4DFD2CDA1EF38695009C1246 /* ZGZDCXViewController.m in Sources */,
 				189A9B0C1818D18200E0C3BF /* ASIHTTPRequest.m in Sources */,
 				4D5584621ED34CD40043B001 /* TAAbstractDotView.m in Sources */,
 				18186D3B182BA26B00D6086D /* BBSideBarView.m in Sources */,
@@ -5198,6 +5223,7 @@
 				18186DBE182BA26B00D6086D /* BBregisterViewController.mm in Sources */,
 				18A2EC12196FE94500D83171 /* BBNewsEyesViewController.mm in Sources */,
 				4D7B982D1ED6DD28004C9660 /* ZGContentCell.m in Sources */,
+				4DFD2CF01EF3C00F009C1246 /* ZGDatePicker.m in Sources */,
 				4D55843A1ED347BF0043B001 /* UIImage+UIImageExtras.m in Sources */,
 				4DA8B0631ECE943F00C8C599 /* ZGanControlViewController.m in Sources */,
 				4D1DD56D1EF054B60023F12F /* ITTXibView.m in Sources */,
