@@ -55,6 +55,7 @@ static UILabel * caculateLabel;
         caculateLabel.font = [UIFont systemFontOfSize:15];
         caculateLabel.numberOfLines = 0;
     }
+    caculateLabel.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 40, 18);
     NSString * content = [self getInfoDescription:infoDic];
     caculateLabel.text = content;
     [caculateLabel sizeToFit];
@@ -73,12 +74,12 @@ static UILabel * caculateLabel;
     if (ZDMoney && ZDMoney.length > 0) {
         [content appendFormat:@"\n账单金额 : %@",ZDMoney];
         if (CreateTime && CreateTime.length > 0) {
-            [content appendFormat:@"\n出账日期 : %@",ZDMoney];
+            [content appendFormat:@"\n出账日期 : %@",CreateTime];
         } else {
             [content appendString:@"\n出账日期 : %@"];
         }
         if (PayTime && PayTime.length > 0) {
-            [content appendFormat:@"\n付款日期 : %@",ZDMoney];
+            [content appendFormat:@"\n付款日期 : %@",PayTime];
         } else {
             [content appendString:@"\n付款日期 : 未付款"];
         }
