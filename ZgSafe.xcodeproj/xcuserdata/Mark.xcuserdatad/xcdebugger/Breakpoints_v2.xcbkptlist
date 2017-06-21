@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZgSafe/Modules/Home/Controller/ZGZDDetailCell.m"
-            timestampString = "519297323.258892"
+            filePath = "ZgSafe/2_cloudEyes/src/BBNewsEyesViewController.mm"
+            timestampString = "519707174.531659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "+caculateHeight:"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-toStartVideo"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

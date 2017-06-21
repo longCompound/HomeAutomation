@@ -38,7 +38,7 @@
         _scrollImageView;
     })];
     
-    _dataSource = @[[ZGDeviceModel modelWithType:0 title:@"智能插座" imagePath:@"deng_false" highLightImagePath:@"deng_true" state:NO],
+    _dataSource = @[[ZGDeviceModel modelWithType:0 title:@"智能插座" imagePath:@"chazuo_false" highLightImagePath:@"chazuo_true" state:NO],
                     [ZGDeviceModel modelWithType:0 title:@"智能主二位开关" imagePath:@"deng_double_false" highLightImagePath:@"deng_double_true" state:NO],
                     [ZGDeviceModel modelWithType:0 title:@"主卧一位开关" imagePath:@"deng_false" highLightImagePath:@"deng_true" state:NO],
                     [ZGDeviceModel modelWithType:0 title:@"次卧一位开关" imagePath:@"deng_false" highLightImagePath:@"deng_true" state:NO],
