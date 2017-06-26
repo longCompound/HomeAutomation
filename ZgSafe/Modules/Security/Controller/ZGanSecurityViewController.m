@@ -17,7 +17,11 @@
     __weak IBOutlet UIButton *_historyBtn;
     __weak IBOutlet UIButton *_photoLibBtn;
     __weak IBOutlet UIImageView *_topImageView;
+    SEL                      _selector;
+    BOOL                     _offLine;
 }
+
+@property (copy,nonatomic) NSString *currentDeviceID;
 
 @end
 
@@ -30,8 +34,21 @@
     [self.topBar.rightButton setImage:[UIImage imageNamed:@"bufang_btn.png"] forState:UIControlStateSelected];
     [self.topBar setupBackTrace:nil title:@"家庭卫士" rightActionTitle:nil];
     self.topBar.rightButton.hidden = NO;
-    
-    
+    [self getCurrentDeviceThenPerformSelector:@selector(getGuardStatusAndScanCard)];
+}
+
+/*!
+ *@description  获取当前设备
+ *@function     getCurrentDeviceThenPerformSelector:
+ *@param        selector    --选择事件
+ *@return       (void)
+ */
+- (void)getCurrentDeviceThenPerformSelector:(SEL)selector
+{
+    _selector = selector;
+    BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+    NSString *userId = curUser.userid;
+    [mainClient queryCurrentTerminal:self param:userId];
 }
 
 /*!
@@ -92,6 +109,10 @@
 
 - (IBAction)cloudClick:(UIButton *)sender
 {
+    if (!curUser.deviceid) {
+        [[ProgressHUD instance] showToast:self.view title:@"设备异常" duration:2];
+        return;
+    }
     if(!appDelegate.EyesIsOpen){
         //appDelegate.EyesIsOpen=YES;
         BBNewsEyesViewController *eyesVC;
@@ -168,7 +189,7 @@
         }else if (src.version==2 && src.MainCmd == 0x0E && src.SubCmd == 80) {
             //获取当前绑定终端
             dispatch_async(dispatch_get_main_queue(), ^{
-//                [self handleReceiveUserDeviceID:src data:data];
+                [self handleReceiveUserDeviceID:src data:data];
             });
         }
         
@@ -254,4 +275,64 @@
         }
     }
 }
+
+/*!
+ *@description  处理获得用户设备ID
+ *@function     handleReceiveUserDeviceID:data:
+ *@param        src     --
+ *@return       data    --返回数据
+ */
+- (void)handleReceiveUserDeviceID:(BBDataFrame *)src data:(BBDataFrame *)data
+{
+    NSString *result = [[NSString alloc] initWithString:[data dataString]];
+    if(result){
+        NSArray *arr = [result componentsSeparatedByString:@"\t"];
+        if (arr.count==3 && [arr[0] isEqualToString:@"0"] ) {
+            self.currentDeviceID = arr[1];
+            
+            BlueBoxer *sysUser = [BlueBoxerManager getCurrentUser];
+            sysUser.deviceid=[arr[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
+            [BlueBoxerManager archiveCurrentUser:sysUser];
+            
+            NSInteger status = [arr[2] intValue];
+            
+            [self toSetPageStatus:status];
+        }
+    }
+}
+
+/*!
+ *@description  处理获得用户设备信息
+ *@function     toSetPageStatus
+ */
+-(void) toSetPageStatus:(int)status{
+    if (status==3) {
+        [self performSelector:_selector withObject:nil];
+        if (ISIP5) {
+            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_1136.png"] forState:UIControlStateNormal];
+            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_1136.png"] forState:UIControlStateHighlighted];
+        }else{
+            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_960.png"] forState:UIControlStateNormal];
+            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_960.png"] forState:UIControlStateHighlighted];
+        }
+        self.topBar.rightButton.selected = NO;
+        _offLine = NO;
+    }else{
+        _offLine = YES;
+        self.topBar.rightButton.selected = YES;
+        if (ISIP5) {
+            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_gray_1136.png"] forState:UIControlStateNormal];
+            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_gray_1136.png"] forState:UIControlStateHighlighted];
+        }else{
+            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_gray_960.png"] forState:UIControlStateNormal];
+            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_gray_960.png"] forState:UIControlStateHighlighted];
+        }
+        BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+        NSString *userId = curUser.userid;
+        [mainClient scanCard:self param:userId];
+        
+        UtilAlert(@"柚保已离线", nil);
+    }
+}
+
 @end

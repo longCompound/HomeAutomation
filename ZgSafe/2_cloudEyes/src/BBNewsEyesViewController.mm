@@ -53,11 +53,11 @@ extern unsigned int _getTickCount() {
     [MyCamera initIOTC];
     
     //设置UID
-    NSString *strUid=curUser.deviceid;
+    NSString *strUid = curUser.deviceid;
     
     camera = [[MyCamera alloc] initWithName:strUid];
     
-    selectedChannel=0;
+    selectedChannel = 0;
     
     camera.delegate2 = self;
     [camera connect:strUid];
