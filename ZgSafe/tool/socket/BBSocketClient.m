@@ -31,7 +31,6 @@
 
 - (void)dealloc
 {
-//    [self removeObserver:self forKeyPath:@"sendedCommand"];
     [commandStack removeAllObjects];
     [commandStack release];
     [handledStack removeAllObjects];
@@ -45,12 +44,22 @@
         commandStack = [[NSMutableArray alloc] init];
         handledStack = [[NSMutableArray alloc] init];
         sendedCommand =[[NSMutableArray alloc] init];
+        [self addObserver:self forKeyPath:@"sendedCommand" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
         _isrunning  = YES;
         self.socketStatus = kSocketStatusInitialed;
         self.user = user;
         _connected = -1;
     }
     return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"sendedCommand"]) {
+        NSArray *old = [change objectForKey:NSKeyValueChangeOldKey];
+        NSArray *new = [change objectForKey:NSKeyValueChangeNewKey];
+        BBLog(@"old count %d, new count:%d", [old count], [new count]);
+    }
 }
 
 - (NSString*)getIpAddressForHost:(NSString*) theHost
@@ -165,7 +174,7 @@
     time(NULL);
      */
     int len=0;
-    for (int i = 0;i < 10;i++ ) {
+    for (int i = 0;i <= 10;i++ ) {
         int rc = [self receiveDataInner:buffer length:length-len timeout:time/10];
         if(rc < 0) {
             return rc;
@@ -216,7 +225,7 @@
     if ( rc < 11 ) {
         return nil;
     }
-//    BBLog(@"<头部>:%@</头部>", buffer);
+    BBLog(@"<头部>:%@</头部>", buffer);
     Byte bbs[2]={0,0};
     Byte* data = (Byte*)[buffer bytes];
     bbs[0] = data[9];
@@ -224,7 +233,7 @@
     int len = [BBDataFrameTool highLowByteToInt:bbs];
     if(len>=0) {
         rc = [self receiveData:buffer length:len+1 timeout:[timeout intValue]];
-        //BBLog(@"<数据>:%@</数据>", buffer);
+        BBLog(@"<数据>:%@</数据>", buffer);
         if (rc != len+1) {
             return nil;
         }
@@ -359,32 +368,6 @@ void processSignal(int sig)
             [self queueData:frame];
             idleCount++;
         }
-        /*}
-         {
-            int ms = 500;
-            usleep(ms);
-            
-            idleCount ++;
-            if (idleCount >= PING_TIME_INTERVAL * 2000 ) { // 需要发送心跳包
-                BBDataFrame* frame = [self linkTestFrame];
-                int sendStatus = [self sendData:frame];
-                if (sendStatus < 10) {
-                    break;
-                }
-                [frame release];
-                BBDataFrame* response = [self receiveFrame:@(PING_TIME_INTERVAL)];
-                if ( response == nil) {
-                    BBLog(@"Link Test fail!");
-                    [_delegate onTimeout];
-                    break;
-                } else {
-                    BBLog(@"response dataframe:{%x, %d, %@}",response.MainCmd, response.SubCmd, response.data);
-                }
-                idleCount = 0;
-                response = nil;
-            }
-        }
-         */
     }
     
     //关闭线程??

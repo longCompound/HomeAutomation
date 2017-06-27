@@ -111,6 +111,8 @@ static BBSocketManager *sharedManager = nil;
     login.username = user;
     login.password = pwd;
     [login logWithDelegate:delegate];
+    
+    
     NSString* data = login.hostInfoFrame.dataString;
     NSArray* result;
     result = [data componentsSeparatedByString:@"\t"];
@@ -137,7 +139,7 @@ static BBSocketManager *sharedManager = nil;
     [login release];
     self.user = user;
     //停止消息服务
-    //[self messageClient];
+//    [self messageClient];
     return YES;
 }
 

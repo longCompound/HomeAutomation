@@ -85,8 +85,8 @@
     
     // 数据长度
     NSUInteger data_len = 0;
-    //NSData *realData = df.data;
-//    BBLog(@"real data:%@", realData);
+    NSData *realData = df.data;
+    BBLog(@"real data:%@", realData);
     
     if (df.data != nil ) {
         data_len = [df.data length];

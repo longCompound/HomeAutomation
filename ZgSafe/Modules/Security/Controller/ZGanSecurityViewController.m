@@ -17,6 +17,8 @@
     __weak IBOutlet UIButton *_historyBtn;
     __weak IBOutlet UIButton *_photoLibBtn;
     __weak IBOutlet UIImageView *_topImageView;
+    
+    
     SEL                      _selector;
     BOOL                     _offLine;
 }
@@ -34,7 +36,33 @@
     [self.topBar.rightButton setImage:[UIImage imageNamed:@"bufang_btn.png"] forState:UIControlStateSelected];
     [self.topBar setupBackTrace:nil title:@"家庭卫士" rightActionTitle:nil];
     self.topBar.rightButton.hidden = NO;
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self getCurrentDeviceThenPerformSelector:@selector(getGuardStatusAndScanCard)];
+}
+/*!
+ *@description  获取布防状态
+ *@function     getGuardStatusAndScanCard
+ *@param        (void)
+ *@return       (void)
+ */
+- (void)getGuardStatusAndScanCard
+{
+    BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+    NSString *userId = curUser.userid;
+    [mainClient queryCurrentStatus:self param:userId];
+    [mainClient scanCard2:self param:userId];
 }
 
 /*!
@@ -48,21 +76,9 @@
     _selector = selector;
     BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
     NSString *userId = curUser.userid;
+    
     [mainClient queryCurrentTerminal:self param:userId];
-}
-
-/*!
- *@description  获取布防状态
- *@function     getGuardStatusAndScanCard
- *@param        (void)
- *@return       (void)
- */
-- (void)getGuardStatusAndScanCard
-{
-    BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
-    NSString *userId = curUser.userid;
-    [mainClient queryCurrentStatus:self param:userId];
-    [mainClient scanCard2:self param:userId];
+    
 }
 
 - (void)viewWillLayoutSubviews
@@ -109,11 +125,7 @@
 
 - (IBAction)cloudClick:(UIButton *)sender
 {
-    if (!curUser.deviceid) {
-        [[ProgressHUD instance] showToast:self.view title:@"设备异常" duration:2];
-        return;
-    }
-    if(!appDelegate.EyesIsOpen){
+    if(!appDelegate.EyesIsOpen && !_offLine){
         //appDelegate.EyesIsOpen=YES;
         BBNewsEyesViewController *eyesVC;
         
@@ -211,6 +223,147 @@
 #pragma mark --
 #pragma mark -- handler message
 /*!
+ *@description  处理获得用户设备ID
+ *@function     handleReceiveUserDeviceID:data:
+ *@param        src     --
+ *@return       data    --返回数据
+ */
+- (void)handleReceiveUserDeviceID:(BBDataFrame *)src data:(BBDataFrame *)data
+{
+    NSString *result = [[NSString alloc] initWithString:[data dataString]];
+    
+    if(result){
+        NSArray *arr = [result componentsSeparatedByString:@"\t"];
+        if (arr.count==3 && [arr[0] isEqualToString:@"0"] ) {
+            self.currentDeviceID = arr[1];
+            
+            BlueBoxer *sysUser = [BlueBoxerManager getCurrentUser];
+            sysUser.deviceid=[arr[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
+            [BlueBoxerManager archiveCurrentUser:sysUser];
+            
+            NSInteger status = [arr[2] intValue];
+            
+            [self toSetPageStatus:status];
+        }
+    }
+    
+}
+
+/*!
+ *@description  处理获得用户设备信息
+ *@function     toSetPageStatus
+ */
+-(void) toSetPageStatus:(int)status{
+    if (status==3) {
+        [self performSelector:_selector withObject:nil];
+//        if (ISIP5) {
+//            [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_1136.png"] forState:UIControlStateNormal];
+//            [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_1136.png"] forState:UIControlStateHighlighted];
+//        }else{
+//            [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_960.png"] forState:UIControlStateNormal];
+//            [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_960.png"] forState:UIControlStateHighlighted];
+//        }
+//        _regardView.selected = NO;
+        _offLine = NO;
+    }else{
+        _offLine = YES;
+//        _regardView.selected = YES;
+//        [_morenImaer setFrame:CGRectMake(62, _morenImaer.frame.origin.y, 194, _morenImaer.frame.size.height)];
+//        if (ISIP5) {
+//            [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_gray_1136.png"] forState:UIControlStateNormal];
+//            [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_gray_1136.png"] forState:UIControlStateHighlighted];
+//        }else{
+//            [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_gray_960.png"] forState:UIControlStateNormal];
+//            [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_gray_960.png"] forState:UIControlStateHighlighted];
+//        }
+        
+        BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+        NSString *userId = curUser.userid;
+        [mainClient scanCard:self param:userId];
+        
+        UtilAlert(@"柚保已离线", nil);
+    }
+}
+
+/*!
+ *@description  处理获得用户设备信息
+ *@function     handleReceiveUserDeviceInfo:data:
+ *@param        src     --
+ *@return       data    --返回数据
+ */
+- (void)handleReceiveUserDeviceInfo:(BBDataFrame *)src data:(BBDataFrame *)data
+{
+    NSString *result = [[NSString alloc] initWithString:[data dataString]];
+    NSArray *arr = [result componentsSeparatedByString:@"\t"];
+    
+    if(result){
+        if (arr.count>3 && [arr[0] isEqualToString:@"0"]) {
+            //
+            NSInteger status = [arr[2] intValue];
+            
+        }
+    }
+    
+    
+    if ([arr[0] boolValue]) {
+        UtilAlert(@"获取当前用户设备信息失败", nil);
+    }else{
+        for (int i=2; i<arr.count; i++) {
+            NSArray *infoArr = [arr[i] componentsSeparatedByString:@"\n"];
+            if ([infoArr[0] isEqualToString:_currentDeviceID]) {
+                NSInteger status = [infoArr[2] intValue];
+                if (status & 1) {
+                    
+                    [self performSelector:_selector withObject:nil];
+//                    if (ISIP5) {
+//                        [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_1136.png"] forState:UIControlStateNormal];
+//                        [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_1136.png"] forState:UIControlStateHighlighted];
+//                    }else{
+//                        [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_960.png"] forState:UIControlStateNormal];
+//                        [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_960.png"] forState:UIControlStateHighlighted];
+//                    }
+//                    _regardView.selected = NO;
+                    _offLine = NO;
+                }else{
+                    _offLine = YES;
+//                    _regardView.selected = YES;
+//                    [_morenImaer setFrame:CGRectMake(62, _morenImaer.frame.origin.y, 194, _morenImaer.frame.size.height)];
+//                    if (ISIP5) {
+//                        [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_gray_1136.png"] forState:UIControlStateNormal];
+//                        [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_gray_1136.png"] forState:UIControlStateHighlighted];
+//                    }else{
+//                        [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_gray_960.png"] forState:UIControlStateNormal];
+//                        [_coudeButton setImage:[UIImage imageNamed:@"eye-bg_gray_960.png"] forState:UIControlStateHighlighted];
+//                    }
+                    
+                    BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
+                    NSString *userId = curUser.userid;
+                    [mainClient scanCard:self param:userId];
+                    
+                    UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(0, 0,230, 50)];
+                    lbl.center = self.view.center;
+                    lbl.textAlignment = NSTextAlignmentCenter;
+                    lbl.textColor = [UIColor whiteColor];
+                    lbl.shadowColor = [UIColor clearColor];
+                    lbl.backgroundColor = [UIColor blackColor];
+                    lbl.font = [UIFont systemFontOfSize:13.];
+                    lbl.numberOfLines = 0;
+                    lbl.text = @"柚保设备已断线，请检查设备网络";
+                    [self.view addSubview:lbl];
+                    
+                    lbl.layer.cornerRadius = 5.0f;
+                    lbl.clipsToBounds = YES;
+                    
+                    [lbl performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1.];
+                    
+                }
+            }
+        }
+    }
+}
+
+
+/*!
  *@description  处理获取到当前布防状态结果
  *@function     handleReceiveCurrentRegard:data:
  *@param        src     --
@@ -275,64 +428,4 @@
         }
     }
 }
-
-/*!
- *@description  处理获得用户设备ID
- *@function     handleReceiveUserDeviceID:data:
- *@param        src     --
- *@return       data    --返回数据
- */
-- (void)handleReceiveUserDeviceID:(BBDataFrame *)src data:(BBDataFrame *)data
-{
-    NSString *result = [[NSString alloc] initWithString:[data dataString]];
-    if(result){
-        NSArray *arr = [result componentsSeparatedByString:@"\t"];
-        if (arr.count==3 && [arr[0] isEqualToString:@"0"] ) {
-            self.currentDeviceID = arr[1];
-            
-            BlueBoxer *sysUser = [BlueBoxerManager getCurrentUser];
-            sysUser.deviceid=[arr[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
-            [BlueBoxerManager archiveCurrentUser:sysUser];
-            
-            NSInteger status = [arr[2] intValue];
-            
-            [self toSetPageStatus:status];
-        }
-    }
-}
-
-/*!
- *@description  处理获得用户设备信息
- *@function     toSetPageStatus
- */
--(void) toSetPageStatus:(int)status{
-    if (status==3) {
-        [self performSelector:_selector withObject:nil];
-        if (ISIP5) {
-            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_1136.png"] forState:UIControlStateNormal];
-            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_1136.png"] forState:UIControlStateHighlighted];
-        }else{
-            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_960.png"] forState:UIControlStateNormal];
-            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_960.png"] forState:UIControlStateHighlighted];
-        }
-        self.topBar.rightButton.selected = NO;
-        _offLine = NO;
-    }else{
-        _offLine = YES;
-        self.topBar.rightButton.selected = YES;
-        if (ISIP5) {
-            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_gray_1136.png"] forState:UIControlStateNormal];
-            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_gray_1136.png"] forState:UIControlStateHighlighted];
-        }else{
-            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_gray_960.png"] forState:UIControlStateNormal];
-            [_cloudEyeBtn setImage:[UIImage imageNamed:@"eye-bg_gray_960.png"] forState:UIControlStateHighlighted];
-        }
-        BBMainClient *mainClient = [[BBSocketManager getInstance] mainClient];
-        NSString *userId = curUser.userid;
-        [mainClient scanCard:self param:userId];
-        
-        UtilAlert(@"柚保已离线", nil);
-    }
-}
-
 @end

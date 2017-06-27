@@ -16,6 +16,7 @@
 #import "BBSideBarView.h"
 #import "BBTemperatureLineView.h"
 #import "BBLoginViewController.h"
+//#import "BBNewsEyesViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BBNoticeSender.h"
 #include <string.h>
@@ -92,6 +93,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Custom initialization
         _members = [[NSMutableArray alloc] init];
     }
     return self;
@@ -399,33 +401,33 @@
     //    //消息推送注册
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge];
     
-    [BBDispatchManager clearStack];
-    
-    BlueBoxer *user = curUser;
-
-    if (user.regardRemindOpened) {
-        //注册布s防通知
-        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:1];
-        //注册撤防通知
-        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:2];
-    }
-    
-    if (user.warnPushOpened) {
-        //注册入侵报警通知
-        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:3];
-        //注册温度报警通知
-       // [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:16];
-        ////注册湿度通知
-        //[BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:17];
-    }
-    
-    if (user.backHomeRemindOpened) {
-        //注册归家/离家通知
-        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:23];
-    }
-    
-    //注册新增图片通知
-    [BBDispatchManager registerHandler:self forMainCmd:0x0f subCmd:40];
+//    [BBDispatchManager clearStack];
+//    
+//    BlueBoxer *user = curUser;
+//
+//    if (user.regardRemindOpened) {
+//        //注册布s防通知
+//        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:1];
+//        //注册撤防通知
+//        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:2];
+//    }
+//    
+//    if (user.warnPushOpened) {
+//        //注册入侵报警通知
+//        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:3];
+//        //注册温度报警通知
+//       // [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:16];
+//        ////注册湿度通知
+//        //[BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:17];
+//    }
+//    
+//    if (user.backHomeRemindOpened) {
+//        //注册归家/离家通知
+//        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:23];
+//    }
+//    
+//    //注册新增图片通知
+//    [BBDispatchManager registerHandler:self forMainCmd:0x0f subCmd:40];
 }
 
 /*!

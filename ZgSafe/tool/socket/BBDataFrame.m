@@ -21,7 +21,7 @@
 {
     if (self = [super init]) {
         self.platform = 4;  // 默认平台版本
-        self.version = 1;   // 默认协议版本
+        self.version = 2;   // 默认协议版本
         gbkEncoding = GBK_ENCODEING;
         dataEncoded = nil;
     }

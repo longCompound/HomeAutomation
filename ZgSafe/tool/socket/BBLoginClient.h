@@ -26,6 +26,8 @@
 -(id)initWith:(NSString*)user password:(NSString*)pwd;
 // 登陆
 -(void)logWithDelegate:(id<BBLoginClientDelegate>)delegate;
+//获取服务器地址
+- (void)getServerList:(NSString *)userID deleagte:(id<BBLoginClientDelegate>)delegate;
 // 注册新用户
 - (int)registerANewUser:(NSString *)newUserInfo delegate:(id<BBLoginClientDelegate>)delegate;
 // 绑定终端
@@ -46,6 +48,9 @@
 @optional
 - (void)loginReceiveData:(BBDataFrame *)data;
 - (void)loginFailedWithErrorInfo:(NSString *)errorInfo;
+
+- (void)getServerListData:(BBDataFrame *)data;
+- (void)getServerListErrorInfo:(NSString *)errorInfo;
 
 - (void)bindReceiveData:(BBDataFrame *)data;
 - (void)bindFailedWithErrorInfo:(NSString *)errorInfo;

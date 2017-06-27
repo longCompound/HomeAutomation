@@ -17,7 +17,7 @@
 
 static const NSInteger kBaseTag  =  100;
 
-@interface BBRootTabbarController () <BBSocketClientDelegate,BBLoginClientDelegate>{
+@interface BBRootTabbarController () <BBSocketClientDelegate,BBLoginClientDelegate,ASIHTTPRequestDelegate>{
     ZGanHomeViewController             * _homeVC;
     ZGanMeViewController               * _meVC;
     ZGanSecurityViewController         * _securityVC;
@@ -164,9 +164,7 @@ static const NSInteger kBaseTag  =  100;
  */
 - (void)getDatas
 {
-    //to do 此处布放消息请求先注释  新版没看到布放的内容
     [self getCurrentDeviceThenPerformSelector:@selector(getGuardStatusAndScanCard)];
-    
     
     NSMutableString *requestStr = [NSMutableString stringWithString:@"http://msgservice.zgantech.com/zganweather.aspx?did=YL_CX_001"];
     
@@ -208,11 +206,100 @@ static const NSInteger kBaseTag  =  100;
     
 }
 
+/*!
+ *@description  注册通知
+ *@function     registNotices
+ *@param        (void)
+ *@return       (void)
+ */
+- (void)registNotices
+{
+    //    //消息推送注册
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge];
+    
+    [BBDispatchManager clearStack];
+    
+    BlueBoxer *user = curUser;
+    
+    if (user.regardRemindOpened) {
+        //注册布s防通知
+        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:1];
+        //注册撤防通知
+        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:2];
+    }
+    
+    if (user.warnPushOpened) {
+        //注册入侵报警通知
+        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:3];
+        //注册温度报警通知
+        // [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:16];
+        ////注册湿度通知
+        //[BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:17];
+    }
+    
+    if (user.backHomeRemindOpened) {
+        //注册归家/离家通知
+        [BBDispatchManager registerHandler:self forMainCmd:0x0d subCmd:23];
+    }
+    
+    //注册新增图片通知
+    [BBDispatchManager registerHandler:self forMainCmd:0x0f subCmd:40];
+}
+
 #pragma mark --
 #pragma mark -- BBSocketClientDelegate
 -(int)onRecevie:(BBDataFrame*)src received:(BBDataFrame*)data
 {
-    return 1;
+    if (src) {
+        //不是通知消息
+//        if(src.MainCmd == 0x0E && src.SubCmd == 1) {
+//            //步防
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self handleReceiveRegard:src data:data];
+//            });
+//        } else if (src.MainCmd == 0x0E && src.SubCmd == 2) {
+//            //撤防
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self handleReceiveCancelRegard:src data:data];
+//            });
+//            
+//        }else if (src.MainCmd == 0x0E && src.SubCmd == 72) {
+//            //当前布防状态
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self handleReceiveCurrentRegard:src data:data];
+//            });
+//        }else
+            if (src.MainCmd == 0x0E && src.SubCmd == 74) {
+            //获取温度值
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            //                [self handleReceiveTemperature:src data:data];
+            //            });
+            
+        }else if (src.MainCmd == 0x0E && src.SubCmd == 75) {
+            //获取湿度值
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            //                [self handleReceiveHumidity:src data:data];
+            //            });
+            
+        }else if (src.MainCmd == 0x0E && src.SubCmd == 4) {
+            //获扫描卡片
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self handleReceiveRFID:src data:data];
+            });
+        }else if (src.MainCmd == 0x0E && src.SubCmd == 84) {
+            //获取温度曲线
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            //                [self handleReceiveTemperatureLine:src data:data];
+            //            });
+        }else if (src.version==2 && src.MainCmd == 0x0E && src.SubCmd == 80) {
+            //获取当前绑定终端
+            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self handleReceiveUserDeviceID:src data:data];
+            });
+        }
+    }
+    
+    return 0;
 }
 
 -(void)onRecevieError:(BBDataFrame*)src received:(BBDataFrame*)data
@@ -223,6 +310,88 @@ static const NSInteger kBaseTag  =  100;
 -(void)onTimeout:(BBDataFrame*)sr
 {
 
+}
+
+/*!
+ *@description  处理获取RFID结果
+ *@function     handleReceiveRFID:data:
+ *@param        src     --
+ *@return       data    --返回数据
+ */
+- (void)handleReceiveRFID:(BBDataFrame *)src data:(BBDataFrame *)data{
+    NSString *result = [[NSString alloc] initWithString:[data dataString]];
+    
+//    [_members removeAllObjects];
+    NSMutableArray *_members = [NSMutableArray array];
+    if(result){
+        NSArray *aryData=[result componentsSeparatedByString:@"\t"];
+        if(aryData.count>2){
+            if([aryData[0] intValue]>0){
+                int i=2;
+                while (i<(aryData.count-1)) {
+                    NSDictionary *dic = @{
+                                          @"id":aryData[i],
+                                          @"name":aryData[i+1],
+                                          @"status":aryData[i+2]
+                                          };
+                    
+                    [_members addObject:dic];
+                    
+                    i=i+4;
+                }
+                
+            }
+        }
+    }
+    
+    [self genMemberView:_members];
+    
+}
+
+
+
+/*!
+ *@brief        生成成员列表
+ *@function     genMemberView:
+ *@param        mems
+ *@return       (void)
+ */
+- (void)genMemberView:(NSArray *)mems
+{
+//#define MEM_VIEW_WIDTH 45.0f
+//    for (BBMemberView *view in _memView.subviews) {
+//        [view removeFromSuperview];
+//    }
+//    NSUInteger count = [mems count];
+//    CGFloat start = 0;
+//    int i = 0;
+//    for (NSDictionary *member in mems) {
+//        if (i%5==0) {
+//            NSInteger last = count - i;
+//            if (last >= 5) {
+//                start = MEM_VIEW_WIDTH * i;
+//            }else{
+//                start = MEM_VIEW_WIDTH*(5-last)/2.0f
+//                + MEM_VIEW_WIDTH*i;
+//            }
+//        }
+//        NSArray *nibs = [[NSBundle mainBundle] loadNibNamed:@"BBMemberView" owner:nil options:nil];
+//        BBMemberView *view = (BBMemberView *)[nibs objectAtIndex:0];
+//        view.photo.highlighted = _offLine;
+//        CGRect frame = view.frame;
+//        frame.origin.x = start + (i%5) * frame.size.width;
+//        view.frame = frame;
+//        view.name = [[mems[i] valueForKey:@"name"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//        view.isOnline = [[mems[i] valueForKey:@"status"]boolValue];
+//        view.isMale = YES;
+//        [self.memView addSubview:view];
+//        i++;
+//    }
+//    
+//    if (count%5 != 0) {
+//        count = count + 5-(count+5)%5;
+//    }
+//    [self.memView setContentSize:CGSizeMake(count*MEM_VIEW_WIDTH, self.memView.frame.size.height)];
 }
 
 #pragma mark -
@@ -300,7 +469,10 @@ static const NSInteger kBaseTag  =  100;
                 sysUser.userid=_P_UserName;
                 [BlueBoxerManager archiveCurrentUser:sysUser];
                 
-                [self getAllDatas];
+                BBLoginClient* login = [[BBLoginClient alloc] init];
+                [login getServerList:curUser.userid deleagte:self];
+//                [self getAllDatas];
+//                [self registNotices];
                 
             }else{
                 [self toLoginErr];
@@ -348,5 +520,35 @@ static const NSInteger kBaseTag  =  100;
     }
 }
 
+- (BOOL)getServerListData:(BBDataFrame *)data
+{
+    NSArray* result;
+    result = [data.dataString componentsSeparatedByString:@"\t"];
+    if (result.count < 2) {
+        return NO;
+    }
+    
+    NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
+    
+    int count = [result[0] intValue];
+    for ( int i = 1 ; i <= count ; i++)
+    {
+        NSArray* hostinfo = [result[i] componentsSeparatedByString:@":"];
+        NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+        [dict setObject:hostinfo[0] forKey:@"ip"];
+        [dict setObject:hostinfo[1] forKey:@"port"];
+        [dict setObject:hostinfo[2] forKey:@"server"];
+        
+        [dict2 setObject:dict forKey:hostinfo[2]];
+    }
+    NSLog(@"%@", dict2);
+    
+    return YES;
+}
+
+- (void)getServerListErrorInfo:(NSString *)errorInfo
+{
+    
+}
 
 @end

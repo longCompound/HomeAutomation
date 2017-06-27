@@ -23,7 +23,10 @@
     return self;
 }
 
-
+- (NSArray *)sepByDataString:(NSString *)dataString
+{
+    return [dataString componentsSeparatedByString:@"\t"];
+}
 
 -(BBDataFrame*)createLoginFrame
 {    
@@ -43,14 +46,16 @@
     [para appendString:@"\t"];
     
     //APP版本
-    [para appendString:@""];
+    [para appendString:@"1"];
     [para appendString:@"\t"];
     
     //手机类型
     [para appendString:@"1"];
     
-    return [self createFrame:0x01 subcmd:0x01 str:para];
+    return [self createFrame:0x01 subcmd:1 str:para];
 }
+
+
 
 -(void)logWithDelegate:(id<BBLoginClientDelegate>)delegate
 {
@@ -66,13 +71,15 @@
         return ;
     }
     [self sendData:loginFrame];
+    
     BBDataFrame* loginResp = [self receiveFrame:@30];
     if (loginResp != nil) {
-        if([loginResp.dataString compare:@"0"] == NSOrderedSame) {
+        NSArray *dataArr = [self sepByDataString:loginResp.dataString];
+        if (dataArr.count > 1 && [dataArr.firstObject isEqualToString:@"0"]) {
             BBLog(@"Login success");
-            BBDataFrame* hostInfo = [self receiveFrame:@30];
-            BBLog(@"%@",hostInfo.dataString);
-            self.hostInfoFrame = hostInfo;
+//            BBDataFrame* hostInfo = [self receiveFrame:@30];
+//            BBLog(@"%@",hostInfo.dataString);
+//            self.hostInfoFrame = hostInfo;
             if (delegate && [delegate respondsToSelector:@selector(loginReceiveData:)]) {
                 [delegate loginReceiveData:loginResp];
             }
@@ -92,7 +99,49 @@
     [self close];
 }
 
-
+//获取服务器地址
+- (int)getServerList:(NSString *)userID deleagte:(id<BBLoginClientDelegate>)delegate
+{
+    int flags = fcntl(socketfd, F_GETFL,0);
+    fcntl(socketfd,F_SETFL, flags | O_NONBLOCK);
+    NSData *data = [userID dataUsingEncoding:GBK_ENCODEING];
+    BBDataFrame *getServerListFrame = [self createFrame:0x01 subcmd:4 data:data];
+    BOOL connected = [self connect:LOG_SERVER_PATH port:LOG_SERVER_PORT];
+    if (!connected) {
+        if (!connected) {
+            if (delegate && [delegate respondsToSelector:@selector(registFailedWithErrorInfo:)] ) {
+                [delegate registFailedWithErrorInfo:@"连接登陆服务器失败"];
+            }
+            return -1;
+        }
+    }
+    int sendStatus = [self sendData:getServerListFrame];
+    if (sendStatus < 0) {
+        BBLog(@"发送消息失败");
+        if (delegate && [delegate respondsToSelector:@selector(getServerListErrorInfo:)] ) {
+            [delegate getServerListErrorInfo:@"发送消息失败"];
+        }
+        return -2;
+    }
+    BBDataFrame* logoutResp = [self receiveFrame:@30];
+    if([logoutResp.dataString compare:@"0"] == NSOrderedSame) {
+        BBLog(@"获取短信失败");
+        if (delegate && [delegate respondsToSelector:@selector(getServerListErrorInfo:)] ) {
+            [delegate getServerListErrorInfo:@"发送消息失败"];
+        }
+        [self close];
+        return -3;
+    }
+    
+    BBLog(@"获取短信 SUCCESS");
+    if (delegate && [delegate respondsToSelector:@selector(getServerListData:)] ) {
+        [delegate getServerListData:logoutResp];
+    }
+    
+    [self close];
+    
+    return 0;
+}
 /*!
  *@brief        注册新用户
  *@function     registerNewUser:
