@@ -44,22 +44,12 @@
         commandStack = [[NSMutableArray alloc] init];
         handledStack = [[NSMutableArray alloc] init];
         sendedCommand =[[NSMutableArray alloc] init];
-        [self addObserver:self forKeyPath:@"sendedCommand" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
         _isrunning  = YES;
         self.socketStatus = kSocketStatusInitialed;
         self.user = user;
         _connected = -1;
     }
     return self;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"sendedCommand"]) {
-        NSArray *old = [change objectForKey:NSKeyValueChangeOldKey];
-        NSArray *new = [change objectForKey:NSKeyValueChangeNewKey];
-        BBLog(@"old count %d, new count:%d", [old count], [new count]);
-    }
 }
 
 - (NSString*)getIpAddressForHost:(NSString*) theHost

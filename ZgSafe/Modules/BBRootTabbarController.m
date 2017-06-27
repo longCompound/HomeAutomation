@@ -13,6 +13,7 @@
 #import "ZGanControlViewController.h"
 #import "BBLoginViewController.h"
 #import "Defines.h"
+#import "BBSocketManager.h"
 
 
 static const NSInteger kBaseTag  =  100;
@@ -520,12 +521,12 @@ static const NSInteger kBaseTag  =  100;
     }
 }
 
-- (BOOL)getServerListData:(BBDataFrame *)data
+- (void)getServerListData:(BBDataFrame *)data
 {
     NSArray* result;
     result = [data.dataString componentsSeparatedByString:@"\t"];
     if (result.count < 2) {
-        return NO;
+        return ;
     }
     
     NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
@@ -541,9 +542,10 @@ static const NSInteger kBaseTag  =  100;
         
         [dict2 setObject:dict forKey:hostinfo[2]];
     }
-    NSLog(@"%@", dict2);
     
-    return YES;
+    [BBSocketManager getInstance].hostInfoDict = dict2;
+    [BBSocketManager getInstance].user = curUser.userid;
+    NSLog(@"ip dic ===== %@", dict2);
 }
 
 - (void)getServerListErrorInfo:(NSString *)errorInfo

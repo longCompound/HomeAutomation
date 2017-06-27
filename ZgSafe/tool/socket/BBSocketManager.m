@@ -113,31 +113,31 @@ static BBSocketManager *sharedManager = nil;
     [login logWithDelegate:delegate];
     
     
-    NSString* data = login.hostInfoFrame.dataString;
-    NSArray* result;
-    result = [data componentsSeparatedByString:@"\t"];
-    if (result.count < 2) {
-        [login release];
-        return NO;
-    }
-    
-    NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
-    
-    int count = [result[0] intValue];
-    for ( int i = 1 ; i <= count ; i++)
-    {
-        NSArray* hostinfo = [result[i] componentsSeparatedByString:@":"];
-        NSMutableDictionary* dict = [NSMutableDictionary dictionary];
-        [dict setObject:hostinfo[0] forKey:@"ip"];
-        [dict setObject:hostinfo[1] forKey:@"port"];
-        [dict setObject:hostinfo[2] forKey:@"server"];
-        
-        [dict2 setObject:dict forKey:hostinfo[2]];
-    }
-    self.hostInfoDict = dict2;
-    [dict2 release];
-    [login release];
-    self.user = user;
+//    NSString* data = login.hostInfoFrame.dataString;
+//    NSArray* result;
+//    result = [data componentsSeparatedByString:@"\t"];
+//    if (result.count < 2) {
+//        [login release];
+//        return NO;
+//    }
+//    
+//    NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
+//    
+//    int count = [result[0] intValue];
+//    for ( int i = 1 ; i <= count ; i++)
+//    {
+//        NSArray* hostinfo = [result[i] componentsSeparatedByString:@":"];
+//        NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+//        [dict setObject:hostinfo[0] forKey:@"ip"];
+//        [dict setObject:hostinfo[1] forKey:@"port"];
+//        [dict setObject:hostinfo[2] forKey:@"server"];
+//        
+//        [dict2 setObject:dict forKey:hostinfo[2]];
+//    }
+//    self.hostInfoDict = dict2;
+//    [dict2 release];
+//    [login release];
+//    self.user = user;
     //停止消息服务
 //    [self messageClient];
     return YES;

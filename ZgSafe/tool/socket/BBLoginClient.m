@@ -124,7 +124,9 @@
         return -2;
     }
     BBDataFrame* logoutResp = [self receiveFrame:@30];
-    if([logoutResp.dataString compare:@"0"] == NSOrderedSame) {
+    NSArray *array = [self sepByDataString:logoutResp.dataString];
+    if (array.count > 0) {
+        if([array[0] compare:@"0"] == NSOrderedSame) {
         BBLog(@"获取短信失败");
         if (delegate && [delegate respondsToSelector:@selector(getServerListErrorInfo:)] ) {
             [delegate getServerListErrorInfo:@"发送消息失败"];
@@ -136,6 +138,7 @@
     BBLog(@"获取短信 SUCCESS");
     if (delegate && [delegate respondsToSelector:@selector(getServerListData:)] ) {
         [delegate getServerListData:logoutResp];
+    }
     }
     
     [self close];
