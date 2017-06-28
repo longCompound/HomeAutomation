@@ -4312,7 +4312,7 @@
 				ORGANIZATIONNAME = iXcoder;
 				TargetAttributes = {
 					189A9A361818D0D900E0C3BF = {
-						DevelopmentTeam = R48Q5YKW7M;
+						DevelopmentTeam = 35CYZANLC2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
@@ -5449,7 +5449,7 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 亮 甘 (59JSN8L647)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R48Q5YKW7M;
+				DEVELOPMENT_TEAM = 35CYZANLC2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5480,7 +5480,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.facishare2.iphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.longHouse.iphone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -5499,7 +5499,7 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 亮 甘 (59JSN8L647)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R48Q5YKW7M;
+				DEVELOPMENT_TEAM = 35CYZANLC2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5531,7 +5531,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.facishare2.iphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.longHouse.iphone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
